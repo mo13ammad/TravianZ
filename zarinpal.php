@@ -8,18 +8,19 @@ $description = SERVER_NAME . " Package $package Gold Pack (" . $session->usernam
 $email = $session->userinfo['email'];
 $callbackURL = rtrim(SERVER, '/') . '/zarinpal_callback.php?package=' . $package;
 
-// ZarinPal handles Tomans or Rials. We'll use Tomans.
 $data = array(
-    'MerchantID' => $merchantID,
-    'Amount' => $amount,
-    'Description' => $description,
-    'Email' => $email,
-    'CallbackURL' => $callbackURL,
+    'merchant_id' => $merchantID,
+    'amount' => $amount,
+    'description' => $description,
+    'callback_url' => $callbackURL,
+    'metadata' => [
+        'email' => $email
+    ],
 );
 
 $jsonData = json_encode($data);
-$ch = curl_init('https://www.zarinpal.com/pg/rest/WebGate/PaymentRequest.json');
-curl_setopt($ch, CURLOPT_USERAGENT, 'ZarinPal Rest Api v1');
+$ch = curl_init('https://api.zarinpal.com/pg/v4/payment/request.json');
+curl_setopt($ch, CURLOPT_USERAGENT, 'ZarinPal Rest Api v4');
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
 curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -36,10 +37,14 @@ curl_close($ch);
 if ($err) {
     echo "cURL Error #:" . $err;
 } else {
-    if ($result["Status"] == 100) {
-        header('Location: https://www.zarinpal.com/pg/StartPay/' . $result["Authority"]);
+    if (empty($result['errors'])) {
+        if ($result['data']['code'] == 100) {
+            header('Location: https://www.zarinpal.com/pg/StartPay/' . $result['data']["authority"]);
+        } else {
+            echo 'ERR: ' . $result['data']['code'];
+        }
     } else {
-        echo 'ERR: ' . $result["Status"];
+        echo 'ERR: ' . $result['errors']['code'] . ' - ' . $result['errors']['message'];
     }
 }
 ?>
