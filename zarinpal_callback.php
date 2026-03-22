@@ -15,10 +15,10 @@ switch ($package) {
 }
 
 if ($_GET['Status'] == 'OK') {
-    $data = array('MerchantID' => $merchantID, 'Authority' => $authority, 'Amount' => $amount);
+    $data = array('merchant_id' => $merchantID, 'authority' => $authority, 'amount' => $amount);
     $jsonData = json_encode($data);
-    $ch = curl_init('https://www.zarinpal.com/pg/rest/WebGate/PaymentVerification.json');
-    curl_setopt($ch, CURLOPT_USERAGENT, 'ZarinPal Rest Api v1');
+    $ch = curl_init('https://api.zarinpal.com/pg/v4/payment/verify.json');
+    curl_setopt($ch, CURLOPT_USERAGENT, 'ZarinPal Rest Api v4');
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
     curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -33,11 +33,15 @@ if ($_GET['Status'] == 'OK') {
     if ($err) {
         echo "cURL Error #:" . $err;
     } else {
-        if ($result['Status'] == 100) {
-            $database->modifyGold($session->uid, $gold, 1);
-            header("Location: plus.php?id=3&success=1");
+        if (empty($result['errors'])) {
+            if ($result['data']['code'] == 100 || $result['data']['code'] == 101) {
+                $database->modifyGold($session->uid, $gold, 1);
+                header("Location: plus.php?id=3&success=1");
+            } else {
+                echo 'Transaction failed. Status:' . $result['data']['code'];
+            }
         } else {
-            echo 'Transction failed. Status:' . $result['Status'];
+            echo 'ERR: ' . $result['errors']['code'] . ' - ' . $result['errors']['message'];
         }
     }
 } else {
