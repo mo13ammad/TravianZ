@@ -40,8 +40,6 @@ services:
     environment:
       PMA_HOST: db
       PMA_PORT: 3306
-      PMA_USER: root
-      PMA_PASSWORD: ${MARIADB_ROOT_PASSWORD:-${MYSQL_ROOT_PASSWORD:-rootpassword}}
     ports:
       - "8081:80"
     depends_on:

@@ -138,8 +138,8 @@ $fh = fopen($myFile, 'w') or die("<br/><br/><br/>Can't open file: GameEngine\con
 		// PLUS SETTINGS
 		$text = preg_replace("'%PLUS_TIME%'", $_POST['plus_time'], $text);
 		$text = preg_replace("'%PLUS_PRODUCTION%'", $_POST['plus_production'], $text);
-		$text = preg_replace("'%PAYPAL_EMAIL%'", $_POST['paypal-email'], $text);
-		$text = preg_replace("'%PAYPAL_CURRENCY%'", $_POST['paypal-currency'], $text);
+		$text = preg_replace("'%ZARINPAL_MERCHANT%'", $_POST['zarinpal-merchant'], $text);
+		$text = preg_replace("'%PAYMENT_CURRENCY%'", $_POST['payment-currency'], $text);
 		$text = preg_replace("'%PLUS_PACKAGE_A_GOLD%'", $_POST['plus-a-gold'], $text);
 		$text = preg_replace("'%PLUS_PACKAGE_A_PRICE%'", $_POST['plus-a-price'], $text);
 		$text = preg_replace("'%PLUS_PACKAGE_B_GOLD%'", $_POST['plus-b-gold'], $text);

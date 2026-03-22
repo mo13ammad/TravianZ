@@ -110,6 +110,7 @@ $dbPrefix = $_SESSION['install_random_prefix'];
 					<option value="10,Europe/Bratislava" <?php if ($tz==10) echo "selected";?>>Europe (Bratislava)</option>
                     <option value="11,Indian/Maldives" <?php if ($tz==11) echo "selected";?>>Indian</option>
                     <option value="12,Pacific/Fiji" <?php if ($tz==12) echo "selected";?>>Pacific</option>
+                    <option value="14,Asia/Tehran" <?php if ($tz==14) echo "selected";?>>Asia (Tehran)</option>
                 </select>
             </td>
         </tr>
@@ -211,7 +212,8 @@ $dbPrefix = $_SESSION['install_random_prefix'];
             <td><span class="f9 c6">Language:</span></td>
             <td>
                 <select name="lang">
-                    <option value="en" selected="selected">English</option>
+                    <option value="en">English</option>
+                    <option value="fa" selected="selected">Farsi (Persian)</option>
                     <option value="es">Spanish</option>
                     <option value="rs">Serbian</option>
                     <option value="ru">Rusian</option>
@@ -524,15 +526,13 @@ $dbPrefix = $_SESSION['install_random_prefix'];
         <span class="f10 c">PLUS GOLD PACKAGES</span>
     <table>
         <tr>
-            <td><span class="f9 c6">Your PayPal E-Mail Address:</span>
-            <br />(must be either <b>Business</b> or <b>Premier</b> account)</td>
-            <td><input type="text" name="paypal-email" id="paypal-email" value="@"></td>
+            <td><span class="f9 c6">Your ZarinPal Merchant ID:</span></td>
+            <td><input type="text" name="zarinpal-merchant" id="zarinpal-merchant" value="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"></td>
         </tr>
         <tr><td>&nbsp;</td></tr>
         <tr>
-            <td><span class="f9 c6">Payment Currency:</span>
-            <br />(your PayPal account must be able to receive this currency)</td>
-            <td><input type="text" name="paypal-currency" id="paypal-currency" value="EUR"></td>
+            <td><span class="f9 c6">Payment Currency:</span></td>
+            <td><input type="text" name="payment-currency" id="payment-currency" value="Toman"></td>
         </tr>
         <tr><td>&nbsp;</td></tr>
         <tr>

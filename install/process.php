@@ -122,8 +122,8 @@ class Process {
 		//$findReplace["%GP_LOCATE%"] = $_POST['gp_locate'];
 		$findReplace["%PLUS_TIME%"] = $_POST['plus_time'];
 		$findReplace["%PLUS_PRODUCTION%"] = $_POST['plus_production'];
-		$findReplace["%PAYPAL_EMAIL%"] = $_POST['paypal-email'];
-		$findReplace["%PAYPAL_CURRENCY%"] = $_POST['paypal-currency'];
+		$findReplace["%ZARINPAL_MERCHANT%"] = $_POST['zarinpal-merchant'];
+		$findReplace["%PAYMENT_CURRENCY%"] = $_POST['payment-currency'];
 		$findReplace["%PLUS_PACKAGE_A_GOLD%"] = $_POST['plus-a-gold'];
 		$findReplace["%PLUS_PACKAGE_A_PRICE%"] = $_POST['plus-a-price'];
 		$findReplace["%PLUS_PACKAGE_B_GOLD%"] = $_POST['plus-b-gold'];

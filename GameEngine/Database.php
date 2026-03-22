@@ -3213,7 +3213,7 @@ public function getBestOasisCropBonus($x, $y) {
 	function deleteAlliance($aid) {
 	    list($aid) = $this->escape_input((int) $aid);
 
-	    $result = mysqli_fetch_array(mysqli_query($this->dblink,"SELECT Count(*) as Total FROM " . TB_PREFIX . "users where alliance = $aid"), MYSQLI_ASSOC);
+	    $result = mysqli_fetch_array(mysqli_query($this->dblink,"SELECT Count(*) as Total FROM " . TB_PREFIX . "users where alliance = ".(int)$aid), MYSQLI_ASSOC);
 		if ($result['Total'] == 0) {
 	        // remove the alliance
 	        $q = "DELETE FROM " . TB_PREFIX . "alidata WHERE id = $aid";
@@ -5136,7 +5136,7 @@ References: User ID/Message ID, Mode
         	$orders = $this->mysqli_fetch_all(mysqli_query($this->dblink, $q));
         	foreach($orders as $order) $this->removeBuilding($order['id'], $tribe, $wid);
         }
-        else mysqli_query($this->dblink, $q = "UPDATE " .TB_PREFIX. "bdata SET level = level - $levels[1] + $levels[0] WHERE wid = $wid AND field = $field");
+        else mysqli_query($this->dblink, $q = "UPDATE " .TB_PREFIX. "bdata SET level = level - ".(int)$levels[1]." + ".(int)$levels[0]." WHERE wid = ".(int)$wid." AND field = ".(int)$field);
     }
     
     private function getBData($wid, $use_cache = true, $orderByID = false) {

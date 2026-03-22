@@ -15,10 +15,11 @@ if($_SESSION['access'] < ADMIN) die("Access Denied: You are not Admin!");
 
 $id = (int) $_POST['id'];
 $admid = (int) $_POST['admid'];
-mysqli_query($GLOBALS["link"], "UPDATE ".TB_PREFIX."users SET cp = cp + ".$_POST['cp']." WHERE id = ".$id."");
+$cp = (int) $_POST['cp'];
+mysqli_query($GLOBALS["link"], "UPDATE ".TB_PREFIX."users SET cp = cp + ".$cp." WHERE id = ".$id."");
 
 $name = $database->getUserField($id,"username",0);
-mysqli_query($GLOBALS["link"], "Insert into ".TB_PREFIX."admin_log values (0,$admid,'Added ".$_POST['cp']." Cultural Points to user <a href=\'admin.php?p=player&uid=$id\'>$name</a> ',".time().")");
+mysqli_query($GLOBALS["link"], "Insert into ".TB_PREFIX."admin_log values (0,$admid,'Added ".$cp." Cultural Points to user <a href=\'admin.php?p=player&uid=$id\'>$name</a> ',".time().")");
 
 header("Location: ../../../Admin/admin.php?p=player&uid=".$id."&cp=ok");
 ?>
