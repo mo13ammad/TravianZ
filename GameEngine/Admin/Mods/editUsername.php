@@ -37,7 +37,7 @@ $sessionaccess = $access['access'];
 
 if($sessionaccess != 9) die("<h1><font color=\"red\">Access Denied: You are not Admin!</font></h1>");
 
-mysqli_query($GLOBALS["link"], "UPDATE ".TB_PREFIX."users SET username = '".$_POST['username']."' WHERE id = ".$uid."");
+mysqli_query($GLOBALS["link"], "UPDATE ".TB_PREFIX."users SET username = '".$database->escape($_POST['username'])."' WHERE id = ".$uid."");
 
 header("Location: ../../../Admin/admin.php?p=player&uid=".$uid."");
 ?>

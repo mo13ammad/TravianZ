@@ -105,7 +105,7 @@ if (PLUS_TIME >= 86400) {
             echo '
                 <a href="plus.php?id=8"><span>Extend';
         } else {
-            echo '<a href="plus.php?s=1"><span class="none">too little gold';
+            echo '<a href="plus.php?id=1"><span class="none">too little gold';
         }
     }
 ?>
@@ -153,7 +153,7 @@ if ($session->access != BANNED) {
         } elseif ($golds['gold'] > 4 && $datetime1 > $date2) {
             echo '        <a href="plus.php?id=9"><span>Extend';
         } else {
-            echo '<a href="plus.php?s=1"><span class="none">too little gold';
+            echo '<a href="plus.php?id=1"><span class="none">too little gold';
         }
     }
 } else {
@@ -207,7 +207,7 @@ if ($session->access != BANNED) {
         } elseif ($golds['gold'] > 4 && $tl_b2 > $date2) {
             echo '        <a href="plus.php?id=10"><span>Extend';
         } else {
-            echo '<a href="plus.php?s=1"><span class="none">too little gold</span></a></td>';
+            echo '<a href="plus.php?id=1"><span class="none">too little gold</span></a></td>';
         }
     }
 } else {
@@ -261,7 +261,7 @@ if ($session->access != BANNED) {
         } elseif ($golds['gold'] > 4 && $tl_b3 > $date2) {
             echo '        <a href="plus.php?id=11"><span>Extend';
         } else {
-            echo '<a href="plus.php?s=1"><span class="none">too little gold';
+            echo '<a href="plus.php?id=1"><span class="none">too little gold';
         }
     }
 } else {
@@ -313,7 +313,7 @@ if ($session->access != BANNED) {
         } elseif ($golds['gold'] > 4 && $tl_b4 > $date2) {
             echo '        <a href="plus.php?id=12"><span>Extend';
         } else {
-            echo '<a href="plus.php?s=1"><span class="none">too little gold';
+            echo '<a href="plus.php?id=1"><span class="none">too little gold';
         }
     }
 } else {
@@ -352,7 +352,7 @@ if ($session->access != BANNED) {
             echo '
                 <a href="plus.php?id=7"><span>On';
         } else {
-            echo '<a href="plus.php?s=1"><span class="none">too little gold';
+            echo '<a href="plus.php?id=1"><span class="none">too little gold';
         }
     }
 } else {
@@ -385,7 +385,7 @@ if ($session->access != BANNED) {
         if ($golds['gold'] > 2) {
             echo ' <a href="build.php?gid=17&t=3"><span>NPC';
         } else {
-            echo '<a href="plus.php?s=1"><span class="none">too little gold';
+            echo '<a href="plus.php?id=1"><span class="none">too little gold';
         }
     }
 } else {
@@ -439,7 +439,7 @@ if (mysqli_num_rows($MyGold)) {
                 <a href="plus.php?id=15"><span>Activate';
         } else {
             echo '
-                <a href="plus.php?s=1"><span class="none">too little gold';
+                <a href="plus.php?id=1"><span class="none">too little gold';
         }
     } else {
         echo '<a href="plus.php?id=3"><span class="none">On';

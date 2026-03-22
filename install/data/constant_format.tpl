@@ -145,10 +145,10 @@ define("T4_COMING",%T4_COMING%);
 define("AUTH_EMAIL",%ACTIVATE%);
 
 // ***** PLUS
-//Plus PayPal e-mail address
-define("PAYPAL_EMAIL","%PAYPAL_EMAIL%");
-//Plus PayPal currency
-define("PAYPAL_CURRENCY","%PAYPAL_CURRENCY%");
+//Plus ZarinPal merchant ID
+define("ZARINPAL_MERCHANT","%ZARINPAL_MERCHANT%");
+//Plus Payment currency
+define("PAYMENT_CURRENCY","%PAYMENT_CURRENCY%");
 //Plus Package A Price
 define("PLUS_PACKAGE_A_PRICE","%PLUS_PACKAGE_A_PRICE%");
 //Plus Package A Gold

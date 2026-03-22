@@ -370,8 +370,8 @@ if (!isset($SAJAX_INCLUDED)) {
 	function get_data() {
 		global $session,$database;
 
-		$alliance = $database->escape($session->alliance);
-		$query = mysqli_query($database->dblink,"select id_user, name, date, msg from ".TB_PREFIX."chat where alli='$alliance' order by id desc limit 0,13");
+		$alliance = (int) $session->alliance;
+		$query = mysqli_query($database->dblink,"select id_user, name, date, msg from ".TB_PREFIX."chat where alli='".$alliance."' order by id desc limit 0,13");
 			while ($r = mysqli_fetch_array($query)) {
 			$dates = date("g:i",$r['date']);
 			$data .= "[{$dates}] <a href='spieler.php?uid={$r['id_user']}'>{$r['name']}</a>: {$r['msg']} <br>";

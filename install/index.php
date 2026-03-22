@@ -7,7 +7,7 @@ include("templates/script.tpl");
 if(!isset($_GET['s'])) {
 	$_GET['s']=0;
 }
-$tz=(isset($_GET['t']))? (int)$_GET['t'] : 13;
+$tz=(isset($_GET['t']))? (int)$_GET['t'] : 14;
     switch($tz) {
         case 1: $t_zone="Africa/Dakar";break;
         case 2: $t_zone="America/New_York";break;
@@ -22,7 +22,8 @@ $tz=(isset($_GET['t']))? (int)$_GET['t'] : 13;
 		case 11: $t_zone="Indian/Maldives";break;
 		case 12: $t_zone="Pacific/Fiji";break;
 		case 13: $t_zone="America/Sao_Paulo";break;
-		default: $t_zone="America/Sao_Paulo";break;
+		case 14: $t_zone="Asia/Tehran";break;
+		default: $t_zone="Asia/Tehran";break;
     }
 date_default_timezone_set($t_zone);
 ?>

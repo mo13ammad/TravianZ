@@ -263,12 +263,12 @@ if($_SESSION['access'] < 9) die(ACCESS_DENIED_ADMIN);
 
   <table id="profile">
     <tr>
-        <td><?php echo CONF_PLUS_PAYPALEMAIL ?> <em class="tooltip">?<span class="classic"><?php echo CONF_PLUS_PAYPALEMAIL_TOOLTIP ?></span></em></td>
-        <td><?php echo (defined('PAYPAL_EMAIL') ? PAYPAL_EMAIL : 'martin@martinambrus.com'); ?></td>
+        <td>ZarinPal Merchant ID <em class="tooltip">?<span class="classic">Your ZarinPal Merchant ID</span></em></td>
+        <td><?php echo (defined('ZARINPAL_MERCHANT') ? ZARINPAL_MERCHANT : 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'); ?></td>
     </tr>
     <tr>
-        <td><?php echo CONF_PLUS_CURRENCY ?> <em class="tooltip">?<span class="classic"><?php echo CONF_PLUS_CURRENCY_TOOLTIP ?></span></em></td>
-        <td><?php echo (defined('PAYPAL_CURRENCY') ? PAYPAL_CURRENCY : 'EUR'); ?></td>
+        <td>Payment Currency <em class="tooltip">?<span class="classic">The currency used for payments</span></em></td>
+        <td><?php echo (defined('PAYMENT_CURRENCY') ? PAYMENT_CURRENCY : 'Toman'); ?></td>
     </tr>
     <tr>
         <td><?php echo CONF_PLUS_PACKAGEGOLDA ?> <em class="tooltip">?<span class="classic"><?php echo CONF_PLUS_PACKAGEGOLDA_TOOLTIP ?></span></em></td>

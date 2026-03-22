@@ -403,9 +403,9 @@ class Message {
 
 		// Vulnerability closed by Shadow
 
-		$allmembersQ = mysqli_query($database->dblink,"SELECT id FROM ".TB_PREFIX."users WHERE alliance='".$session->alliance."'");
+		$allmembersQ = mysqli_query($database->dblink,"SELECT id FROM ".TB_PREFIX."users WHERE alliance='".$database->escape($session->alliance)."'");
 		$userally = $database->getUserField($session->uid,"alliance",0);
-		$permission=mysqli_fetch_array(mysqli_query($database->dblink,"SELECT opt7 FROM ".TB_PREFIX."ali_permission WHERE uid='".$session->uid."'"));
+		$permission=mysqli_fetch_array(mysqli_query($database->dblink,"SELECT opt7 FROM ".TB_PREFIX."ali_permission WHERE uid='".(int) $session->uid."'"));
 
 		if(defined('WORD_CENSOR')) {
             $topic = $this->wordCensor($topic);

@@ -19,4 +19,11 @@ if(NEWSBOX2){
 if(NEWSBOX3){
 	include "News/newsbox3.tpl";
 	}
+
+$announcements = $database->query_return("SELECT * FROM " . TB_PREFIX . "announcements ORDER BY time DESC LIMIT 5");
+if($announcements) {
+    foreach($announcements as $ann) {
+        echo '<div class="news"><b>' . ANNOUNCEMENT . ':</b><br>' . $ann['text'] . '</div><br>';
+    }
+}
 ?>

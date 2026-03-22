@@ -74,8 +74,14 @@ Complete the rest of the installation wizard with your preferred server settings
 After starting the containers, the following services will be available:
 
 - **TravianZ Web Application:** http://localhost:8080
-- **phpMyAdmin:** http://localhost:8081
+- **phpMyAdmin:** http://localhost:8081 (Requires manual login)
 - **MariaDB Database:** localhost:3306 (for external connections)
+
+### phpMyAdmin Access
+To access phpMyAdmin, use the credentials defined in your `.env` file (or the default ones in `docker-compose.yml`):
+- **Server:** `db`
+- **Username:** `travianz` (or `root`)
+- **Password:** Your defined password (default for `travianz` is `travianzpass`)
 
 ## Container Management
 
@@ -191,6 +197,15 @@ If you need to start the installation over:
    ```
 
 4. Access the installation wizard again at http://localhost:8080/install
+
+### Applying Database Changes
+If you need to manually apply database changes (like the new `announcements` table), you can do so through phpMyAdmin or via the command line:
+
+```bash
+docker exec -i travianz-db mariadb -u root -pYourRootPassword travian < var/db/announcements.sql
+```
+
+Note: Replace `%PREFIX%` in the SQL file with your actual table prefix (default is `s1_`).
 
 ### Port Already in Use
 

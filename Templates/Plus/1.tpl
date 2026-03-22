@@ -34,8 +34,7 @@ function loadProductGroup(group_id) {
 			<div>Gold Shop</div>
 			</td>
 			<td class="desc">
-			Basically, we reserve the ordered amount of gold immediately after the payment. If there are any problems, please send an email to our 
-			<a href="mailto:<?php echo (defined('PAYPAL_EMAIL') ? PAYPAL_EMAIL : 'novgorodschi@icloud.com') ?>">payment account</a>. <br /><br /><b>Username<br />Payment Method<br />Ordered Package<br />
+			Basically, we reserve the ordered amount of gold immediately after the payment. If there are any problems, please contact support. <br /><br /><b>Username<br />Payment Method<br />Ordered Package<br />
 			Date and time</b><br /><br />We strive to ensure speedy processing!<br />
                             
                             </td>
@@ -63,7 +62,7 @@ function loadProductGroup(group_id) {
 						<td><?php echo (defined('PLUS_PACKAGE_A_GOLD') ? PLUS_PACKAGE_A_GOLD : 60); ?>&nbsp;Gold</td>
 					</tr>
 					<tr>
-						<td><?php echo (defined('PLUS_PACKAGE_A_PRICE') ? PLUS_PACKAGE_A_PRICE : '1,99') . ' ' . (defined('PAYPAL_CURRENCY') ? PAYPAL_CURRENCY : 'EUR'); ?></td>
+						<td><?php echo (defined('PLUS_PACKAGE_A_PRICE') ? PLUS_PACKAGE_A_PRICE : '5000') . ' ' . (defined('PAYMENT_CURRENCY') ? PAYMENT_CURRENCY : 'Toman'); ?></td>
 
 					</tr>
 					<tr>
@@ -91,7 +90,7 @@ function loadProductGroup(group_id) {
                         <td><?php echo (defined('PLUS_PACKAGE_B_GOLD') ? PLUS_PACKAGE_B_GOLD : 120); ?>&nbsp;Gold</td>
                     </tr>
                     <tr>
-                        <td><?php echo (defined('PLUS_PACKAGE_B_PRICE') ? PLUS_PACKAGE_B_PRICE : '4,99') . ' ' . (defined('PAYPAL_CURRENCY') ? PAYPAL_CURRENCY : 'EUR'); ?></td>
+                        <td><?php echo (defined('PLUS_PACKAGE_B_PRICE') ? PLUS_PACKAGE_B_PRICE : '10000') . ' ' . (defined('PAYMENT_CURRENCY') ? PAYMENT_CURRENCY : 'Toman'); ?></td>
 
                     </tr>
 					<tr>
@@ -120,7 +119,7 @@ function loadProductGroup(group_id) {
                         <td><?php echo (defined('PLUS_PACKAGE_C_GOLD') ? PLUS_PACKAGE_C_GOLD : 360); ?>&nbsp;Gold</td>
                     </tr>
                     <tr>
-                        <td><?php echo (defined('PLUS_PACKAGE_C_PRICE') ? PLUS_PACKAGE_C_PRICE : '9,99') . ' ' . (defined('PAYPAL_CURRENCY') ? PAYPAL_CURRENCY : 'EUR'); ?></td>
+                        <td><?php echo (defined('PLUS_PACKAGE_C_PRICE') ? PLUS_PACKAGE_C_PRICE : '20000') . ' ' . (defined('PAYMENT_CURRENCY') ? PAYMENT_CURRENCY : 'Toman'); ?></td>
 
                     </tr>
 					<tr>
@@ -149,7 +148,7 @@ function loadProductGroup(group_id) {
                         <td><?php echo (defined('PLUS_PACKAGE_D_GOLD') ? PLUS_PACKAGE_D_GOLD : 1000); ?>&nbsp;Gold</td>
                     </tr>
                     <tr>
-                        <td><?php echo (defined('PLUS_PACKAGE_D_PRICE') ? PLUS_PACKAGE_D_PRICE : '19,99') . ' ' . (defined('PAYPAL_CURRENCY') ? PAYPAL_CURRENCY : 'EUR'); ?></td>
+                        <td><?php echo (defined('PLUS_PACKAGE_D_PRICE') ? PLUS_PACKAGE_D_PRICE : '50000') . ' ' . (defined('PAYMENT_CURRENCY') ? PAYMENT_CURRENCY : 'Toman'); ?></td>
 
                     </tr>
 					<tr>
@@ -178,7 +177,7 @@ function loadProductGroup(group_id) {
                         <td><?php echo (defined('PLUS_PACKAGE_E_GOLD') ? PLUS_PACKAGE_E_GOLD : 2000); ?>&nbsp;Gold</td>
                     </tr>
                     <tr>
-                        <td><?php echo (defined('PLUS_PACKAGE_E_PRICE') ? PLUS_PACKAGE_E_PRICE : '49,99') . ' ' . (defined('PAYPAL_CURRENCY') ? PAYPAL_CURRENCY : 'EUR'); ?></td>
+                        <td><?php echo (defined('PLUS_PACKAGE_E_PRICE') ? PLUS_PACKAGE_E_PRICE : '100000') . ' ' . (defined('PAYMENT_CURRENCY') ? PAYMENT_CURRENCY : 'Toman'); ?></td>
 
                     </tr>
 					<tr>

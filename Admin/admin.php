@@ -139,6 +139,10 @@ if (!empty($_GET['p'])) {
             $subpage = 'Admin Log';
             break;
 
+        case 'announcements':
+            $subpage = 'Manage Announcements';
+            break;
+
         case 'config':
             $subpage = 'Server Settings';
             break;
@@ -570,6 +574,7 @@ if (!empty($_GET['p'])) {
 						<li class="sub"><a href="#">Admin</a>
 							<ul>
 								<li><a href="?p=admin_log"><font color="Red"><b>Admin Log</b></font></a></li>
+								<li><a href="?p=announcements">Manage Announcements</a></li>
 								<li><a href="?p=config">Server Settings</a></li>
 								<li><a href="?p=resetServer">Server Resetting</a></li>
 							</ul>

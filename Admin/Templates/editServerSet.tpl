@@ -52,6 +52,7 @@ function refresh(tz) {
 								<option value="Europe/London" <?php if (TIMEZONE=="Europe/London") echo "selected";?>>Europe (London)</option>
 								<option value="Indian/Maldives" <?php if (TIMEZONE=="Indian/Maldives") echo "selected";?>>Indian</option>
 								<option value="Pacific/Fiji" <?php if (TIMEZONE=="Pacific/Fiji") echo "selected";?>>Pacific</option>
+								<option value="Asia/Tehran" <?php if (TIMEZONE=="Asia/Tehran") echo "selected";?>>Asia (Tehran)</option>
 							</select>
 							<span id="tz" name="tz"><?php echo TIMEZONE;?></span>
 						</td>
@@ -61,6 +62,7 @@ function refresh(tz) {
                         <td>
                             <select name="lang">
                                 <option value="en" <?php if (LANG=="en") echo "selected";?>>English</option>
+                                <option value="fa" <?php if (LANG=="fa") echo "selected";?>>Farsi</option>
                                 <option value="es" <?php if (LANG=="es") echo "selected";?>>Spain</option>
                                 <option value="rs" <?php if (LANG=="rs") echo "selected";?>>Serbian</option>
                                 <option value="ru" <?php if (LANG=="ru") echo "selected";?>>Russian</option>

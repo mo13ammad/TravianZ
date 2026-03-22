@@ -31,18 +31,18 @@ function refresh(tz) {
 				<tbody>
     				<tr>
     					<td width="50%">
-                            <?php echo CONF_PLUS_PAYPALEMAIL ?> <em class="tooltip">?<span class="classic"><?php echo CONF_PLUS_PAYPALEMAIL_TOOLTIP ?></span></em>
+                            ZarinPal Merchant ID <em class="tooltip">?<span class="classic">Your ZarinPal Merchant ID</span></em>
                         </td>
     					<td width="50%">
-    					   <input class="fm" name="paypal-email" value="<?php echo (defined('PAYPAL_EMAIL') ? PAYPAL_EMAIL : '@'); ?>" style="width: 70%;">
+    					   <input class="fm" name="zarinpal-merchant" value="<?php echo (defined('ZARINPAL_MERCHANT') ? ZARINPAL_MERCHANT : 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'); ?>" style="width: 70%;">
     					</td>
     				</tr>
     				<tr>
                         <td width="50%">
-                            <?php echo CONF_PLUS_CURRENCY ?> <em class="tooltip">?<span class="classic"><?php echo CONF_PLUS_CURRENCY_TOOLTIP ?></span></em>
+                            Payment Currency <em class="tooltip">?<span class="classic">The currency used for payments</span></em>
                         </td>
                         <td width="50%">
-                           <input class="fm" name="paypal-currency" value="<?php echo (defined('PAYPAL_CURRENCY') ? PAYPAL_CURRENCY : 'EUR'); ?>" style="width: 70%;">
+                           <input class="fm" name="payment-currency" value="<?php echo (defined('PAYMENT_CURRENCY') ? PAYMENT_CURRENCY : 'Toman'); ?>" style="width: 70%;">
                         </td>
                     </tr>
 

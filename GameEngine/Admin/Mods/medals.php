@@ -34,8 +34,10 @@ elseif(isset($_POST['userid']) && !empty($_POST['userid']) && is_numeric($_POST[
     mysqli_query($database->dblink, "UPDATE ".TB_PREFIX."medal set del = 1 WHERE userid = ".$userID."");
 }
 
-$admidID = (int) $_SESSION['id'];
-$name = $database->getUserField($adminID, "name", 0);
+$admid = (int) $_SESSION['id'];
+$uid = (int) $_POST['uid'];
+$medalid = isset($_POST['medalid']) ? (int) $_POST['medalid'] : 0;
+$name = $database->getUserField($uid, "username", 0);
 //TODO: Make a dedicated method for logging
 mysqli_query($database->dblink, "INSERT INTO ".TB_PREFIX."admin_log values (0, $admid, 'Deleted medal id [#".$medalid."] from the user <a href=\'admin.php?p=player&uid=$uid\'>$name</a> ',".time().")");
 

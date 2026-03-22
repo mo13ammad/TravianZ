@@ -160,8 +160,8 @@ $fh = fopen($myFile, 'w') or die("<br/><br/><br/>Can't open file: GameEngine\con
 		// PLUS settings need to be kept intact
 		$text = preg_replace("'%PLUS_TIME%'", PLUS_TIME, $text);
 		$text = preg_replace("'%PLUS_PRODUCTION%'", PLUS_PRODUCTION, $text);
-		$text = preg_replace("'%PAYPAL_EMAIL%'", (defined('PAYPAL_EMAIL') ? PAYPAL_EMAIL : 'martin@martinambrus.com'), $text);
-		$text = preg_replace("'%PAYPAL_CURRENCY%'", (defined('PAYPAL_CURRENCY') ? PAYPAL_CURRENCY : 'EUR'), $text);
+		$text = preg_replace("'%ZARINPAL_MERCHANT%'", (defined('ZARINPAL_MERCHANT') ? ZARINPAL_MERCHANT : 'martin@martinambrus.com'), $text);
+		$text = preg_replace("'%PAYMENT_CURRENCY%'", (defined('PAYMENT_CURRENCY') ? PAYMENT_CURRENCY : 'Toman'), $text);
 		$text = preg_replace("'%PLUS_PACKAGE_A_PRICE%'", (defined('PLUS_PACKAGE_A_PRICE') ? PLUS_PACKAGE_A_PRICE : '1,99'), $text);
 		$text = preg_replace("'%PLUS_PACKAGE_A_GOLD%'", (defined('PLUS_PACKAGE_A_GOLD') ? PLUS_PACKAGE_A_GOLD : '60'), $text);
 		$text = preg_replace("'%PLUS_PACKAGE_B_PRICE%'", (defined('PLUS_PACKAGE_B_PRICE') ? PLUS_PACKAGE_B_PRICE : '4,99'), $text);

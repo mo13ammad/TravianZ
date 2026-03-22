@@ -1,7 +1,11 @@
 FROM php:8.3-apache
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
+# Install system dependencies with Iranian mirror (using trixie instead of bookworm)
+RUN rm -f /etc/apt/sources.list.d/* && \
+    echo "deb https://edge31.10.ir.cdn.ir/repository/debian trixie main contrib non-free" > /etc/apt/sources.list && \
+    echo "deb https://edge31.10.ir.cdn.ir/repository/debian-security trixie-security main contrib non-free" >> /etc/apt/sources.list && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
     libpng-dev \
     libjpeg62-turbo-dev \
     libfreetype6-dev \
@@ -9,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     git \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 # Configure and install PHP extensions
@@ -38,3 +43,7 @@ EXPOSE 80
 
 # Start Apache
 CMD ["apache2-foreground"]
+
+# Set permissions
+RUN chown -R www-data:www-data /var/www/html && \
+    chmod -R 755 /var/www/html

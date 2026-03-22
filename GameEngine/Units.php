@@ -670,8 +670,8 @@ class Units {
             for($i = 1; $i <= 11; $i++) $troops += $prisoner['t'.$i];
             
             if($prisoner['t11'] > 0){
-                $p_owner = $database->getVillageField($prisoner['from'], "owner");
-                mysqli_query($database->dblink, "UPDATE ".TB_PREFIX."hero SET `dead` = '1', `health` = '0' WHERE `uid` = '".$p_owner."' AND dead = 0");
+                $p_owner = (int) $database->getVillageField($prisoner['from'], "owner");
+                mysqli_query($database->dblink, "UPDATE ".TB_PREFIX."hero SET `dead` = '1', `health` = '0' WHERE `uid` = $p_owner AND dead = 0");
             }
         
             //Reset traps
