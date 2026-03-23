@@ -5,13 +5,13 @@
 ##                                                                             ##
 ## --------------------------------------------------------------------------- ##
 ##                                                                             ##
-##  Project:       TravianZ                                                    ##
+##  Project:       nalooti                                                    ##
 ##  Version:       6.0.1                                                       ##
 ##  Filename:      Templates/indexnews.tpl                                     ##
 ##  Developed by:  ZZJHONS                                                     ##
 ##  License:       Creative Commons BY-NC-SA 3.0                               ##
-##  Copyright:     TravianZ (c) 2011 - All rights reserved                     ##
+##  Copyright:     nalooti (c) 2011 - All rights reserved                     ##
 #################################################################################
 ?>
-<p class="date">[Release by: TravianZ]</p>
+<p class="date">[Release by: nalooti]</p>
 <p>Thank you for using our version!</p>

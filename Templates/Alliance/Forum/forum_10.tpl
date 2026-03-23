@@ -3,7 +3,7 @@
 // # DO NOT REMOVE THIS NOTICE ##
 // # MADE BY TTMTT ##
 // # FIX BY RONIX ##
-// # TRAVIANZ ##
+// # NALOOTI ##
 // ###########################################################
 
 $topic_id = $_GET['tid'];

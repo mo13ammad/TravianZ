@@ -4,8 +4,8 @@
 ## --------------------------------------------------------------------------- ##
 ##  Filename       links.tpl                                                   ##
 ##  Developed by:  Slim, Manuel Mannhardt < manuel_mannhardt@web.de >          ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2010-2025. All rights reserved.                ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2025. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 
@@ -29,7 +29,7 @@ foreach($links as $link) {
        $external = '';
    }
 
-   echo '<tr><td class="dot">●</td><td class="link">'; 
+   echo '<tr><td class="dot">â—</td><td class="link">'; 
  if($session->plus == 0) { echo  "buy Plus"; } else {
    echo '<a href="' . $link['url'] . '"' . $target . '>' . $link['name'] . $external . '</a></td></tr>';
 }

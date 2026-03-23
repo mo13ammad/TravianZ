@@ -3,7 +3,7 @@
 ##              DO NOT REMOVE THIS NOTICE                 ##
 ##                    MADE BY TTMTT                       ##
 ##                     FIX BY RONIX                       ##
-##                       TRAVIANZ                         ##
+##                       NALOOTI                         ##
 ############################################################
 
 $cat_id = $_GET['fid'];

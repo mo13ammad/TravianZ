@@ -7,7 +7,7 @@ $start_timer = $generator->pageLoadTimeStart();
 ## --------------------------------------------------------------------------- ##
 ##  Filename       packages.php                                                  ##
 ##  Developed by:  yi12345                                                     ##
-##  Copyright:     TravianX (c) 2010-2011. All rights reserved.                ##
+##  Copyright:     nalooti (c) 2010-2011. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 

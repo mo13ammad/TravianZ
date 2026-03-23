@@ -4,8 +4,8 @@
 ## --------------------------------------------------------------------------- ##
 ##  Filename       anleitung.php                                               ##
 ##  Developed by:  Dzoki                                                       ##
-##  License:       TravianX Project                                            ##
-##  Copyright:     TravianX (c) 2010-2011. All rights reserved.                ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2011. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 
@@ -51,7 +51,7 @@ AccessLogger::logRequest();
 
 		<td><a href="anleitung.php"><span>Manual</span></a></td>
 
-		<td><a href="http://forum.travian.com/" target="_blank"><span>Forum</span></a></td>
+		<td><a href="https://Nalooti.ir" target="_blank"><span>Forum</span></a></td>
 
 
 
@@ -98,7 +98,7 @@ There is no compensation for damages done by someone knowing the password for an
 In order to change the email address of your account or to transfer your account to another player NOT playing on the same server, go into your account profile (/spieler.php?s=3) and fill out the new email information.
 </li>
 <li><strong style="color: #3BAE18">&sect;1.4 Switching accounts</strong><br />
-In order to switch an account with a person on the same game world, both persons must send an e-mail message to admin@travian.com from the e-mail address currently registered for the account. The e-mail must contain the following information:
+In order to switch an account with a person on the same game world, both persons must send an e-mail message to admin@Nalooti.ir from the e-mail address currently registered for the account. The e-mail must contain the following information:
 <ol>
 <li>The game world on which the account resides</li>
 <li>The nickname of the account</li>
@@ -111,7 +111,7 @@ Afterwards both persons must request the password for their new account via the 
 <li><strong style="color: #2A720B">&sect;2 Sitting &amp; same pc usage</strong><br />
 <ul>
 <li><strong style="color: #3BAE18">&sect;2.1 Sitting</strong><br />
-Every player has the right to name two sitters who may play the account during an owner's absence. Sitters must play the account they are sitting to the account�s full benefit. Abuse of this function is punishable.
+Every player has the right to name two sitters who may play the account during an owner's absence. Sitters must play the account they are sitting to the accountï¿½s full benefit. Abuse of this function is punishable.
 <br />
 The sitter of an account must sit the account using the account sitting function in game. The sitter of an account may not tend to an account by logging on with the password of the account they are sitting (see &sect;1.2).
 <br />

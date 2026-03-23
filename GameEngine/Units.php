@@ -2,16 +2,16 @@
 #################################################################################
 ##              -= YOU MAY NOT REMOVE OR CHANGE THIS NOTICE =-                 ##
 ## --------------------------------------------------------------------------- ##
-##  Project:       TravianZ                                                    ##
+##  Project:       nalooti                                                    ##
 ##  Version:       22.06.2015                    			       ## 
 ##  Filename       Units.php                                                   ##
 ##  Developed by:  Mr.php , Advocaite , brainiacX , yi12345 , Shadow , ronix   ## 
 ##  Fixed by:      Shadow - STARVATION , HERO FIXED COMPL.  		       ##
 ##  Fixed by:      InCube - double troops				       ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2010-2015. All rights reserved.                ##
-##  URLs:          http://travian.shadowss.ro                		       ##
-##  Source code:   https://github.com/Shadowss/TravianZ		               ## 
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2015. All rights reserved.                ##
+##  URLs:          https://Nalooti.ir                		       ##
+##  Source code:   https://Nalooti.ir		               ## 
 ##                                                                             ##
 #################################################################################
 

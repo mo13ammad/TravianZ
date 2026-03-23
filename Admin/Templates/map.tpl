@@ -5,8 +5,8 @@
 ##  Filename       map.tpl                                                     ##
 ##  Developed by:  ronix                                                       ##
 ##  Updated by:    iopietro                                                    ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2010-2014. All rights reserved.                ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2014. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 
@@ -143,7 +143,7 @@ if ($check1 == "" && $check2 == "" && $check3 == "") $criteria = "";
   <div id="map" class="grab" title="">
     <!-- Zoom UI -->
     <div class="zoom-controls">
-      <button type="button" id="zoomOut">−</button>
+      <button type="button" id="zoomOut">âˆ’</button>
       <span id="zoomLabel">100%</span>
       <button type="button" id="zoomIn">+</button>
       <button type="button" id="zoomReset">Reset</button>

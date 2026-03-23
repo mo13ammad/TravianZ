@@ -4,8 +4,8 @@
 ## --------------------------------------------------------------------------- ##
 ##  Filename       editServerSet.tpl                                           ##
 ##  Developed by:  ronix                                                       ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2010-2014. All rights reserved.                ##
+##  License:       nalooti Project                                             ##
+##  Copyright:     nalooti (c) 2010-2014. All rights reserved.                 ##
 ##                                                                             ##
 #################################################################################
 if (!isset($_SESSION)) {
@@ -95,7 +95,7 @@ function refresh(tz) {
 						<td><input class="fm" name="crannycap" value="<?php echo CRANNY_CAPACITY;?>" style="width: 20%;"></td>
 					</tr>
 					<tr>
-						<td><?php echo CONF_SERV_TRAPCAPACITY ?> <em class="tooltip">?<span class="classic"><?php echo CONF_SERV_TRAPCAPACITY_TOOLTIP ?></td>
+						<td><?php echo CONF_SERV_TRAPCAPACITY ?> <em class="tooltip">?<span class="classic"><?php echo CONF_SERV_TRAPCAPACITY_TOOLTIP ?></span></em></td>
 						<td><input class="fm" name="trappercap" value="<?php echo TRAPPER_CAPACITY;?>" style="width: 20%;"></td>
 					</tr>
 					<tr>
@@ -176,7 +176,7 @@ function refresh(tz) {
 						<td>
 							<select name="qtype">
 								<option value="25" <?php if(QTYPE == 25) echo "selected";?>>Travian Official</option>
-								<option value="37" <?php if(QTYPE == 37) echo "selected";?>>TravianZ Extended</option>
+								<option value="37" <?php if(QTYPE == 37) echo "selected";?>>nalooti Extended</option>
 							</select>
 						</td>
 					</tr>
@@ -198,6 +198,7 @@ function refresh(tz) {
 								<option value="True" <?php if(WW == true) echo "selected";?>>True</option>
 								<option value="False" <?php if(WW == false) echo "selected";?>>False</option>
 							</select>
+						</td>
 					</tr>
 					<tr>
 						<td><?php echo CONF_SERV_NTRTIME ?> <em class="tooltip">?<span class="classic"><?php echo CONF_SERV_NTRTIME_TOOLTIP ?></span></em></td>

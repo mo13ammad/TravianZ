@@ -7,8 +7,8 @@ $start_timer = $generator->pageLoadTimeStart();
 // # --------------------------------------------------------------------------- ##
 // # Filename a2b.php ##
 // # Developed by: Dzoki ##
-// # License: TravianX Project ##
-// # Copyright: TravianX (c) 2010-2011. All rights reserved. ##
+// # License: nalooti Project ##
+// # Copyright: nalooti (c) 2010-2011. All rights reserved. ##
 // # ##
 // ################################################################################
 
@@ -90,13 +90,13 @@ echo SERVER_NAME.' - Send Troops'?>
 
 echo GP_LOCATE;
 
-?>lang/en/lang.css?f4b7d"
+?>lang/en/compact.css?f4b7i"
 	rel="stylesheet" type="text/css" />
 <link href="<?php
 
 echo GP_LOCATE;
 
-?>lang/en/compact.css?f4b7i"
+?>lang/en/lang.css?f4b7d"
 	rel="stylesheet" type="text/css" />
 	<?php
 	

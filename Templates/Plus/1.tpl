@@ -1,6 +1,6 @@
 <!--
 ** 
-** - TravianX -
+** - nalooti -
 ** DO NOT REMOVE COPYRIGHT NOTICE!
 -->
 <?php

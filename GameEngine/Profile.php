@@ -4,8 +4,8 @@
 ##              -= YOU MAY NOT REMOVE OR CHANGE THIS NOTICE =-                 ##
 ## --------------------------------------------------------------------------- ##
 ##  Filename       Profile.php                                                 ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2010-2025. All rights reserved.                ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2025. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 
@@ -18,6 +18,9 @@ class Profile {
 			switch($post['ft']) {
 				case "p1" :
 					$this->updateProfile($post);
+					break;
+				case "p2" :
+					$this->updatePreferences($post);
 					break;
 				case "p3" :
 					$this->updateAccount($post);
@@ -69,6 +72,28 @@ class Profile {
 		
 		$database->gpack($database->RemoveXSS($session->uid),$database->RemoveXSS($post['custom_url']));
 		header("Location: spieler.php?uid=".$session->uid);
+		exit;
+	}
+
+	private function updatePreferences($post) {
+		global $database, $session;
+
+		$database->saveProfileLinks($session->uid, $post);
+
+		$preferences = [
+			'autocomplete_own' => isset($post['v1']) ? 1 : 0,
+			'autocomplete_near' => isset($post['v2']) ? 1 : 0,
+			'autocomplete_alliance' => isset($post['v3']) ? 1 : 0,
+			'large_map' => isset($post['map']) ? 1 : 0,
+			'report_own' => isset($post['v4']) ? 1 : 0,
+			'report_foreign_to' => isset($post['v5']) ? 1 : 0,
+			'report_foreign_from' => isset($post['v6']) ? 1 : 0,
+			'timezone' => isset($post['timezone']) ? $database->RemoveXSS($post['timezone']) : '99',
+			'tformat' => isset($post['tformat']) ? (int) $post['tformat'] : 0,
+		];
+
+		$database->saveProfilePreferences($session->uid, $preferences);
+		header("Location: spieler.php?s=2&saved=1");
 		exit;
 	}
 	

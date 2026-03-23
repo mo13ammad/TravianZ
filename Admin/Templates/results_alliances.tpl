@@ -4,8 +4,8 @@
 ## --------------------------------------------------------------------------- ##
 ##  Filename       results_alliances.tpl                                       ##
 ##  Developed by:  Dzoki                                                       ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2010-2025. All rights reserved.                ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2025. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 ?>
@@ -15,7 +15,7 @@ $result = $admin->search_alliance($_POST['s']);
 <table id="member">
   <thead>
 	<tr>
-		<th class="dtbl"><a href="">1 «</a></th><th>Found alliances (<?php echo count($result);?>)</th><th class="dtbl"><a href="">» 100</a></th>
+		<th class="dtbl"><a href="">1 Â«</a></th><th>Found alliances (<?php echo count($result);?>)</th><th class="dtbl"><a href="">Â» 100</a></th>
 	</tr>
   </thead>
 

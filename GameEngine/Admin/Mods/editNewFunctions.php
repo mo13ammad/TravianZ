@@ -4,29 +4,17 @@
 ## --------------------------------------------------------------------------- ##
 ##  Filename       editNewFunctions.php                                        ##
 ##  Developed by:  velhbxtyrj                                                  ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2010-2014. All rights reserved.                ##
+##  License:       nalooti Project                                             ##
+##  Copyright:     nalooti (c) 2010-2014. All rights reserved.                 ##
 ##                                                                             ##
 #################################################################################
 
 if(!isset($_SESSION)) session_start();
 if($_SESSION['access'] < 9) die(ACCESS_DENIED_ADMIN);
 include_once("../../Database.php");
+require_once("config_writer.php");
 $id = (int) $_POST['id'];
-
-if (!file_exists('constant_format.tpl')) {
-    die(
-        'You seem to be running a new version of TravianZ which was installed using an old installer.<br />' .
-        'Please download <strong>constant_format.tpl</strong> file and copy it into the <strong>GameEngine/Admin/Mods</strong> ' .
-        'directory  - otherwise saving configuration won\'t work.<br /><br />' .
-        'The constant_format.tpl file can be downloaded at ' .
-        '<strong>https://raw.githubusercontent.com/Shadowss/TravianZ/master/install/data/constant_format.tpl</strong>');
-}
-
-$myFile = "../../config.php";
-$fh = fopen($myFile, 'w') or die("<br/><br/><br/>Can't open file: GameEngine\config.php");
-
-        $text = file_get_contents("constant_format.tpl");
+        $text = tz_admin_load_template();
 
 		$SUPPORT_MSGS_IN_ADMIN = (ADMIN_RECEIVE_SUPPORT_MESSAGES == false ? 'false' : 'true');
 		$ADMINS_RAIDABLE = (ADMIN_ALLOW_INCOMING_RAIDS == false ? 'false' : 'true');
@@ -137,8 +125,7 @@ $fh = fopen($myFile, 'w') or die("<br/><br/><br/>Can't open file: GameEngine\con
 		$text = preg_replace("'%PLUS_PACKAGE_E_PRICE%'", (defined('PLUS_PACKAGE_E_PRICE') ? PLUS_PACKAGE_E_PRICE : '49,99'), $text);
 		$text = preg_replace("'%PLUS_PACKAGE_E_GOLD%'", (defined('PLUS_PACKAGE_E_GOLD') ? PLUS_PACKAGE_E_GOLD : '2000'), $text);
 
-		fwrite($fh, $text);
-		fclose($fh);
+		tz_admin_save_config_text($text);
 
 $database->query("Insert into ".TB_PREFIX."admin_log values (0,".$id.",'Changed New Mechanics and Functions Settings',".time().")");
 

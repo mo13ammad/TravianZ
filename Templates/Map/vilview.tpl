@@ -6,6 +6,51 @@ $oasis1 = mysqli_query($database->dblink,'SELECT conqured, owner FROM `' . TB_PR
 $oasis = mysqli_fetch_assoc($oasis1);
 $access=$session->access;
 $oasislink = '';
+$relocationFeedback = '';
+
+if (isset($_GET['moved'])) {
+	switch ($_GET['moved']) {
+		case 'ok':
+			$relocationFeedback = 'انتقال دهکده با موفقیت انجام شد.';
+			break;
+		case 'already_used':
+			$relocationFeedback = 'این قابلیت در این راند قبلاً استفاده شده است.';
+			break;
+		case 'low_gold':
+			$relocationFeedback = 'برای انتقال دهکده به 50 گلد نیاز دارید.';
+			break;
+		case 'multiple_villages':
+			$relocationFeedback = 'این قابلیت فقط زمانی فعال است که بازیکن فقط یک دهکده داشته باشد.';
+			break;
+		case 'only_capital':
+			$relocationFeedback = 'فقط دهکده پایتخت قابل انتقال است.';
+			break;
+		case 'has_oases':
+			$relocationFeedback = 'دهکده‌ای که واحه اشغال‌شده دارد قابل انتقال نیست.';
+			break;
+		case 'active_movements':
+		case 'active_reinforcements':
+		case 'active_merchants':
+		case 'active_training':
+		case 'active_research':
+		case 'active_routes':
+		case 'active_prisoners':
+			$relocationFeedback = 'دهکده باید بدون حرکت نیرو، تحقیق، آموزش، بازرگان و نیروی کمکی باشد.';
+			break;
+		case 'invalid_target':
+			$relocationFeedback = 'انتقال فقط به خانه خالی 4-4-4-6 ممکن است.';
+			break;
+		case 'same_tile':
+			$relocationFeedback = 'دهکده همین حالا روی این خانه قرار دارد.';
+			break;
+		case 'sitter':
+			$relocationFeedback = 'Sitter اجازه استفاده از این قابلیت را ندارد.';
+			break;
+		default:
+			$relocationFeedback = 'انتقال دهکده انجام نشد.';
+			break;
+	}
+}
 ?>
 <h1><?php if($basearray['fieldtype']!=0){
 echo !$basearray['occupied']? ABANDVALLEY : $basearray['name']; echo " (".$basearray['x']."|".$basearray['y'].")";
@@ -13,6 +58,9 @@ echo !$basearray['occupied']? ABANDVALLEY : $basearray['name']; echo " (".$basea
 echo !$oasis['conqured']? UNOCCUOASIS : OCCUOASIS; echo " (".$basearray['x']."|".$basearray['y'].")";
 $otext = !$oasis['conqured']? UNOCCUOASIS : OCCUOASIS;
 } ?></h1>
+<?php if($relocationFeedback != '') { ?>
+<p><b><?php echo $relocationFeedback; ?></b></p>
+<?php } ?>
 <?php if($basearray['occupied'] && $basearray['capital']) { echo "<div id=\"dmain\">(capital)</div>"; }
 if($uinfo && $uinfo['owner'] == 3 && $uinfo['name'] == PLANVILLAGE){
 ?>
@@ -448,6 +496,53 @@ if($type >= 18 && $type <= 21){
 		<td><a href="karte.php?z=<?php echo $_GET['d']; ?>">&raquo; <?php echo CENTREMAP;?>.</a></td>
 	</tr>
 	<?php if(!$basearray['occupied']) { ?>
+	<?php if($basearray['fieldtype'] == 3) {
+		$relocationStatus = $database->getStartVillageRelocationStatus($session->uid, $village->wid, (int) $_GET['d']);
+	?>
+	<tr>
+		<td class="none">
+		<?php
+		if($session->sit != 0) {
+			echo "&raquo; انتقال دهکده فعلی (فقط مالک اکانت)";
+		} elseif($relocationStatus['available']) {
+			echo "<a href=\"karte.php?d=".$_GET['d']."&c=".$generator->getMapCheck($_GET['d'])."&relocate=1\">&raquo; انتقال دهکده فعلی به این خانه (".START_VILLAGE_RELOCATION_COST." گلد)</a>";
+		} else {
+			switch($relocationStatus['code']) {
+				case 'already_used':
+					$moveText = "قبلاً در این راند استفاده شده";
+					break;
+				case 'low_gold':
+					$moveText = "نیاز به ".START_VILLAGE_RELOCATION_COST." گلد";
+					break;
+				case 'multiple_villages':
+					$moveText = "فقط برای اکانت تک‌دهکده";
+					break;
+				case 'only_capital':
+					$moveText = "فقط پایتخت";
+					break;
+				case 'has_oases':
+					$moveText = "با واحه اشغالی ممکن نیست";
+					break;
+				case 'active_movements':
+				case 'active_reinforcements':
+				case 'active_merchants':
+				case 'active_training':
+				case 'active_research':
+				case 'active_routes':
+				case 'active_prisoners':
+					$moveText = "دهکده باید کاملاً بدون عملیات فعال باشد";
+					break;
+				default:
+					$moveText = "الان در دسترس نیست";
+					break;
+			}
+
+			echo "&raquo; انتقال دهکده فعلی (".$moveText.")";
+		}
+		?>
+		</td>
+	</tr>
+	<?php } ?>
 	
 	<tr>
 		<td class="none"><?php 

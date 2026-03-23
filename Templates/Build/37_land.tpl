@@ -1,6 +1,6 @@
 <?php
 	/* Hero's mansion oases page
-	Copyright: Travianx Project */
+	Copyright: nalooti Project */
 
 	$oasisarray = $database->getOasis($village->wid);
 if(isset($_GET['gid']) && $_GET['gid'] == 37 && isset($_GET['del']) && $database->getOasisField($_GET['del'], 'owner') == $session->uid){

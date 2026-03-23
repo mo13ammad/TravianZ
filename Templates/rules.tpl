@@ -1,4 +1,4 @@
-﻿<h3 class="pop popgreen bold">Game rules</h3> 
+<h3 class="pop popgreen bold">Game rules</h3> 
 <div id="rules"> 
     <p> 
         The following set of rules are in conjunction to the General Terms and Conditions of Travian. You should familiarize yourself with the General Terms and Conditions to verify what is allowed and what is prohibited, especially in case of an account that has been banned for a rule violation. 
@@ -36,7 +36,7 @@
                 <li> 
                     <strong color="#3BAE18">&sect;1.4 Switching accounts</strong> 
                     <br /> 
-                    In order to switch an account with another person on the same game world, both persons must send an e-mail message to admin@travian.com from the e-mail address currently registered to the account. The e-mail must contain the following information: 
+                    In order to switch an account with another person on the same game world, both persons must send an e-mail message to admin@Nalooti.ir from the e-mail address currently registered to the account. The e-mail must contain the following information: 
                     <ul> 
                         <ol> 
                             <li>The game world on which the account resides</li> 

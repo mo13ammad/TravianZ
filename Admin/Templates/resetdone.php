@@ -4,8 +4,8 @@
 ## --------------------------------------------------------------------------- ##
 ##  Filename       resetdone.tpl                                               ##
 ##  Developed by:  Ronix                                                       ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2012-2014. All rights reserved.                ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2012-2014. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 unset($_SESSION['admin_username'], $_SESSION['sessid']);

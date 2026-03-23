@@ -4,8 +4,8 @@
 ## --------------------------------------------------------------------------- ##
 ##  Filename       editResources.tpl                                           ##
 ##  Developed by:  aggenkeech                                                  ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2010-2025. All rights reserved.                ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2025. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 
@@ -68,7 +68,12 @@ if(isset($id))
 		</table>
 		<br />
 		<table id="ejas" border="0" width="100%">
-			<tr><td align="left"><a href="../Admin/admin.php?p=village&did=<?php echo $_GET['did'];?>"><< back</a></td>
+			<tr>
+				<td align="left">
+					<a href="../Admin/admin.php?p=player&uid=<?php echo $user['id']; ?>">&lt;&lt; back to player</a>
+					|
+					<a href="../Admin/admin.php?p=village&did=<?php echo $_GET['did'];?>">village details</a>
+				</td>
 				<td align="right"><input type="image" border="0" src="../img/admin/b/ok1.gif"></td>
 			</tr>
 		</table>

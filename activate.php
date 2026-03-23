@@ -5,8 +5,8 @@
 ## --------------------------------------------------------------------------- ##
 ##  Filename       activate.php                                                ##
 ##  Developed by:  Dixie                                                       ##
-##  License:       TravianX Project                                            ##
-##  Copyright:     TravianX (c) 2010-2011. All rights reserved.                ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2011. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 

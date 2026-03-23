@@ -5,7 +5,7 @@
 +---------------------------------------------------------+
 | Developed by:  Manni < manuel_mannhardt@web.de >        |
 |                Dzoki < dzoki.travian@gmail.com >        |
-| Copyright:     TravianX Project All rights reserved     |
+| Copyright:     nalooti Project All rights reserved     |
 \*-------------------------------------------------------*/
 
         $hero_info = $units->Hero($session->uid);

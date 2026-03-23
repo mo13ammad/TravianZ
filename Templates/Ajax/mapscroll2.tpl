@@ -4,6 +4,7 @@ include_once('GameEngine/config.php');
 include_once ("GameEngine/Lang/" . LANG . ".php");
 include_once("GameEngine/Generator.php");
 include_once("GameEngine/Database.php");
+$canHighlightRelocationTargets = $database->getStartVillageRelocationStatus((int) $_SESSION['id_user'], (int) $_SESSION['wid'])['available'];
 header("Content-Type: application/json;");
 
 if($y < $yy)	{$y = $y + (($yy - $y) /2);}
@@ -123,6 +124,9 @@ $neutral = ((isset($neutralarray[0]) && isset($neutralarray[0]['alli1']) && isse
 
 
 $image = ($donnees['map_occupied'] == 1 && $donnees['map_fieldtype'] > 0)?(($donnees['ville_user'] == $_SESSION['id_user'])? ($donnees['ville_pop']>=100? $donnees['ville_pop']>= 250?$donnees['ville_pop']>=500? 'b30': 'b20' :'b10' : 'b00') : (($targetalliance != 0)? ($friend==1? ($donnees['ville_pop']>=100? $donnees['ville_pop']>= 250?$donnees['ville_pop']>=500? 'b31': 'b21' :'b11' : 'b01') : ($war==1? ($donnees['ville_pop']>=100? $donnees['ville_pop']>= 250?$donnees['ville_pop']>=500? 'b32': 'b22' :'b12' : 'b02') : ($neutral==1? ($donnees['ville_pop']>=100? $donnees['ville_pop']>= 250?$donnees['ville_pop']>=500? 'b35': 'b25' :'b15' : 'b05') : ($targetalliance == $_SESSION['alliance_user']? ($donnees['ville_pop']>=100? $donnees['ville_pop']>= 250?$donnees['ville_pop']>=500? 'b33': 'b23' :'b13' : 'b03') : ($donnees['ville_pop']>=100? $donnees['ville_pop']>= 250?$donnees['ville_pop']>=500? 'b34': 'b24' :'b14' : 'b04'))))) : ($donnees['ville_pop']>=100? $donnees['ville_pop']>= 250?$donnees['ville_pop']>=500? 'b34': 'b24' :'b14' : 'b04'))) : $donnees['map_image'];
+if($canHighlightRelocationTargets && !$donnees['map_occupied'] && (int) $donnees['map_fieldtype'] === 3) {
+    $image .= ' relocateTarget';
+}
 if($donnees['ville_user']==3 && $donnees['ville_name']==PLANVILLAGE){
 $image = "o99";
 }

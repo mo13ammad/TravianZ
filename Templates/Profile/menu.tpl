@@ -1,17 +1,17 @@
 <div id="textmenu">
-   <a href="spieler.php?uid=<?php if(isset($_GET['uid'])) { echo $_GET['uid']; } else { echo $session->uid; } ?>" <?php if(isset($_GET['uid'])) { echo "class=\"selected\""; } ?>>Overview</a>
- | <a href="spieler.php?s=1" <?php if(isset($_GET['s']) && $_GET['s'] == 1) { echo "class=\"selected\""; } ?>>Profile</a>
- | <a href="spieler.php?s=2" <?php if(isset($_GET['s']) && $_GET['s'] == 2) { echo "class=\"selected\""; } ?>>Preferences</a>
- | <a href="spieler.php?s=3" <?php if(isset($_GET['s']) && $_GET['s'] == 3) { echo "class=\"selected\""; } ?>>Account</a>
+   <a href="spieler.php?uid=<?php if(isset($_GET['uid'])) { echo $_GET['uid']; } else { echo $session->uid; } ?>" <?php if(isset($_GET['uid'])) { echo "class=\"selected\""; } ?>>نمای کلی</a>
+ | <a href="spieler.php?s=1" <?php if(isset($_GET['s']) && $_GET['s'] == 1) { echo "class=\"selected\""; } ?>>پروفایل</a>
+ | <a href="spieler.php?s=2" <?php if(isset($_GET['s']) && $_GET['s'] == 2) { echo "class=\"selected\""; } ?>>تنظیمات</a>
+ | <a href="spieler.php?s=3" <?php if(isset($_GET['s']) && $_GET['s'] == 3) { echo "class=\"selected\""; } ?>>حساب کاربری</a>
  <?php
  if(NEW_FUNCTIONS_VACATION){
  ?>
- | <a href="spieler.php?s=5" <?php if(isset($_GET['s']) && $_GET['s'] == 5) { echo "class=\"selected\""; } ?>>Vacation</a>
+ | <a href="spieler.php?s=5" <?php if(isset($_GET['s']) && $_GET['s'] == 5) { echo "class=\"selected\""; } ?>>حالت تعطیلات</a>
  <?php
  }
  if(GP_ENABLE) {
  ?>
- | <a href="spieler.php?s=4" <?php if(isset($_GET['s']) && $_GET['s'] == 4) { echo "class=\"selected\""; } ?>>Graphic pack</a>
+ | <a href="spieler.php?s=4" <?php if(isset($_GET['s']) && $_GET['s'] == 4) { echo "class=\"selected\""; } ?>>بسته گرافیکی</a>
  <?php
  }
  ?>

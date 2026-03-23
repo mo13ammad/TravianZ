@@ -3,7 +3,7 @@
 ##              DO NOT REMOVE THIS NOTICE                 ##
 ##                    MADE BY TTMTT                       ##
 ##                     FIX BY RONIX                       ##
-##                       TRAVIANZ                         ##
+##                       NALOOTI                         ##
 ############################################################
 
 if($session->access != ADMIN && ($session->alliance == 0 || ($session->alliance > 0 && !$opt['opt5']))) $alliance->redirect($_GET);

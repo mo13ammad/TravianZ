@@ -5,8 +5,8 @@
 ##  Filename       results_villages.tpl                                        ##
 ##  Developed by:  Dzoki                                                       ##
 ##  Reworked:      aggenkeech                                                  ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2010-2025. All rights reserved.                ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2025. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 
@@ -23,9 +23,9 @@ $result = $admin->search_village($_POST['s']);
 			<td colspan="5"></td>
 		</tr>
 		<tr>
-			<td><a href="">1 «</a></td>
+			<td><a href="">1 Â«</a></td>
 			<td colspan="2"></td>
-			<td colspan="2"><a href="">» 100</a></td>
+			<td colspan="2"><a href="">Â» 100</a></td>
 		</tr>
 		<tr>
 			<td colspan="5"></td>

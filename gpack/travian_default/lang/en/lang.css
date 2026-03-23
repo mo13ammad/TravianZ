@@ -39,6 +39,41 @@
     background: #fff !important;
 }
 
+html[dir="rtl"] body,
+body.rtl {
+    direction: rtl;
+    text-align: right;
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+}
+
+html[dir="rtl"] #content,
+html[dir="rtl"] .wrapper #content,
+body.rtl #content,
+body.rtl .wrapper #content {
+    text-align: right;
+}
+
+html[dir="rtl"] .menu li,
+body.rtl .menu li {
+    float: right;
+}
+
+html[dir="rtl"] td.text,
+html[dir="rtl"] th.text,
+body.rtl td.text,
+body.rtl th.text {
+    padding-left: 0;
+    padding-right: 7px;
+    text-align: right;
+}
+
+html[dir="rtl"] #side_navi p,
+html[dir="rtl"] #side_navi,
+body.rtl #side_navi p,
+body.rtl #side_navi {
+    text-align: right;
+}
+
 /* Old buttons */
 
 input#btn_login {width:97px; background-image: url(b/login.gif);}

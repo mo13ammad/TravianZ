@@ -5,8 +5,8 @@
 ##  Filename       editBuildings.php                                           ##
 ##  Developed by:  aggenkeech                                                  ##
 ##  Fix by:        ronix                                                       ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2011-2014. All rights reserved.                ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2011-2014. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 

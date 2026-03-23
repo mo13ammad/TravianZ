@@ -3,7 +3,7 @@
 ##              DO NOT REMOVE THIS NOTICE                 ##
 ##                    MADE BY TTMTT                       ##
 ##                     FIX BY RONIX                       ##
-##                       TRAVIANZ                         ##
+##                       NALOOTI                         ##
 ############################################################
 
 $forumData = reset($database->ForumCatEdit($_GET['idf']));

@@ -5,14 +5,14 @@
 ##                                                                             ##
 ## --------------------------------------------------------------------------- ##
 ##                                                                             ##
-##  Project:       ZravianX                                                    ##
+##  Project:       nalooti                                                    ##
 ##  Version:       2011.10.31                                                  ##
 ##  Filename:      notification/index.php                                      ##
 ##  Developed by:  ZZJHONS                                                     ##
 ##  License:       Creative Commons BY-NC-SA 3.0                               ##
-##  Copyright:     ZravianX (c) 2011 - All rights reserved                     ##
-##  URLs:          http://zravianx.zzjhons.com                                 ##
-##  Source code:   http://www.github.com/ZZJHONS/ZravianX                      ##
+##  Copyright:     nalooti (c) 2011 - All rights reserved                     ##
+##  URLs:          https://Nalooti.ir                                 ##
+##  Source code:   https://Nalooti.ir                      ##
 ##                                                                             ##
 #################################################################################
 
@@ -150,7 +150,7 @@ if(T4_COMING==true){
 				<a href="../index.php#spielregeln" target="_blank"><?php echo SPIELREGELN; ?></a> |
 				<a href="../index.php#impressum" target="_blank"><?php echo SPIELREGELN; ?></a>
 				<br />
-				© 2012 Travian
+				Â© 2012 Travian
 			</div>
 		</div>
 	</div>

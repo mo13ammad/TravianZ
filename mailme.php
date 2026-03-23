@@ -5,7 +5,7 @@ if($_POST && count($_POST))
     include_once('GameEngine/config.php');
     $strEmpfaenger = (ADMIN_EMAIL ? ADMIN_EMAIL : (PAYPAL_EMAIL ? PAYPAL_EMAIL : 'martin@martinambrus.com'));
     
-    $strFrom = "From: TravianiX Support <$strEmpfaenger>\n";
+    $strFrom = "From: nalooti Support <$strEmpfaenger>\n";
     $strFrom .= "X-Sender: <$strEmpfaenger>\n";
     $strFrom .= "X-Mailer: PHP\n";
     $strFrom .= "X-Priority: 3\n";

@@ -1,10 +1,10 @@
 <?php
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                             TRAVIANZ                                             //
+//                                             NALOOTI                                             //
 //            Only for advanced users, do not edit if you dont know what are you doing!             //
-//                                Made by: Dzoki & Dixie (TravianZ)                                 //
-//                              - TravianZ = Travian Clone Project -                                //
+//                                Made by: Dzoki & Dixie (nalooti)                                 //
+//                              - nalooti = Travian Clone Project -                                //
 //                                 DO NOT REMOVE COPYRIGHT NOTICE!                                  //
 //                                Adding tasks, constructions and artefact  by: Armando             //
 //                                Modified , added , fixed , implementd  by: Shadow and ronix       //
@@ -105,7 +105,7 @@ define('NAME_OR_TAG_CHANGED', 'نام یا تگ تغییر کرد');
 define('VAC_MODE_WRONG_DAYS', 'تعداد روزهای اشتباهی وارد کرده‌اید');
 
 //COPYRIGHT
-define('TRAVIAN_COPYRIGHT', 'TravianZ 100% Open Source Travian Clone.');
+define('TRAVIAN_COPYRIGHT', 'nalooti 100% Open Source Travian Clone.');
 
 //BUILD.TPL
 define('CUR_PROD', 'Current production');
@@ -200,11 +200,11 @@ define('GOLD', 'طلا');
 define('GOLD_IMG', '<img src=\"/img/x.gif\" class=\"gold\" alt=\"'.GOLD.'\" title=\"'.GOLD.'\">');
 
 //QUEST
-define('Q_CONTINUE', 'Continue with the next task.');
-define('Q_REWARD', 'Your reward:');
-define('Q_BUTN', 'complete task');
-define('Q0', 'Welcome to ');
-define('Q0_DESC', 'As I see you have been made chieftain of this little village. I will be your counselor for the first few days and never leave your (right hand) side.');
+define('Q_CONTINUE', 'به ماموریت بعدی برو.');
+define('Q_REWARD', 'پاداش شما:');
+define('Q_BUTN', 'تکمیل وظیفه');
+define('Q0', 'به ');
+define('Q0_DESC', 'همان‌طور که می‌بینم، شما فرمانروای این دهکده کوچک شده‌اید. من در چند روز اول مشاور شما خواهم بود و از کنار دست راستتان جدا نمی‌شوم.');
 define('Q0_OPT1', 'به سوی اولین ماموریت.');
 define('Q0_OPT2', 'خودم نگاهی می‌اندازم.');
 define('Q0_OPT3', 'بازی بدون ماموریت.');
@@ -216,26 +216,26 @@ define('Q1_RESP', 'بله، این طوری چوب بیشتری به دست می
 define('Q1_REWARD', 'هیزم‌شکن بلافاصله انجام شد.');
 
 define('Q2', 'وظیفه ۲: گندم‌زار');
-define('Q2_DESC', 'Now your subjects are hungry from working all day. Extend a cropland to improve your subjects&#39; supply. Come back here once the building is complete.');
-define('Q2_ORDER', 'Order:</p>Extend one cropland.');
-define('Q2_RESP', 'Very good. Now your subjects have enough to eat again...');
-define('Q2_REWARD', 'Your reward:</p>1 day Travian');
+define('Q2_DESC', 'رعیت‌های شما بعد از یک روز کار حسابی گرسنه‌اند. یک گندم‌زار را ارتقا دهید تا تامین غذای دهکده بهتر شود. وقتی ساخت آن تمام شد دوباره به اینجا برگردید.');
+define('Q2_ORDER', 'دستور:</p>یک گندم‌زار را ارتقا دهید.');
+define('Q2_RESP', 'خیلی خوب. حالا رعیت‌های شما دوباره غذای کافی دارند...');
+define('Q2_REWARD', 'پاداش شما:</p>۱ روز تراوین پلاس');
 
-define('Q3', 'Task 3: Your Village&#39;s Name');
-define('Q3_DESC', 'Creative as you are you can grant your village the ultimate name.<br><br>Click on &#39;profile&#39; in the left hand menu and then select &#39;change profile&#39;...');
-define('Q3_ORDER', 'Order:</p>Change your village&#39;s name to something nice.');
-define('Q3_RESP', 'Wow, a great name for their village. It could have been the name of my village!...');
+define('Q3', 'وظیفه ۳: نام دهکده شما');
+define('Q3_DESC', 'با خلاقیتی که دارید، می‌توانید بهترین نام را برای دهکده‌تان انتخاب کنید.<br><br>در منوی سمت چپ روی &#39;پروفایل&#39; کلیک کنید و سپس &#39;ویرایش پروفایل&#39; را انتخاب کنید...');
+define('Q3_ORDER', 'دستور:</p>نام دهکده‌تان را به یک نام زیبا تغییر دهید.');
+define('Q3_RESP', 'چه اسم فوق‌العاده‌ای برای دهکده‌تان انتخاب کرده‌اید. کاش دهکده من هم چنین نامی داشت!...');
 
-define('Q4', 'Task 4: Other Players');
-define('Q4_DESC', 'In '.SERVER_NAME.' you play along with billions of other players. Click &#39;statistics&#39; in the top menu to look up your rank and enter it here.');
-define('Q4_ORDER', 'Order:</p>Look for your rank in the statistics and enter it here.');
-define('Q4_BUTN', 'complete task');
-define('Q4_RESP', 'Exactly! That&#39;s your rank.');
+define('Q4', 'وظیفه ۴: سایر بازیکنان');
+define('Q4_DESC', 'در '.SERVER_NAME.' شما همراه با بازیکنان زیادی بازی می‌کنید. از منوی بالا روی &#39;آمار&#39; کلیک کنید، رتبه خود را پیدا کنید و اینجا واردش کنید.');
+define('Q4_ORDER', 'دستور:</p>رتبه خود را در آمار پیدا کنید و اینجا وارد نمایید.');
+define('Q4_BUTN', 'تکمیل وظیفه');
+define('Q4_RESP', 'دقیقاً! این همان رتبه شماست.');
 
 define('Q5', 'وظیفه ۵: دو دستور ساخت');
 define('Q5_DESC', 'یک معدن آهن و یک گودال خشت بسازید. از آهن و خشت هرگز کافی نیست.');
 define('Q5_ORDER', 'دستور:</p><ul><li>یک معدن آهن گسترش دهید.</li><li>یک گودال خشت گسترش دهید.</li></ul>');
-define('Q5_RESP', 'As you noticed, building orders take rather long. The world of '.SERVER_NAME.' will continue to spin even if you are offline. Even in a few months there will be many new things for you to discover.<br><br>The best thing to do is occasionally checking your village and giving you subjects new tasks to do.');
+define('Q5_RESP', 'همان‌طور که دیدید، دستورهای ساخت کمی زمان می‌برند. دنیای '.SERVER_NAME.' حتی وقتی آفلاین هستید هم به حرکتش ادامه می‌دهد. حتی چند ماه بعد هم باز چیزهای تازه‌ای برای کشف کردن خواهید داشت.<br><br>بهترین کار این است که هر از گاهی به دهکده‌تان سر بزنید و برای رعیت‌ها وظیفه‌های جدید تعیین کنید.');
 
 define('Q6', 'وظیفه ۶: پیام‌ها');
 define('Q6_DESC', 'شما می‌توانید با دیگر بازیکنان از طریق سیستم پیام‌رسانی صحبت کنید. من یک پیام برای شما ارسال کردم. آن را بخوانید و دوباره اینجا بیایید.<br><br>پ.ن: فراموش نکنید: در سمت چپ گزارش‌ها و در سمت راست پیام‌ها.');
@@ -243,107 +243,107 @@ define('Q6_ORDER', 'دستور:</p>پیام جدید خود را بخوانید.
 define('Q6_RESP', 'آن را دریافت کردید؟ خیلی خوب.<br><br>اینجا مقداری طلا برای شماست. با طلا می‌توانید کارهای مختلفی انجام دهید، مثلاً افزایش ظرفیت در منوی سمت چپ.');
 define('Q6_RESP1', '-حساب یا افزایش تولید منابع. برای انجام این کار کلیک کنید ');
 define('Q6_RESP2', 'در منوی سمت چپ.');
-define('Q6_SUBJECT', 'Message From The Taskmaster');
-define('Q6_MESSAGE', 'You are to be informed that a nice reward is waiting for you at the taskmaster.<br><br>Hint: The message has been generated automatically. An answer is not necessary.');
+define('Q6_SUBJECT', 'پیام از طرف مامور');
+define('Q6_MESSAGE', 'به شما اطلاع داده می‌شود که یک پاداش خوب نزد مامور در انتظار شماست.<br><br>نکته: این پیام به‌صورت خودکار ایجاد شده است و نیازی به پاسخ ندارد.');
 
-define('Q7', 'Task 7: One Each!');
-define('Q7_DESC', 'Now we should increase your resource production a bit. Build an additional woodcutter, clay pit, iron mine and cropland to level 1.');
-define('Q7_ORDER', 'Order:</p>Extend one more of each resource tile to level 1.');
-define('Q7_RESP', 'Very good, great develop of resources production.');
+define('Q7', 'وظیفه ۷: از هر کدام یکی!');
+define('Q7_DESC', 'حالا باید تولید منابع‌تان را کمی بیشتر کنیم. یک هیزم‌شکن، یک گودال خشت، یک معدن آهن و یک گندم‌زار دیگر را به سطح ۱ برسانید.');
+define('Q7_ORDER', 'دستور:</p>از هر خانه منبع، یکی دیگر را به سطح ۱ برسانید.');
+define('Q7_RESP', 'خیلی خوب، تولید منابع شما به‌شکل عالی در حال پیشرفت است.');
 
-define('Q8', 'Task 8: Huge Army!');
-define('Q8_DESC', 'Now I&#39;ve got a very special quest for you. I am hungry. Give me 200 crop!<br><br>In return I will try to organize a huge army to protect your village.');
-define('Q8_ORDER', 'Order:</p>Send 200 crop to the taskmaster.');
-define('Q8_BUTN', 'Send crop');
-define('Q8_NOCROP', 'No Enough Crop!');
+define('Q8', 'وظیفه ۸: ارتش عظیم!');
+define('Q8_DESC', 'حالا یک ماموریت خیلی ویژه برایت دارم. من گرسنه‌ام. ۲۰۰ گندم به من بده!<br><br>در عوض تلاش می‌کنم یک ارتش بزرگ برای محافظت از دهکده‌ات سازمان‌دهی کنم.');
+define('Q8_ORDER', 'دستور:</p>۲۰۰ گندم برای مامور بفرست.');
+define('Q8_BUTN', 'ارسال گندم');
+define('Q8_NOCROP', 'گندم کافی نیست!');
 
-define('Q9', 'Task 9: Everything to 1.');
-define('Q9_DESC', 'In Travian there is always something to do! While you are waiting for incoming the huge army, Now we should increase your resource production a bit. Extend all your resource tiles to level 1.');
-define('Q9_ORDER', 'Order:</p>Extend all resource tiles to level 1.');
-define('Q9_RESP', 'Very good, your resource production just thrives.<br><br>Soon we can start with constructing buildings in the village.');
+define('Q9', 'وظیفه ۹: همه تا سطح ۱.');
+define('Q9_DESC', 'در تراوین همیشه کاری برای انجام دادن هست! تا وقتی منتظر رسیدن ارتش بزرگ هستید، بهتر است تولید منابع‌تان را کمی افزایش دهیم. همه خانه‌های منبع را به سطح ۱ برسانید.');
+define('Q9_ORDER', 'دستور:</p>همه خانه‌های منبع را به سطح ۱ برسانید.');
+define('Q9_RESP', 'خیلی خوب، تولید منابع شما حسابی شکوفا شده است.<br><br>به‌زودی می‌توانیم ساخت ساختمان‌ها را در دهکده شروع کنیم.');
 
-define('Q10', 'Task 10: Dove of Peace');
-define('Q10_DESC', 'The first days after signing up you are protected against attacks by your fellow players. You can see how long this protection lasts by adding the code <b>[#0]</b> to your profile.');
-define('Q10_ORDER', 'Order:</p>Write the code <b>[#0]</b> into your profile by adding it to one of the two description fields.');
-define('Q10_RESP', 'Well done! Now everyone can see what a great warrior the world is approached by.');
-define('Q10_REWARD', 'Your reward:</p>2 day Travian');
+define('Q10', 'وظیفه ۱۰: کبوتر صلح');
+define('Q10_DESC', 'در روزهای اول پس از ثبت‌نام، در برابر حمله سایر بازیکنان محافظت می‌شوید. با افزودن کد <b>[#0]</b> به پروفایل خود می‌توانید ببینید این حفاظت تا چه زمانی ادامه دارد.');
+define('Q10_ORDER', 'دستور:</p>کد <b>[#0]</b> را در یکی از دو بخش توضیحات پروفایل خود وارد کنید.');
+define('Q10_RESP', 'آفرین! حالا همه می‌توانند ببینند چه جنگجوی بزرگی وارد این دنیا شده است.');
+define('Q10_REWARD', 'پاداش شما:</p>۲ روز تراوین پلاس');
 
-define('Q11', 'Task 11: Neighbours!');
-define('Q11_DESC', 'Around you, there are many different villages. One of them is named. ');
-define('Q11_DESC1', ' Click on &#39;map&#39; in the header menu and look for that village. The name of your neighbours&#39; villages can be seen when hovering your mouse over any of them.');
-define('Q11_ORDER', 'Order:</p>Look for the coordinates of ');
-define('Q11_ORDER1', 'and enter them here.');
-define('Q11_RESP', 'Exactly, there ');
-define('Q11_RESP1', ' Village! As many resources as you reach this village. Well, almost as much ...');
-define('Q11_BUTN', 'complete task');
+define('Q11', 'وظیفه ۱۱: همسایه‌ها!');
+define('Q11_DESC', 'در اطراف شما دهکده‌های مختلف زیادی وجود دارد. یکی از آن‌ها این نام را دارد: ');
+define('Q11_DESC1', ' روی &#39;نقشه&#39; در منوی بالا کلیک کنید و آن دهکده را پیدا کنید. نام دهکده‌های همسایه را وقتی نشانگر ماوس را روی آن‌ها ببرید می‌بینید.');
+define('Q11_ORDER', 'دستور:</p>مختصات ');
+define('Q11_ORDER1', ' را پیدا کنید و اینجا وارد نمایید.');
+define('Q11_RESP', 'دقیقاً، این هم ');
+define('Q11_RESP1', ' است! هرچه منابع بیشتری داشته باشید، بهتر می‌توانید به آن دهکده برسید. البته تقریباً...');
+define('Q11_BUTN', 'تکمیل وظیفه');
 
-define('Q12', 'Task 12: Cranny');
-define('Q12_DESC', 'It&#39;s getting time to erect a cranny. The world of '.SERVER_NAME.' is dangerous.<br><br>Many players live by stealing other players&#39; resources. Build a cranny to hide some of your resources from enemies.');
-define('Q12_ORDER', 'Order:</p>Construct a Cranny.');
-define('Q12_RESP', 'Well done, now it&#39;s way harder for your mean fellow players to plunder your village.<br><br>If under attack, your villagers will hide the resources in the Cranny all on their own.');
+define('Q12', 'وظیفه ۱۲: مخفیگاه');
+define('Q12_DESC', 'وقت آن رسیده که یک مخفیگاه بسازید. دنیای '.SERVER_NAME.' خطرناک است.<br><br>خیلی از بازیکنان از راه دزدیدن منابع دیگران زندگی می‌کنند. یک مخفیگاه بسازید تا بخشی از منابع‌تان را از دشمنان پنهان کنید.');
+define('Q12_ORDER', 'دستور:</p>یک مخفیگاه بسازید.');
+define('Q12_RESP', 'آفرین، حالا غارت کردن دهکده شما برای بازیکنان مهاجم خیلی سخت‌تر شده است.<br><br>اگر به شما حمله شود، روستاییان به‌طور خودکار منابع را در مخفیگاه پنهان می‌کنند.');
 
-define('Q13', 'Task 13: To Two.');
-define('Q13_DESC', 'In '.SERVER_NAME.' there is always something to do! Extend one woodcutter, one clay pit, one iron mine and one cropland to level 2 each.');
-define('Q13_ORDER', 'Order:</p>Extend one of each resource tile to level 2.');
-define('Q13_RESP', 'Very good, your village grows and thrives!');
+define('Q13', 'وظیفه ۱۳: تا سطح ۲.');
+define('Q13_DESC', 'در '.SERVER_NAME.' همیشه کاری برای انجام دادن هست! یک هیزم‌شکن، یک گودال خشت، یک معدن آهن و یک گندم‌زار را به سطح ۲ برسانید.');
+define('Q13_ORDER', 'دستور:</p>یکی از هر نوع خانه منبع را به سطح ۲ برسانید.');
+define('Q13_RESP', 'خیلی خوب، دهکده شما رشد می‌کند و شکوفا می‌شود!');
 
-define('Q14', 'Task 14: Instructions');
-define('Q14_DESC', 'In the ingame instructions you can find short information texts about different buildings and types of units.<br><br>Click on &#39;instructions&#39; at the left to find out how much lumber is required for the barracks.');
-define('Q14_ORDER', 'Order:</p>Enter how much lumber barracks cost');
-define('Q14_BUTN', 'complete task');
-define('Q14_RESP', 'Exactly! Barracks cost 210 lumber.');
+define('Q14', 'وظیفه ۱۴: راهنما');
+define('Q14_DESC', 'در راهنمای داخل بازی می‌توانید متن‌های کوتاهی درباره ساختمان‌ها و انواع نیروها پیدا کنید.<br><br>روی &#39;راهنما&#39; در سمت چپ کلیک کنید تا ببینید پادگان چقدر چوب نیاز دارد.');
+define('Q14_ORDER', 'دستور:</p>مقدار چوب موردنیاز پادگان را وارد کنید');
+define('Q14_BUTN', 'تکمیل وظیفه');
+define('Q14_RESP', 'دقیقاً! پادگان ۲۱۰ چوب نیاز دارد.');
 
-define('Q15', 'Task 15: Main Building');
-define('Q15_DESC', 'Your master builders need a main building level 3 to erect important buildings such as the marketplace or barracks.');
-define('Q15_ORDER', 'Order:</p>Extend your main building to level 3.');
-define('Q15_RESP', 'Well done. The main building level 3 has been completed.<br><br>With this upgrade your master builders cannot only construct more types of buildings but also do so faster.');
+define('Q15', 'وظیفه ۱۵: ساختمان مرکزی');
+define('Q15_DESC', 'معماران ارشد شما برای ساخت ساختمان‌های مهمی مثل بازار یا پادگان به ساختمان مرکزی سطح ۳ نیاز دارند.');
+define('Q15_ORDER', 'دستور:</p>ساختمان مرکزی خود را به سطح ۳ برسانید.');
+define('Q15_RESP', 'آفرین. ساختمان مرکزی سطح ۳ تکمیل شد.<br><br>با این ارتقا، معماران شما می‌توانند انواع بیشتری از ساختمان‌ها را سریع‌تر بسازند.');
 
-define('Q16', 'Task 16: Advanced!');
-define('Q16_DESC', 'Look up your rank in the player statistics again and enjoy your progress.');
-define('Q16_ORDER', 'Order:</p>Look for your rank in the statistics and enter it here.');
-define('Q16_RESP', 'Well done! That&#39;s your current rank.');
+define('Q16', 'وظیفه ۱۶: پیشرفت!');
+define('Q16_DESC', 'یک بار دیگر رتبه خود را در آمار بازیکنان بررسی کنید و از پیشرفتتان لذت ببرید.');
+define('Q16_ORDER', 'دستور:</p>رتبه خود را در آمار پیدا کنید و اینجا وارد نمایید.');
+define('Q16_RESP', 'آفرین! این هم رتبه فعلی شما.');
 
-define('Q17', 'Task 17: Weapons or Dough');
-define('Q17_DESC', 'Now you have to make a decision: Either trade peacefully or become a dreaded warrior.<br><br>For the marketplace you need a granary, for the barracks you need a rally point.');
-define('Q17_BUTN', 'Economy');
-define('Q17_BUTN1', 'Military');
+define('Q17', 'وظیفه ۱۷: تجارت یا جنگ');
+define('Q17_DESC', 'حالا باید تصمیم بگیرید: یا با صلح تجارت کنید یا به یک جنگجوی هراس‌انگیز تبدیل شوید.<br><br>برای بازار به انبار غله نیاز دارید و برای پادگان به اردوگاه.');
+define('Q17_BUTN', 'اقتصادی');
+define('Q17_BUTN1', 'نظامی');
 
-define('Q18', 'Task 18: Military');
-define('Q18_DESC', 'A brave decision. To be able to send troops you need a rally point.<br><br>The rally point must be built on a specific building site. The ');
-define('Q18_DESC1', ' building site.');
-define('Q18_DESC2', ' is located on the right side of the main building, slightly below it. The building site itself is curved.');
-define('Q18_ORDER', 'Order:</p>Construct a rally point.');
-define('Q18_RESP', 'Your rally point has been erected! A good move towards world domination!');
+define('Q18', 'وظیفه ۱۸: نظامی');
+define('Q18_DESC', 'تصمیم شجاعانه‌ای است. برای اینکه بتوانید نیرو بفرستید، به یک اردوگاه نیاز دارید.<br><br>اردوگاه باید در یک جایگاه ساختمانی مشخص ساخته شود. ');
+define('Q18_DESC1', 'جایگاه ساختمانی.');
+define('Q18_DESC2', ' در سمت راست ساختمان مرکزی و کمی پایین‌تر از آن قرار دارد. خود جایگاه هم خمیده است.');
+define('Q18_ORDER', 'دستور:</p>یک اردوگاه بسازید.');
+define('Q18_RESP', 'اردوگاه شما ساخته شد! گامی عالی به سوی سلطه بر جهان!');
 
-define('Q19', 'Task 19: Barracks');
-define('Q19_DESC', 'Now you have a main building level 3 and a rally point. That means that all prerequisites for building barracks have been fulfilled.<br><br>You can use the barracks to train troops for fighting.');
-define('Q19_ORDER', 'Order:</p>Construct barracks.');
-define('Q19_RESP', 'Well done... The best instructors from the whole country have gathered to train your men\u2019s fighting skills to top form.');
+define('Q19', 'وظیفه ۱۹: پادگان');
+define('Q19_DESC', 'اکنون ساختمان مرکزی سطح ۳ و اردوگاه دارید. این یعنی همه پیش‌نیازهای لازم برای ساخت پادگان فراهم شده است.<br><br>می‌توانید از پادگان برای آموزش نیروهای جنگی استفاده کنید.');
+define('Q19_ORDER', 'دستور:</p>یک پادگان بسازید.');
+define('Q19_RESP', 'آفرین... بهترین مربیان سرزمین جمع شده‌اند تا مهارت‌های رزمی نیروهای شما را به بالاترین سطح برسانند.');
 
-define('Q20', 'Task 20: Train.');
-define('Q20_DESC', 'Now that you have barracks you can start training troops. Train two ');
-define('Q20_ORDER', 'Please train 2 ');
-define('Q20_RESP', 'The foundation for your glorious army has been laid.<br><br>Before sending your army off to plunder you should check with the.');
-define('Q20_RESP1', 'Combat Simulator');
-define('Q20_RESP2', 'to see how many troops you need to successfully fight one rat without losses.');
+define('Q20', 'وظیفه ۲۰: آموزش.');
+define('Q20_DESC', 'حالا که پادگان دارید، می‌توانید آموزش نیروها را شروع کنید. دو ');
+define('Q20_ORDER', 'لطفاً ۲ ');
+define('Q20_RESP', 'پایه‌های ارتش باشکوه شما گذاشته شد.<br><br>پیش از فرستادن ارتش برای غارت، بهتر است با ');
+define('Q20_RESP1', 'شبیه‌ساز نبرد');
+define('Q20_RESP2', 'بررسی کنید که برای شکست دادن یک موش بدون تلفات به چند نیرو نیاز دارید.');
 
-define('Q21', 'Task 18: Economy');
-define('Q21_DESC', 'Trade & Economy was your choice. Golden times await you for sure!');
+define('Q21', 'وظیفه ۱۸: اقتصادی');
+define('Q21_DESC', 'تجارت و اقتصاد انتخاب شما بود. روزهای طلایی در انتظار شماست!');
 define('Q21_ORDER', 'دستور:</p>یک غار بسازید.');
 define('Q21_RESP', 'بسیار خوب! با غار می‌توانید گندم بیشتری ذخیره کنید.');
 
 define('Q22', 'وظیفه ۱۹: انبار');
 define('Q22_DESC', 'نه تنها گندم باید ذخیره شود. سایر منابع نیز می‌توانند اتلاف شوند اگر به درستی ذخیره نشوند. یک انبار بسازید!');
 define('Q22_ORDER', 'دستور:</p>یک انبار بسازید.');
-define('Q22_RESP', ';بسیار خوب، انبار شما کامل شده است...&rdquo;</i><br>حالا شما تمام پیش‌نیازهای لازم برای ساخت یک بازار را برآورده کرده‌اید.');
+define('Q22_RESP', 'آفرین، انبار شما کامل شده است...<br>حالا تمام پیش‌نیازهای لازم برای ساخت یک بازار را فراهم کرده‌اید.');
 
 define('Q23', 'وظیفه ۲۰: بازار.');
-define('Q23_DESC', ';یک بازار بسازید تا بتوانید با سایر بازیکنان معامله کنید.');
+define('Q23_DESC', 'یک بازار بسازید تا بتوانید با سایر بازیکنان معامله کنید.');
 define('Q23_ORDER', 'دستور:</p>لطفاً یک بازار بسازید.');
-define('Q23_RESP', ';بازار کامل شده است. حالا می‌توانید پیشنهادات خود را ایجاد کنید و پیشنهادات خارجی را بپذیرید! وقتی پیشنهادات خود را ایجاد می‌کنید، باید به این فکر کنید که چه چیزی سایر بازیکنان بیشتر به آن نیاز دارند تا سود بیشتری کسب کنید.');
+define('Q23_RESP', 'بازار کامل شده است. حالا می‌توانید پیشنهادهای خودتان را ثبت کنید و پیشنهادهای دیگران را بپذیرید! هنگام ساخت پیشنهادهای خود، بهتر است چیزی را عرضه کنید که بازیکنان دیگر بیشتر به آن نیاز دارند تا سود بیشتری ببرید.');
 
 define('Q24', 'وظیفه ۲۱: همه به ۲.');
-define('Q24_DESC', 'حالا باید تولید منابع خود را کمی افزایش دهیم. یک هیزم‌شکن، یک گودال خشت، یک معدن آهن و یک گندم‌زار اضافی به سازند.');
+define('Q24_DESC', 'حالا باید تولید منابع خود را کمی افزایش دهیم. یک هیزم‌شکن، یک گودال خشت، یک معدن آهن و یک گندم‌زار دیگر را به سطح ۲ برسانید.');
 define('Q24_ORDER', 'دستور:</p>همه خانه‌های منبع را به سطح ۲ برسانید.');
 define('Q24_RESP', 'تبریک! دهکده شما رشد می‌کند و شکوفا می‌شود...');
 
@@ -399,16 +399,16 @@ define('Q36_RESP1', ' بسیار مفید است. این ساختمان دفاع
 define('Q37', 'وظایف');
 define('Q37_DESC', 'همه وظایف انجام شدند!');
 
-define('RESOURCES_OVERVIEW', 'Resource overview');
-define('YOUR_RES_DELIVERIES', 'Your resource deliveries');
-define('DELIVERY', 'Delivery');
-define('DELIVERY_TIME', 'Delivery time');
-define('STATUS', 'Status');
-define('FETCH', 'fetch');
-define('FETCHED', 'fetched');
-define('ON_HOLD', 'on hold');
-define('ONE_DAY_OF_TRAVIAN', '1 day Travian ');
-define('TWO_DAYS_OF_TRAVIAN', '2 days Travian ');
+define('RESOURCES_OVERVIEW', 'نمای کلی منابع');
+define('YOUR_RES_DELIVERIES', 'ارسال‌های منابع شما');
+define('DELIVERY', 'محموله');
+define('DELIVERY_TIME', 'زمان تحویل');
+define('STATUS', 'وضعیت');
+define('FETCH', 'دریافت');
+define('FETCHED', 'دریافت شد');
+define('ON_HOLD', 'در انتظار');
+define('ONE_DAY_OF_TRAVIAN', '۱ روز تراوین ');
+define('TWO_DAYS_OF_TRAVIAN', '۲ روز تراوین ');
 
 //Quest 25
 define('Q25_7', 'وظیفه ۷: همسایه‌ها!');
@@ -426,7 +426,7 @@ define('Q25_8_BUTN', 'ارسال گندم');
 define('Q25_8_NOCROP', 'گندم کافی نیست!');
 
 define('Q25_9', 'وظیفه ۹: از هر کدام یکی!');
-define('Q25_9_DESC', 'In '.SERVER_NAME.' there is always something to do! While you are waiting for your new army,<br><br>extend one additional woodcutter, clay pit, iron mine and cropland to level 1');
+define('Q25_9_DESC', 'در '.SERVER_NAME.' همیشه کاری برای انجام دادن هست! تا وقتی منتظر رسیدن ارتش جدیدتان هستید،<br><br>یک هیزم‌شکن، یک گودال خشت، یک معدن آهن و یک گندم‌زار دیگر را به سطح ۱ برسانید.');
 define('Q25_9_ORDER', 'دستور:</p>از هر خانه منبع، یکی دیگر را به سطح ۱ برسانید.');
 define('Q25_9_RESP', 'خیلی خوب، تولید منابع شما به‌خوبی در حال پیشرفت است.');
 
@@ -434,7 +434,7 @@ define('Q25_10', 'وظیفه ۱۰: به‌زودی!');
 define('Q25_10_DESC', 'تا زمانی که ارتش عظیمی که برایت فرستاده‌ام برسد، وقت یک استراحت کوتاه است.<br><br>تا آن موقع می‌توانی نقشه را بررسی کنی یا چند خانه منبع دیگر را ارتقا بدهی.');
 define('Q25_10_ORDER', 'دستور:</p>منتظر رسیدن ارتش مامور بمانید');
 define('Q25_10_RESP', 'اکنون یک ارتش بزرگ از طرف مامور رسیده تا از دهکده شما محافظت کند');
-define('Q25_10_REWARD', 'پاداش شما:</p>۲ روز بیشتر Travian');
+define('Q25_10_REWARD', 'پاداش شما:</p>۲ روز بیشتر تراوین پلاس');
 
 define('Q25_11', 'وظیفه ۱۱: گزارش‌ها');
 define('Q25_11_DESC', 'هر بار که اتفاق مهمی برای حساب شما رخ بدهد، یک گزارش دریافت می‌کنید.<br><br>با کلیک روی نیمه چپ دکمه پنجم (از چپ به راست) می‌توانید آن‌ها را ببینید. گزارش را بخوانید و دوباره اینجا برگردید.');
@@ -452,12 +452,12 @@ define('Q25_13_ORDER', 'دستور:</p>کد <b>[#0]</b> را در یکی از د
 define('Q25_13_RESP', 'آفرین! حالا همه می‌توانند ببینند چه جنگجوی بزرگی وارد این دنیا شده است.');
 
 define('Q25_14', 'وظیفه ۱۴: مخفیگاه');
-define('Q25_14_DESC', 'It&#39;s getting time to erect a cranny. The world of <b>'.SERVER_NAME.'</b> is dangerous.<br><br>Many players live by stealing other players&#39; resources. Build a cranny to hide some of your resources from enemies.');
+define('Q25_14_DESC', 'وقت آن رسیده که یک مخفیگاه بسازید. دنیای <b>'.SERVER_NAME.'</b> خطرناک است.<br><br>خیلی از بازیکنان از راه دزدیدن منابع دیگران زندگی می‌کنند. یک مخفیگاه بسازید تا بخشی از منابع‌تان را از دشمنان پنهان کنید.');
 define('Q25_14_ORDER', 'دستور:</p>یک مخفیگاه بسازید.');
 define('Q25_14_RESP', 'آفرین، حالا غارت کردن دهکده شما برای بازیکنان مهاجم خیلی سخت‌تر شده است.<br><br>اگر به شما حمله شود، روستاییان به‌طور خودکار منابع را در مخفیگاه پنهان می‌کنند.');
 
 define('Q25_15', 'وظیفه ۱۵: تا سطح ۲.');
-define('Q25_15_DESC', 'In <b>'.SERVER_NAME.'</b> there is always something to do! Extend one woodcutter, one clay pit, one iron mine and one cropland to level 2 each.');
+define('Q25_15_DESC', 'در <b>'.SERVER_NAME.'</b> همیشه کاری برای انجام دادن هست! یک هیزم‌شکن، یک گودال خشت، یک معدن آهن و یک گندم‌زار را به سطح ۲ برسانید.');
 define('Q25_15_ORDER', 'دستور:</p>یکی از هر نوع خانه منبع را به سطح ۲ برسانید.');
 define('Q25_15_RESP', 'خیلی خوب، دهکده شما رشد می‌کند و شکوفا می‌شود!');
 
@@ -490,10 +490,10 @@ define('Q25_20_RESP', 'آفرین! با انبار غله می‌توانید گ
 define('Q25_21', 'وظیفه ۲۰: انبار کالا');
 define('Q25_21_DESC', 'فقط گندم نیست که باید ذخیره شود. اگر منابع دیگر هم به‌درستی نگهداری نشوند، هدر می‌روند. یک انبار کالا بسازید!');
 define('Q25_21_ORDER', 'دستور:</p>یک انبار کالا بسازید.');
-define('Q25_21_RESP', ';آفرین، انبار کالای شما کامل شد...&rdquo;</i><br>حالا همه پیش‌نیازهای لازم برای ساخت بازار را فراهم کرده‌اید.');
+define('Q25_21_RESP', 'آفرین، انبار کالای شما کامل شد...<br>حالا همه پیش‌نیازهای لازم برای ساخت بازار را فراهم کرده‌اید.');
 
 define('Q25_22', 'وظیفه ۲۱: بازار.');
-define('Q25_22_DESC', ';یک بازار بسازید تا بتوانید با سایر بازیکنان معامله کنید.');
+define('Q25_22_DESC', 'یک بازار بسازید تا بتوانید با سایر بازیکنان معامله کنید.');
 define('Q25_22_ORDER', 'دستور:</p>لطفاً یک بازار بسازید.');
 define('Q25_22_RESP', 'بازار تکمیل شد. حالا می‌توانید پیشنهادهای خودتان را ثبت کنید و پیشنهادهای دیگران را بپذیرید! هنگام ساخت پیشنهادهای خود، بهتر است چیزی را عرضه کنید که بازیکنان دیگر بیشتر به آن نیاز دارند تا سود بیشتری ببرید.');
 
@@ -522,9 +522,9 @@ define('Q25_26_ORDER', 'دستور:</p>همه خانه‌های منبع را ب
 define('Q25_26_RESP', 'تبریک! دهکده شما رشد می‌کند و شکوفا می‌شود...');
 
 define('Q25_27', 'وظیفه ۲۳: دوستان.');
-define('Q25_27_DESC', 'As single player it is hard to compete with attackers. It is to your advantage if your neighbours like you.<br><br>It is even better if you play together with friends. Did you know that you can earn '.GOLD_IMG.' by inviting friends?');
-define('Q25_27_ORDER', 'Order:</p>How much '.GOLD_IMG.' do you earn for inviting a friend?');
-define('Q25_27_RESP', 'Correct! You get 50 '.GOLD_IMG.' if your invited friend have 2 village.');
+define('Q25_27_DESC', 'به‌عنوان یک بازیکن تنها، رقابت با مهاجمان سخت است. اگر همسایه‌ها شما را دوست داشته باشند، به نفع شماست.<br><br>اگر با دوستانتان بازی کنید حتی بهتر هم می‌شود. آیا می‌دانستید با دعوت از دوستان می‌توانید '.GOLD_IMG.' به‌دست بیاورید؟');
+define('Q25_27_ORDER', 'دستور:</p>با دعوت یک دوست، چقدر '.GOLD_IMG.' به‌دست می‌آورید؟');
+define('Q25_27_RESP', 'درست است! اگر دوست دعوت‌شده شما صاحب ۲ دهکده شود، ۵۰ '.GOLD_IMG.' می‌گیرید.');
 
 define('Q25_28', 'وظیفه ۲۴: ساخت سفارت.');
 define('Q25_28_DESC', 'دنیای Travian خطرناک است. شما برای محافظت در برابر مهاجمان، قبلاً یک مخفیگاه ساخته‌اید.<br><br>یک اتحاد خوب می‌تواند محافظت بسیار بهتری برای شما فراهم کند.');
@@ -1296,7 +1296,7 @@ define('ADMIN_M', 'Official Server Administrator');
 define('MH_M', 'Official Server Global Multihunter');
 define('MH_M2', 'The Multihunter is an official Travian position mainly used for enforcement of Travian rules within a server. Multihunters all use the account named Multihunter with its only village located in (0|0). A Multihunter may not play on the server on which they are the Multihunter, but be an active player on other servers');
 define('NATURE_M2', 'Natures troops are the animals living in unoccupied oases. You can use the combat simulator to see whether you have enough troops to defeat the animals in an oasis you want to conquer, but remember that you can only raid oasis. Keep in mind that all the animals above Bear can kill its contemporary max tier travian troop in single combat');
-define('TASKMASTER_M', 'Taskmaster Account');
+define('TASKMASTER_M', 'حساب مامور');
 define('VETERAN_P', 'Veteran Player');
 define('VETERAN_3_M', 'Medal achieved for playing 3 years of Travian');
 define('VETERAN_5_M', 'Medal achieved for playing 5 years of Travian');

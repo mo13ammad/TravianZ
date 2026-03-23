@@ -5,15 +5,15 @@
 ##                                                                             ##
 ## --------------------------------------------------------------------------- ##
 ##                                                                             ##
-##  Project:       TravianZ                                                    ##
+##  Project:       nalooti                                                    ##
 ##  Version:       05.03.2014                                                  ##
 ##  Filename:      Admin/admin.php     				                           ##
 ##  Developed by:  Dzoki                                                       ##
 ##  Edited by:     Shadow and ronix                                            ##
 ##  License:       Creative Commons BY-NC-SA 3.0                               ##
-##  Copyright:     TravianZ (c) 2014 - All rights reserved                     ##
-##  URLs:          http://travian.shadowss.ro                                  ##
-##  Source code:   https://github.com/Shadowss/TravianZ	                       ##
+##  Copyright:     nalooti (c) 2014 - All rights reserved                     ##
+##  URLs:          https://Nalooti.ir                                  ##
+##  Source code:   https://Nalooti.ir	                       ##
 ##                                                                             ##
 #################################################################################
 
@@ -25,7 +25,7 @@ include("../GameEngine/Admin/database.php");
 <html>
 <head>
   <link rel="shortcut icon" href="favicon.ico"/>
-	<title>Admin Control Panel - TravianZ</title>
+	<title>Admin Control Panel - nalooti</title>
 	<link rel=stylesheet type="text/css" href="../img/admin/admin.css">
 	<link rel=stylesheet type="text/css" href="../img/admin/acp.css">
 	<link rel=stylesheet type="text/css" href="../img/../img.css">

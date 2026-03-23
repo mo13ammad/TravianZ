@@ -1,10 +1,10 @@
-﻿<?php
+<?php
 #################################################################################
 ##              -= YOU MAY NOT REMOVE OR CHANGE THIS NOTICE =-                 ##
 ## --------------------------------------------------------------------------- ##
 ##  Filename       ban_msq.tpl                                                 ##
 ##  Developed by:  yi12345                                                     ##
-##  Copyright:     TravianZ (c) 2010-2025. All rights reserved.                ##
+##  Copyright:     nalooti (c) 2010-2025. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 $time = time();

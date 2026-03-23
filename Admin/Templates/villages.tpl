@@ -4,8 +4,8 @@
 ## --------------------------------------------------------------------------- ##
 ##  Filename       villages.tpl                                                ##
 ##  Developed by:  Dzoki                                                       ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2010-2025. All rights reserved.                ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2025. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 ?>
@@ -25,6 +25,7 @@
 		<td>Name</td>
 		<td>Population</td>
 		<td>Coordinates</td>
+		<td>Edit Resources</td>
 		<td>Add Troops</td>
 		<td></td>
 	</tr>
@@ -42,12 +43,14 @@ $delLink = '<a href="?action=delVil&did='.$varray[$i]['wref'].'" onClick="return
   $delLink = '<a href="#"><img src="../img/admin/del_g.gif" class="del"></a>';
 	}
 }
+$editResources = '<a href="?p=editResources&did='.$varray[$i]['wref'].'">Edit Resources</a>';
 $addTroops = '<a href="?p=addTroops&did='.$varray[$i]['wref'].'"> Edit Troops</a>';
 echo '
 	<tr>
 		<td><a href="?p=village&did='.$varray[$i]['wref'].'">'.$varray[$i]['name'].'</a> '.$capital.'</td>
 		<td>'.$varray[$i]['pop'].' <a href="?action=recountPop&did='.$varray[$i]['wref'].'">Recount<a/></td>
 		<td>('.$coorproc['x'].'|'.$coorproc['y'].')</td>
+		<td>'.$editResources.'</td>
 		<td>'.$addTroops.' </td>
 		<td>'.$delLink.' </td>
 	</tr>

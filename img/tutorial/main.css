@@ -78,6 +78,27 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {margin:0;}
 
+html[dir="rtl"] body,
+body.rtl {
+	direction: rtl;
+	text-align: right;
+	font-family: Tahoma, Verdana, Arial, sans-serif;
+}
+
+html[dir="rtl"] .wrapper #content,
+body.rtl .wrapper #content,
+html[dir="rtl"] #content,
+body.rtl #content,
+html[dir="rtl"] #navigation .menu td,
+body.rtl #navigation .menu td {
+	text-align: right;
+}
+
+html[dir="rtl"] .menu li,
+body.rtl .menu li {
+	float: right;
+}
+
 body.contentPage h1 {
 	text-align: center;
 	padding-top: 70px;

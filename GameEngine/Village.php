@@ -4,8 +4,8 @@
 ##              -= YOU MAY NOT REMOVE OR CHANGE THIS NOTICE =-                 ##
 ## --------------------------------------------------------------------------- ##
 ##  Filename       Village.php                                                 ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2010-2025. All rights reserved.                ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2025. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 
@@ -23,6 +23,8 @@ class Village {
 	public $wid, $vname, $capital, $natar, $master;
 	public $resarray = [];
 	public $unitarray, $techarray, $unitall, $researching, $abarray = [];
+	public $enforcetome = [], $enforcetoyou = [], $enforceoasis = [];
+	public $currentcel = 0, $allcrop = 0, $loyalty = 100;
 	private $infoarray = [];
 	private $production = [];
 	private $oasisowned, $ocounter = [];
@@ -81,6 +83,10 @@ class Village {
 		$this->resarray = $database->getResourceLevel($this->wid);
 		$this->coor = $database->getCoor($this->wid);
 		$this->type = $database->getVillageType($this->wid);
+        if ((int) $this->type === 0 && (int) ($this->infoarray['owner'] ?? 0) > 0 && $database->repairVillageWorldTile($this->wid)) {
+            $this->coor = $database->getCoor($this->wid, false);
+            $this->type = $database->getVillageType($this->wid, false);
+        }
 		$this->oasisowned = $database->getOasis($this->wid);
 		$this->ocounter = $this->sortOasis();
 		$this->unitarray = $database->getUnit($this->wid);

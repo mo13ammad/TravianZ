@@ -1,11 +1,11 @@
-# TravianZ
+# nalooti
 
-[![Maintenance](https://img.shields.io/maintenance/yes/2025.svg)](https://github.com/Shadowss/TravianZ)
-[![GitHub Release](https://img.shields.io/github/release/Shadowss/TravianZ/all.svg)](https://github.com/Shadowss/TravianZ)
-[![GitHub contributors](https://img.shields.io/github/contributors/Shadowss/TravianZ.svg)](https://github.com/Shadowss/TravianZ)
-[![license](https://img.shields.io/github/license/Shadowss/TravianZ.svg)](https://github.com/Shadowss/TravianZ)
+[![Maintenance](https://img.shields.io/maintenance/yes/2025.svg)](https://Nalooti.ir)
+[![GitHub Release](https://img.shields.io/github/release/Shadowss/nalooti/all.svg)](https://Nalooti.ir)
+[![GitHub contributors](https://img.shields.io/github/contributors/Shadowss/nalooti.svg)](https://Nalooti.ir)
+[![license](https://img.shields.io/github/license/Shadowss/nalooti.svg)](https://Nalooti.ir)
 
-TravianZ is an open-source browser strategy game inspired by classic Travian-like gameplay.
+nalooti is an open-source browser strategy game inspired by classic Travian-like gameplay.
 
 This repository currently targets modern local/server setups with PHP 8.x and MariaDB.
 
@@ -20,8 +20,8 @@ If you are upgrading from an older installation, do a fresh install and migrate 
 ## Quick Start (Docker)
 
 ```bash
-git clone https://github.com/Shadowss/TravianZ.git
-cd TravianZ
+git clone https://Nalooti.ir
+cd nalooti
 cp .env.example .env
 docker compose up -d
 ```
@@ -141,13 +141,13 @@ Repository references:
 
 ## Community and Support
 
-- Issues: https://github.com/Shadowss/TravianZ/issues
-- Wiki: https://github.com/Shadowss/TravianZ/wiki
-- Chat: https://gitter.im/TravianZ-V8/Lobby
+- Issues: https://Nalooti.ir
+- Wiki: https://Nalooti.ir
+- Chat: https://gitter.im/nalooti-V8/Lobby
 
 ## Credits
 
-Thanks to the original and current maintainers, contributors, testers, and the TravianZ community.
+Thanks to the original and current maintainers, contributors, testers, and the nalooti community.
 
 Special acknowledgement to all legacy authors and maintainers who kept this project alive through multiple iterations.
 

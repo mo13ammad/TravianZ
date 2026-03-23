@@ -98,12 +98,12 @@ if(isset($_GET['aid']) || isset($_GET['fid']) || isset($_GET['fid2']) ||
 
 	   echo GP_LOCATE;
 
-?>lang/en/lang.css?f4b7d" rel="stylesheet" type="text/css" />
+?>lang/en/compact.css?f4b7i" rel="stylesheet" type="text/css" />
 	<link href="<?php
 
 	   echo GP_LOCATE;
 
-?>lang/en/compact.css?f4b7i" rel="stylesheet" type="text/css" />
+?>lang/en/lang.css?f4b7d" rel="stylesheet" type="text/css" />
 	<?php
 
 	   if($session->gpack == null || GP_ENABLE == false) {

@@ -7,8 +7,8 @@ $start_timer = $generator->pageLoadTimeStart();
 ## --------------------------------------------------------------------------- ##
 ##  Filename       karte.php                                                   ##
 ##  Developed by:  Dzoki                                                       ##
-##  License:       TravianX Project                                            ##
-##  Copyright:     TravianX (c) 2010-2011. All rights reserved.                ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2011. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 
@@ -17,6 +17,33 @@ use App\Utils\AccessLogger;
 if(isset($_GET['z']) && !is_numeric($_GET['z'])) die('Hacking Attempt');
 include_once("GameEngine/Village.php");
 AccessLogger::logRequest();
+
+if (isset($_GET['relocate']) && isset($_GET['d']) && isset($_GET['c'])) {
+    $targetWid = (int) $_GET['d'];
+    $targetCheck = preg_replace("/[^a-zA-Z0-9_-]/", "", $_GET['c']);
+
+    if ($generator->getMapCheck($targetWid) !== $targetCheck) {
+        header("Location: karte.php?d=".$targetWid."&c=".$generator->getMapCheck($targetWid)."&moved=invalid_target");
+        exit;
+    }
+
+    if ($session->sit != 0) {
+        header("Location: karte.php?d=".$targetWid."&c=".$targetCheck."&moved=sitter");
+        exit;
+    }
+
+    $moveResult = $database->relocateStartVillage($session->uid, $village->wid, $targetWid);
+
+    if (!empty($moveResult['available'])) {
+        $_SESSION['wid'] = $moveResult['new_wid'];
+        $database->query("UPDATE ".TB_PREFIX."users SET village_select=".(int) $moveResult['new_wid']." WHERE id=".$session->uid);
+        header("Location: karte.php?d=".$moveResult['new_wid']."&c=".$generator->getMapCheck($moveResult['new_wid'])."&moved=ok");
+        exit;
+    }
+
+    header("Location: karte.php?d=".$targetWid."&c=".$targetCheck."&moved=".$moveResult['code']);
+    exit;
+}
 
 if(isset($_GET['newdid'])) {
 	$_SESSION['wid'] = $_GET['newdid'];
@@ -50,8 +77,8 @@ else{
 	<script src="mt-full.js?0ac37" type="text/javascript"></script>
 	<script src="unx.js?f4b7i" type="text/javascript"></script>
 	<script src="new.js?0ac37" type="text/javascript"></script>
-	<link href="<?php echo GP_LOCATE; ?>lang/en/lang.css?f4b7d" rel="stylesheet" type="text/css" />
 	<link href="<?php echo GP_LOCATE; ?>lang/en/compact.css?f4b7i" rel="stylesheet" type="text/css" />
+	<link href="<?php echo GP_LOCATE; ?>lang/en/lang.css?f4b7d" rel="stylesheet" type="text/css" />
 	<?php
 	if($session->gpack == null || GP_ENABLE == false) {
 	echo "

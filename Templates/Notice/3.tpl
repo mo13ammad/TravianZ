@@ -1,9 +1,9 @@
 <?php
 ############################################################
 ##                DO NOT REMOVE THIS NOTICE               ##
-##              ADVOCAITE ROCKS TRAVIANX NUTS             ##
+##              ADVOCAITE ROCKS NALOOTI NUTS             ##
 ##                     FIX BY RONIX                       ##  
-##                       TRAVIANZ                         ##  
+##                       NALOOTI                         ##  
 ############################################################
 $dataarray = explode(",",$message->readingNotice['data']);
 $colspan = (isset($dataarray[184]) && $dataarray[184] > 0) ? 11 : 10;

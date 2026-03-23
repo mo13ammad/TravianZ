@@ -1636,10 +1636,10 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%users` (
 --
 
 INSERT INTO `%PREFIX%users` (`id`, `username`, `password`, `email`, `tribe`, `access`, `gold`, `gender`, `birthday`, `location`, `desc1`, `desc2`, `plus`, `b1`, `b2`, `b3`, `b4`, `sit1`, `sit2`, `alliance`, `sessid`, `act`, `timestamp`, `ap`, `apall`, `dp`, `dpall`, `protect`, `quest`, `gpack`, `cp`, `lastupdate`, `RR`, `Rc`, `ok`, `is_bcrypt`) VALUES
-(1, 'Support', '', 'support@travianz.game', 0, 8, 0, 0, '1970-01-01', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, '/gpack/travian_default/', 1, 0, 0, 0, 0, 1),
-(2, 'Nature', '', 'nature@travianz.game', 4, 2, 0, 0, '1970-01-01', '', '[#NATURE]', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, '/gpack/travian_default/', 1, 0, 0, 0, 0, 1),
-(4, 'Taskmaster', '', 'taskmaster@travianz.game', 0, 8, 0, 0, '1970-01-01', '', '[#TASKMASTER]', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, '/gpack/travian_default/', 1, 0, 0, 0, 0, 1),
-(5, 'Multihunter', '', 'multihunter@travianz.game', 1, 9, 0, 0, '1970-01-01', '', '[#MH]', '[#MULTIHUNTER]', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, '/gpack/travian_default/', 1, 0, 0, 0, 0, 1);
+(1, 'Support', '', 'support@nalooti.ir', 0, 8, 0, 0, '1970-01-01', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, '/gpack/travian_default/', 1, 0, 0, 0, 0, 1),
+(2, 'Nature', '', 'nature@nalooti.ir', 4, 2, 0, 0, '1970-01-01', '', '[#NATURE]', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, '/gpack/travian_default/', 1, 0, 0, 0, 0, 1),
+(4, 'Taskmaster', '', 'taskmaster@nalooti.ir', 0, 8, 0, 0, '1970-01-01', '', '[#TASKMASTER]', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, '/gpack/travian_default/', 1, 0, 0, 0, 0, 1),
+(5, 'Multihunter', '', 'multihunter@nalooti.ir', 1, 9, 0, 0, '1970-01-01', '', '[#MH]', '[#MULTIHUNTER]', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, '/gpack/travian_default/', 1, 0, 0, 0, 0, 1);
 
 ALTER TABLE `%PREFIX%users` AUTO_INCREMENT=6;
 

@@ -4,8 +4,8 @@
 ## --------------------------------------------------------------------------- ##
 ##  Filename       special.tpl                                                 ##
 ##  Developed by:  Dzoki                                                       ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2010-2025. All rights reserved.                ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2025. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 ?>
@@ -14,18 +14,18 @@
 <table cellpadding="1" cellspacing="1" id="support_mh">
 	<thead>
 	<tr>
-	<th>Support and Multihunter</th>
+	<th>پشتیبانی و مولتی‌هانتر</th>
 	</tr>
 	</thead>
 	<tbody>
 	<tr>
-	<td><b>Support:</b><br>The support is a group of experienced players who will answer your questions gladly.<br />
-	 <a href="nachrichten.php?t=1&amp;id=1">&raquo; Write message</a>
+	<td><b>پشتیبانی:</b><br>تیم پشتیبانی از بازیکنان باتجربه تشکیل شده و با خوشحالی به سوالات شما پاسخ می‌دهد.<br />
+	 <a href="nachrichten.php?t=1&amp;id=1">&raquo; ارسال پیام</a>
 	</td>
 	</tr>
 	<tr>
-	<td><b>Multihunter:</b><br>The Multihunters are responsible for the compliance with the <a href="rules.php"><b><?php echo GAME_RULES;?></b></a>. If you have questions about the rules or want to report a violation, you can message a Multihunter.<br />
-	 <a href="nachrichten.php?t=1&amp;id=0">&raquo; Write message</a>
+	<td><b>مولتی‌هانتر:</b><br>مولتی‌هانترها مسئول نظارت بر رعایت <a href="rules.php"><b><?php echo GAME_RULES;?></b></a> هستند. اگر درباره قوانین سوالی دارید یا می‌خواهید تخلفی را گزارش کنید، به مولتی‌هانتر پیام بدهید.<br />
+	 <a href="nachrichten.php?t=1&amp;id=0">&raquo; ارسال پیام</a>
 	</td>
 	</tr>
 	</tbody>

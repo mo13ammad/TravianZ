@@ -1,3 +1,6 @@
+-- 24.03.2026 -> starter village relocation
+ALTER TABLE `s1_users` ADD `start_village_move_round` INT(11) NOT NULL DEFAULT '0' AFTER `village_select`;
+
 -- 21.06.2018 -> added one column and one index
 ALTER TABLE `s1_artefacts` ADD `del` TINYINT(1) NULL DEFAULT '0' AFTER `lastupdate`;
 ALTER TABLE `testtravian`.`s1_artefacts` ADD INDEX `active-owner-conquered-del` (`active`, `owner`, `conquered`, `del`);
@@ -132,9 +135,9 @@ ALTER TABLE `s1_activate` CHANGE `email` `email` VARCHAR(255) CHARACTER SET utf8
 ALTER TABLE `s1_activate` ADD UNIQUE(`email`);
 ALTER TABLE `s1_users` CHANGE `email` `email` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL;
 -- YOU MAY NOT NEED THESE IF YOUR EMAILS FOR THESE 3 ACCOUNTS ARE ALREADY DIFFERENT FROM ONE ANOTHER
-UPDATE `s1_users` SET `email` = 'support@travianz.game' WHERE `s1_users`.`id` = 1;
-UPDATE `s1_users` SET `email` = 'nature@travianz.game' WHERE `s1_users`.`id` = 2;
-UPDATE `s1_users` SET `email` = 'taskmaster@travianz.game' WHERE `s1_users`.`id` = 4;
+UPDATE `s1_users` SET `email` = 'support@nalooti.ir' WHERE `s1_users`.`id` = 1;
+UPDATE `s1_users` SET `email` = 'nature@nalooti.ir' WHERE `s1_users`.`id` = 2;
+UPDATE `s1_users` SET `email` = 'taskmaster@nalooti.ir' WHERE `s1_users`.`id` = 4;
 -- END OF "YOU MAY NOT NEED THESE"
 ALTER TABLE `s1_users` ADD UNIQUE `email` (`email`);
 ALTER TABLE `s1_users` ADD INDEX(`access`);

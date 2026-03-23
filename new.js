@@ -863,3 +863,41 @@ function markAttackSymbol(id)
 
 
 }
+
+(function () {
+	function isProbablyPersian(text) {
+		return /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]/.test(text || '');
+	}
+
+	function enableRtlIfNeeded() {
+		var root = document.documentElement;
+		var body = document.body;
+		if (!root || !body) {
+			return;
+		}
+
+		var sample = '';
+		if (body.innerText && body.innerText.length) {
+			sample = body.innerText.slice(0, 5000);
+		} else if (body.textContent && body.textContent.length) {
+			sample = body.textContent.slice(0, 5000);
+		}
+
+		if (!isProbablyPersian(sample)) {
+			return;
+		}
+
+		root.setAttribute('lang', 'fa');
+		root.setAttribute('dir', 'rtl');
+
+		if (body.className.indexOf('rtl') === -1) {
+			body.className += (body.className ? ' ' : '') + 'rtl';
+		}
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', enableRtlIfNeeded);
+	} else {
+		enableRtlIfNeeded();
+	}
+})();

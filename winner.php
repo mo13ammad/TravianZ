@@ -5,7 +5,7 @@ $start_timer = $generator->pageLoadTimeStart();
 #################################################################################
 ## -= YOU MAY NOT REMOVE OR CHANGE THIS NOTICE =- 			        ##
 ## ---------------------------------------------------------------------------  ##
-## Project:     TravianZ 							##
+## Project:     nalooti 							##
 ## Version:     18.02.2014 							##
 ## Description: When the player builds Wonder of the World      		##
 ##              to level 100 the winner details are shown.      		##
@@ -13,10 +13,10 @@ $start_timer = $generator->pageLoadTimeStart();
 ## Authors:     aggenkeech - and a little help from Eyas95      		##
 ## Page:        winner.php                                      		##
 ## Fixed by:    Shadow  							##
-## License:     TravianZ Project 						##
-## Copyright:   TravianZ (c) 2010-2013. All rights reserved. 			##
-## URLs:        http://travian.shadowss.ro 					##
-## Source code: https://github.com/Shadowss/TravianZ/	 			##
+## License:     nalooti Project 						##
+## Copyright:   nalooti (c) 2010-2013. All rights reserved. 			##
+## URLs:        https://Nalooti.ir 					##
+## Source code: https://Nalooti.ir	 			##
 ## 										##
 #################################################################################
 
@@ -161,8 +161,8 @@ if(isset($_GET['newdid'])) {
 		<script src="mt-full.js?0faab" type="text/javascript"></script>
 		<script src="unx.js?f4b7h" type="text/javascript"></script>
 		<script src="new.js?0faab" type="text/javascript"></script>
-		<link href="<?php echo GP_LOCATE; ?>lang/en/lang.css?f4b7d" rel="stylesheet" type="text/css" />
 		<link href="<?php echo GP_LOCATE; ?>lang/en/compact.css?f4b7i" rel="stylesheet" type="text/css" />
+		<link href="<?php echo GP_LOCATE; ?>lang/en/lang.css?f4b7d" rel="stylesheet" type="text/css" />
 		<?php
 		if($session->gpack == null || GP_ENABLE == false){
 			echo "
@@ -216,11 +216,11 @@ if(isset($_GET['newdid'])) {
 					<br />
 					<p>Warriors, leaders, heroes, stood together, looking over the world they explored and conquered. Although the feast will end and people will go back to their daily lives again, this day will remain in their memory forever.</p>
 					<br />
-					<p>We, the TravianZ Team, thank you and we look forward to a new adventure in a new TravianZ world.</p>
+					<p>We, the nalooti Team, thank you and we look forward to a new adventure in a new nalooti world.</p>
 					<br />
 					Best Regards,<br />
 					<?php echo SERVER_NAME; ?> Team<br /><br /><br /><br />
-					<small><i>(By: TravianZ team v8.3.5)</i></small></p>
+					<small><i>(By: nalooti team v8.3.5)</i></small></p>
 
 					<br /><br />
 					<div style="text-align: center"><a href="dorf1.php">&raquo; Continue</a></div>

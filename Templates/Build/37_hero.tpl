@@ -6,7 +6,7 @@
 | Developed by:  Manni < manuel_mannhardt@web.de >        | 
 |                Dzoki < dzoki.travian@gmail.com >        |
 | Reworked by: 	 Esfomeado < vps1992@live.com.pt >        |
-| Copyright:     TravianX Project All rights reserved     | 
+| Copyright:     nalooti Project All rights reserved     | 
 \*-------------------------------------------------------*/ 
 
 include_once("GameEngine/Data/hero_full.php");

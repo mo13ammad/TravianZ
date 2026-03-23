@@ -2,16 +2,16 @@
 #################################################################################
 ##              -= YOU MAY NOT REMOVE OR CHANGE THIS NOTICE =-                 ##
 ## --------------------------------------------------------------------------- ##
-##  Project:       TravianZ                                                    ##
+##  Project:       nalooti                                                    ##
 ##  Version:       22.06.2015                    			       ##
 ##  Filename       db_MYSQL.php                                                ##
 ##  Developed by:  Mr.php , Advocaite , brainiacX , yi12345 , Shadow , ronix   ##
 ##  Fixed by:      Shadow - STARVATION , HERO FIXED COMPL.  		       ##
 ##  Fixed by:      InCube - double troops				       ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2010-2015. All rights reserved.                ##
-##  URLs:          http://travian.shadowss.ro                		       ##
-##  Source code:   https://github.com/Shadowss/TravianZ		               ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2015. All rights reserved.                ##
+##  URLs:          https://Nalooti.ir                		       ##
+##  Source code:   https://Nalooti.ir		               ##
 ##                                                                             ##
 #################################################################################
 
@@ -63,7 +63,7 @@ class MYSQLi_DB implements IDbConnection {
         $password = '',
 
         /**
-         * @var string Database to use with TravianZ.
+         * @var string Database to use with nalooti.
          */
         $dbname = 'travian',
 
@@ -422,8 +422,14 @@ class MYSQLi_DB implements IDbConnection {
 	    $this->password = $password;
 	    $this->dbname   = $dbname;
 
-	    // connect to the DB
-	    if (!$this->connect()) die(mysqli_error($this->dblink));
+	    // connect to the DB and surface the real connection error even if no link was created
+	    if (!$this->connect()) {
+            $errorMessage = mysqli_connect_error();
+            if (empty($errorMessage)) {
+                $errorMessage = 'Database connection failed.';
+            }
+            die($errorMessage);
+        }
 
 		// we will operate in UTF8
 		mysqli_query($this->dblink,"SET NAMES 'UTF8'");
@@ -676,8 +682,89 @@ public function getBestOasisCropBonus($x, $y) {
     Function to do free query
     References: Query
      ***************************/
-    function query($query) {
+	function query($query) {
         return mysqli_query($this->dblink,$query);
+    }
+
+    function getServerStartTimestamp() {
+        static $serverStartTimestamp = null;
+
+        if ($serverStartTimestamp !== null) {
+            return $serverStartTimestamp;
+        }
+
+        $dateTime = DateTime::createFromFormat('d.m.Y H:i', START_DATE . ' ' . START_TIME);
+        $serverStartTimestamp = $dateTime ? (int) $dateTime->getTimestamp() : (int) strtotime(START_DATE . ' ' . START_TIME);
+
+        if ($serverStartTimestamp <= 0) {
+            $serverStartTimestamp = time();
+        }
+
+        return $serverStartTimestamp;
+    }
+
+    function getWrappedMapDistance($x1, $y1, $x2, $y2) {
+        $max = 2 * WORLD_MAX + 1;
+        $distanceX = min(abs($x2 - $x1), abs($max - abs($x2 - $x1)));
+        $distanceY = min(abs($y2 - $y1), abs($max - abs($y2 - $y1)));
+
+        return sqrt(pow($distanceX, 2) + pow($distanceY, 2));
+    }
+
+    function findSpawnVillageWithSpacing($newSector, $radiusMin, $radiusMax, $minDistance) {
+        $candidateLimit = 200;
+        $q = "SELECT id, x, y
+              FROM " . TB_PREFIX . "wdata
+              WHERE fieldtype = 3
+                AND ($newSector)
+                AND (POWER(x, 2) + POWER(y, 2) >= $radiusMin AND POWER(x, 2) + POWER(y, 2) <= $radiusMax)
+                AND occupied = 0
+              ORDER BY RAND()
+              LIMIT $candidateLimit";
+        $candidates = $this->query_return($q);
+
+        if (empty($candidates)) {
+            return 0;
+        }
+
+        if ($minDistance <= 0) {
+            return (int) $candidates[0]['id'];
+        }
+
+        $capitalVillages = $this->query_return(
+            "SELECT w.x, w.y
+             FROM " . TB_PREFIX . "vdata v
+             INNER JOIN " . TB_PREFIX . "wdata w ON w.id = v.wref
+             WHERE v.capital = 1 AND v.owner > 5"
+        );
+
+        if (empty($capitalVillages)) {
+            return (int) $candidates[0]['id'];
+        }
+
+        for ($requiredDistance = $minDistance; $requiredDistance >= 0; $requiredDistance -= 2) {
+            foreach ($candidates as $candidate) {
+                $isValid = true;
+
+                foreach ($capitalVillages as $capitalVillage) {
+                    if ($this->getWrappedMapDistance(
+                        (int) $candidate['x'],
+                        (int) $candidate['y'],
+                        (int) $capitalVillage['x'],
+                        (int) $capitalVillage['y']
+                    ) < $requiredDistance) {
+                        $isValid = false;
+                        break;
+                    }
+                }
+
+                if ($isValid) {
+                    return (int) $candidate['id'];
+                }
+            }
+        }
+
+        return (int) $candidates[0]['id'];
     }
 
     function RemoveXSS($val) {
@@ -1278,6 +1365,112 @@ public function getBestOasisCropBonus($x, $y) {
 		return mysqli_query($this->dblink,$q);
 	}
 
+	function ensureProfilePreferenceColumns() {
+		$columns = [
+			'pref_autocomplete_own' => "ALTER TABLE " . TB_PREFIX . "users ADD `pref_autocomplete_own` TINYINT(1) NOT NULL DEFAULT '1' AFTER `is_bcrypt`",
+			'pref_autocomplete_near' => "ALTER TABLE " . TB_PREFIX . "users ADD `pref_autocomplete_near` TINYINT(1) NOT NULL DEFAULT '0' AFTER `pref_autocomplete_own`",
+			'pref_autocomplete_alliance' => "ALTER TABLE " . TB_PREFIX . "users ADD `pref_autocomplete_alliance` TINYINT(1) NOT NULL DEFAULT '0' AFTER `pref_autocomplete_near`",
+			'pref_large_map' => "ALTER TABLE " . TB_PREFIX . "users ADD `pref_large_map` TINYINT(1) NOT NULL DEFAULT '0' AFTER `pref_autocomplete_alliance`",
+			'pref_report_own' => "ALTER TABLE " . TB_PREFIX . "users ADD `pref_report_own` TINYINT(1) NOT NULL DEFAULT '0' AFTER `pref_large_map`",
+			'pref_report_foreign_to' => "ALTER TABLE " . TB_PREFIX . "users ADD `pref_report_foreign_to` TINYINT(1) NOT NULL DEFAULT '0' AFTER `pref_report_own`",
+			'pref_report_foreign_from' => "ALTER TABLE " . TB_PREFIX . "users ADD `pref_report_foreign_from` TINYINT(1) NOT NULL DEFAULT '0' AFTER `pref_report_foreign_to`",
+			'pref_timezone' => "ALTER TABLE " . TB_PREFIX . "users ADD `pref_timezone` VARCHAR(32) DEFAULT '99' AFTER `pref_report_foreign_from`",
+			'pref_tformat' => "ALTER TABLE " . TB_PREFIX . "users ADD `pref_tformat` TINYINT(1) NOT NULL DEFAULT '0' AFTER `pref_timezone`",
+		];
+
+		foreach ($columns as $column => $sql) {
+			$check = mysqli_query($this->dblink, "SHOW COLUMNS FROM " . TB_PREFIX . "users LIKE '".$this->escape($column)."'");
+			if($check && mysqli_num_rows($check) === 0) {
+				mysqli_query($this->dblink, $sql);
+			}
+		}
+	}
+
+	function saveProfilePreferences($uid, $preferences) {
+		$this->ensureProfilePreferenceColumns();
+
+		$uid = (int) $uid;
+		$fields = [
+			'pref_autocomplete_own',
+			'pref_autocomplete_near',
+			'pref_autocomplete_alliance',
+			'pref_large_map',
+			'pref_report_own',
+			'pref_report_foreign_to',
+			'pref_report_foreign_from',
+			'pref_timezone',
+			'pref_tformat',
+		];
+
+		$values = [
+			(int) $preferences['autocomplete_own'],
+			(int) $preferences['autocomplete_near'],
+			(int) $preferences['autocomplete_alliance'],
+			(int) $preferences['large_map'],
+			(int) $preferences['report_own'],
+			(int) $preferences['report_foreign_to'],
+			(int) $preferences['report_foreign_from'],
+			(string) $preferences['timezone'],
+			(int) $preferences['tformat'],
+		];
+
+		return $this->updateUserField($uid, $fields, $values, 1);
+	}
+
+	function saveProfileLinks($uid, $post) {
+		$links = [];
+		
+		foreach($post as $key => $value) {
+			if(substr($key, 0, 2) == 'nr') {
+				$i = substr($key, 2);
+				$links[$i]['nr'] = mysqli_real_escape_string($this->dblink, $value);
+			}
+			
+			if(substr($key, 0, 2) == 'id') {
+				$i = substr($key, 2);
+				$links[$i]['id'] = mysqli_real_escape_string($this->dblink, $value);
+			}
+			
+			if(substr($key, 0, 8) == 'linkname') {
+				$i = substr($key, 8);
+				$links[$i]['linkname'] = htmlspecialchars(mysqli_real_escape_string($this->dblink, $value));
+			}
+			
+			if(substr($key, 0, 8) == 'linkziel') {
+				$i = substr($key, 8);
+				$links[$i]['linkziel'] = htmlspecialchars(mysqli_real_escape_string($this->dblink, $value));
+			}
+		}
+
+		foreach($links as $link) {
+			if (!isset($link['nr'], $link['linkname'], $link['linkziel'])) {
+				continue;
+			}
+
+			settype($link['nr'], 'int');
+			$link['id'] = isset($link['id']) ? trim($link['id']) : '';
+			
+			if(trim($link['nr']) != '' AND trim($link['linkname']) != '' AND trim($link['linkziel']) != '' AND $link['id'] == '') {
+				$userid = (int) $uid;
+				mysqli_query($this->dblink,'INSERT INTO `' . TB_PREFIX . 'links` (`userid`, `name`, `url`, `pos`) VALUES (' . $userid . ', \'' . $link['linkname'] . '\', \'' . $link['linkziel'] . '\', ' . $link['nr'] . ')');
+			} elseif(trim($link['nr']) != '' AND trim($link['linkname']) != '' AND trim($link['linkziel']) != '' AND $link['id'] != '') {
+				$query = mysqli_query($this->dblink,'SELECT userid FROM `' . TB_PREFIX . 'links` WHERE `id` = ' . (int) $link['id']);
+				$data = mysqli_fetch_assoc($query);
+				
+				if(isset($data['userid']) && (int) $data['userid'] == (int) $uid) {
+					mysqli_query($this->dblink,'UPDATE `' . TB_PREFIX . 'links` SET `name` = \'' . $link['linkname'] . '\', `url` = \'' . $link['linkziel'] . '\', `pos` = ' . $link['nr'] . ' WHERE `id` = ' . (int) $link['id']);
+				}
+			} elseif(trim($link['nr']) == '' AND trim($link['linkname']) == '' AND trim($link['linkziel']) == '' AND $link['id'] != '') {
+				$query = mysqli_query($this->dblink,'SELECT userid FROM `' . TB_PREFIX . 'links` WHERE `id` = ' . (int) $link['id']);
+				$data = mysqli_fetch_assoc($query);
+				
+				if(isset($data['userid']) && (int) $data['userid'] == (int) $uid) {
+					mysqli_query($this->dblink,'DELETE FROM `' . TB_PREFIX . 'links` WHERE `id` = ' . (int) $link['id']);
+				}
+			}
+		}
+	}
+
     // no need to cache this method
 	function GetOnline($uid) {
 	    list($uid) = $this->escape_input((int) $uid);
@@ -1369,6 +1562,23 @@ public function getBestOasisCropBonus($x, $y) {
                 default: $newSector = "x >= 0 AND y <= 0"; // + | -                 
             }
 
+            if ($mode == 0 && $numberOfVillages == 1 && defined('START_RANDOM_SPAWN_MIN_DISTANCE') && START_RANDOM_SPAWN_MIN_DISTANCE > 0) {
+                $selectedWid = $this->findSpawnVillageWithSpacing($newSector, $radiusMin, $radiusMax, (int) START_RANDOM_SPAWN_MIN_DISTANCE);
+
+                if ($selectedWid > 0) {
+                    $villages[] = ['id' => $selectedWid];
+                    $num_rows++;
+                    $numberOfVillages--;
+                    $count++;
+
+                    if ($count > intval(WORLD_MAX / 10)) {
+                        $sector = rand(1, 4);
+                    }
+
+                    continue;
+                }
+            }
+
             //Choose villages beetween two circumferences, by using their formula (x^2 + y^2 = r^2)
             $q = "SELECT id FROM ".TB_PREFIX."wdata WHERE fieldtype = 3 AND ($newSector) AND (POWER(x, 2) + POWER(y, 2) >= $radiusMin AND POWER(x, 2) + POWER(y, 2) <= $radiusMax) AND occupied = 0 ORDER BY RAND() LIMIT $numberOfVillages";
             $result = mysqli_query($this->dblink, $q);
@@ -1392,6 +1602,128 @@ public function getBestOasisCropBonus($x, $y) {
         foreach($villages as $village) $wids[] = $village['id'];
 
         return $num_rows == 1 ? $wids[0] : $wids;
+    }
+
+    function getStartVillageRelocationStatus($uid, $wid, $targetWid = 0) {
+        $uid = (int) $uid;
+        $wid = (int) $wid;
+        $targetWid = (int) $targetWid;
+
+        $user = $this->getUserArray($uid, 1, false);
+        $village = $this->getVillage($wid, 0, false);
+
+        if (empty($user) || empty($village) || (int) $village['owner'] !== $uid) {
+            return ['available' => false, 'code' => 'invalid_village'];
+        }
+
+        if ((int) $village['capital'] !== 1) {
+            return ['available' => false, 'code' => 'only_capital'];
+        }
+
+        if (count($this->getProfileVillages($uid, 0, false)) !== 1) {
+            return ['available' => false, 'code' => 'multiple_villages'];
+        }
+
+        if ((int) $user['gold'] < START_VILLAGE_RELOCATION_COST) {
+            return ['available' => false, 'code' => 'low_gold'];
+        }
+
+        if ((int) $user['start_village_move_round'] >= $this->getServerStartTimestamp()) {
+            return ['available' => false, 'code' => 'already_used'];
+        }
+
+        $checks = [
+            'has_oases' => "SELECT COUNT(*) AS total FROM " . TB_PREFIX . "odata WHERE conqured = $wid",
+            'active_movements' => "SELECT COUNT(*) AS total FROM " . TB_PREFIX . "movement WHERE proc = 0 AND (`from` = $wid OR `to` = $wid)",
+            'active_reinforcements' => "SELECT COUNT(*) AS total FROM " . TB_PREFIX . "enforcement WHERE `from` = $wid OR vref = $wid",
+            'active_merchants' => "SELECT COUNT(*) AS total FROM " . TB_PREFIX . "market WHERE vref = $wid AND accept = 0",
+            'active_training' => "SELECT COUNT(*) AS total FROM " . TB_PREFIX . "training WHERE vref = $wid",
+            'active_research' => "SELECT COUNT(*) AS total FROM " . TB_PREFIX . "research WHERE vref = $wid",
+            'active_routes' => "SELECT COUNT(*) AS total FROM " . TB_PREFIX . "route WHERE wid = $wid OR `from` = $wid",
+            'active_prisoners' => "SELECT COUNT(*) AS total FROM " . TB_PREFIX . "prisoners WHERE wref = $wid OR `from` = $wid",
+        ];
+
+        foreach ($checks as $code => $query) {
+            $result = mysqli_query($this->dblink, $query);
+            $row = $result ? mysqli_fetch_assoc($result) : null;
+
+            if (!empty($row['total'])) {
+                return ['available' => false, 'code' => $code];
+            }
+        }
+
+        if ($targetWid > 0) {
+            if ($targetWid === $wid) {
+                return ['available' => false, 'code' => 'same_tile'];
+            }
+
+            $result = mysqli_query(
+                $this->dblink,
+                "SELECT id
+                 FROM " . TB_PREFIX . "wdata
+                 WHERE id = $targetWid AND occupied = 0 AND fieldtype = 3
+                 LIMIT 1"
+            );
+            $target = $result ? mysqli_fetch_assoc($result) : null;
+
+            if (empty($target)) {
+                return ['available' => false, 'code' => 'invalid_target'];
+            }
+        }
+
+        return ['available' => true, 'code' => 'ok'];
+    }
+
+    function relocateStartVillage($uid, $fromWid, $toWid) {
+        $uid = (int) $uid;
+        $fromWid = (int) $fromWid;
+        $toWid = (int) $toWid;
+        $status = $this->getStartVillageRelocationStatus($uid, $fromWid, $toWid);
+
+        if (!$status['available']) {
+            return $status;
+        }
+
+        $serverStartTimestamp = $this->getServerStartTimestamp();
+        $queries = [
+            "UPDATE " . TB_PREFIX . "wdata SET occupied = 0 WHERE id = $fromWid",
+            "UPDATE " . TB_PREFIX . "wdata SET occupied = 1 WHERE id = $toWid AND occupied = 0 AND fieldtype = 3",
+            "UPDATE " . TB_PREFIX . "vdata SET wref = $toWid WHERE wref = $fromWid AND owner = $uid",
+            "UPDATE " . TB_PREFIX . "fdata SET vref = $toWid WHERE vref = $fromWid",
+            "UPDATE " . TB_PREFIX . "units SET vref = $toWid WHERE vref = $fromWid",
+            "UPDATE " . TB_PREFIX . "tdata SET vref = $toWid WHERE vref = $fromWid",
+            "UPDATE " . TB_PREFIX . "abdata SET vref = $toWid WHERE vref = $fromWid",
+            "UPDATE " . TB_PREFIX . "market SET vref = $toWid WHERE vref = $fromWid",
+            "UPDATE " . TB_PREFIX . "research SET vref = $toWid WHERE vref = $fromWid",
+            "UPDATE " . TB_PREFIX . "training SET vref = $toWid WHERE vref = $fromWid",
+            "UPDATE " . TB_PREFIX . "route SET wid = IF(wid = $fromWid, $toWid, wid), `from` = IF(`from` = $fromWid, $toWid, `from`) WHERE wid = $fromWid OR `from` = $fromWid",
+            "UPDATE " . TB_PREFIX . "movement SET `from` = IF(`from` = $fromWid, $toWid, `from`), `to` = IF(`to` = $fromWid, $toWid, `to`) WHERE `from` = $fromWid OR `to` = $fromWid",
+            "UPDATE " . TB_PREFIX . "enforcement SET `from` = IF(`from` = $fromWid, $toWid, `from`), vref = IF(vref = $fromWid, $toWid, vref) WHERE `from` = $fromWid OR vref = $fromWid",
+            "UPDATE " . TB_PREFIX . "prisoners SET `from` = IF(`from` = $fromWid, $toWid, `from`), wref = IF(wref = $fromWid, $toWid, wref) WHERE `from` = $fromWid OR wref = $fromWid",
+            "UPDATE " . TB_PREFIX . "hero SET wref = $toWid WHERE uid = $uid AND wref = $fromWid",
+            "UPDATE " . TB_PREFIX . "users
+             SET village_select = IF(village_select = $fromWid, $toWid, village_select),
+                 gold = gold - " . (int) START_VILLAGE_RELOCATION_COST . ",
+                 start_village_move_round = $serverStartTimestamp
+             WHERE id = $uid AND gold >= " . (int) START_VILLAGE_RELOCATION_COST
+        ];
+
+        mysqli_query($this->dblink, "START TRANSACTION");
+
+        foreach ($queries as $query) {
+            if (!mysqli_query($this->dblink, $query)) {
+                mysqli_query($this->dblink, "ROLLBACK");
+                return ['available' => false, 'code' => 'failed'];
+            }
+        }
+
+        if (mysqli_affected_rows($this->dblink) <= 0) {
+            mysqli_query($this->dblink, "ROLLBACK");
+            return ['available' => false, 'code' => 'failed'];
+        }
+
+        mysqli_query($this->dblink, "COMMIT");
+        return ['available' => true, 'code' => 'ok', 'new_wid' => $toWid];
     }
 
 	function setFieldTaken($id) {
@@ -1732,6 +2064,79 @@ public function getBestOasisCropBonus($x, $y) {
         // retrieve this value from the full village data cache
         return $this->getVillageByWorldID($wref, $use_cache)['fieldtype'];
 	}
+
+    /**
+     * Derive the village fieldtype from the first 18 resource fields.
+     * Returns null when the current data does not match a known Travian layout.
+     */
+    function inferVillageTypeFromResourceFields($wref) {
+        list($wref) = $this->escape_input((int) $wref);
+
+        $fields = $this->getResourceLevel($wref);
+        if (!is_array($fields) || !count($fields)) {
+            return null;
+        }
+
+        $counts = [1 => 0, 2 => 0, 3 => 0, 4 => 0];
+        for ($i = 1; $i <= 18; $i++) {
+            $type = (int) ($fields['f'.$i.'t'] ?? 0);
+            if (isset($counts[$type])) {
+                $counts[$type]++;
+            }
+        }
+
+        $layouts = [
+            '3-3-3-9' => 1,
+            '3-4-5-6' => 2,
+            '4-4-4-6' => 3,
+            '4-5-3-6' => 4,
+            '5-3-4-6' => 5,
+            '1-1-1-15' => 6,
+            '4-4-3-7' => 7,
+            '3-4-4-7' => 8,
+            '4-3-4-7' => 9,
+            '3-5-4-6' => 10,
+            '4-3-5-6' => 11,
+            '5-4-3-6' => 12,
+        ];
+
+        $signature = $counts[1].'-'.$counts[2].'-'.$counts[3].'-'.$counts[4];
+        return $layouts[$signature] ?? null;
+    }
+
+    /**
+     * Repair a village world-tile row when it was accidentally stored as an oasis.
+     */
+    function repairVillageWorldTile($wref) {
+        list($wref) = $this->escape_input((int) $wref);
+
+        $worldData = $this->getVillageByWorldID($wref, false);
+        if (!is_array($worldData) || !count($worldData)) {
+            return false;
+        }
+
+        $villageData = $this->getVillage($wref);
+        if (!is_array($villageData) || !count($villageData) || (int) ($villageData['owner'] ?? 0) <= 0) {
+            return false;
+        }
+
+        $fieldType = $this->inferVillageTypeFromResourceFields($wref);
+        if ($fieldType === null) {
+            return false;
+        }
+
+        $image = 't'.max(0, min(8, $fieldType - 1));
+        $q = "UPDATE ".TB_PREFIX."wdata
+              SET fieldtype = ".(int) $fieldType.",
+                  oasistype = 0,
+                  occupied = 1,
+                  image = '".$this->escape($image)."'
+              WHERE id = ".(int) $wref;
+        mysqli_query($this->dblink, $q);
+
+        self::clearVillageCache();
+        return true;
+    }
 
 	/*****************************************
 	Function to retrieve if is occupied via ID

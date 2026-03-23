@@ -11,7 +11,7 @@
 +---------------------------------------------------------+
 | Developed by:  Manni < manuel_mannhardt@web.de >        |
 |                Dzoki < dzoki.travian@gmail.com >        |
-| Copyright:     TravianX Project All rights reserved     |
+| Copyright:     nalooti Project All rights reserved     |
 \*-------------------------------------------------------*/
 
 	// check if there is a hero in revive already

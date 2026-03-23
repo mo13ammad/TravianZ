@@ -7,8 +7,8 @@ $start_timer = $generator->pageLoadTimeStart();
 ## --------------------------------------------------------------------------- ##
 ##  Filename       version.php                                                 ##
 ##  Developed by:  Shadow                                                      ##
-##  License:       TravianX Project                                            ##
-##  Copyright:     TravianX (c) 2010-2011. All rights reserved.                ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2011. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 
@@ -39,8 +39,8 @@ else $building->procBuild($_GET);
 	<script src="mt-full.js?0faab" type="text/javascript"></script>
 	<script src="unx.js?f4b7h" type="text/javascript"></script>
 	<script src="new.js?0faab" type="text/javascript"></script>
-	<link href="<?php echo GP_LOCATE; ?>lang/en/lang.css?f4b7d" rel="stylesheet" type="text/css" />
 	<link href="<?php echo GP_LOCATE; ?>lang/en/compact.css?f4b7i" rel="stylesheet" type="text/css" />
+	<link href="<?php echo GP_LOCATE; ?>lang/en/lang.css?f4b7d" rel="stylesheet" type="text/css" />
 	<?php
 	if($session->gpack == null || GP_ENABLE == false) {
 	echo "
@@ -104,9 +104,9 @@ else $building->procBuild($_GET);
 35. iopietro - alumni developer<br />
 36. Vladyslav - rigorous game tester<br />
 37. AL-Kateb - alumni developer</b></div><br />
-<div style="text-align: center"><b><u>Released by: TravianZ Team</u></b><br /><br />
-<b>Visit: <a href="http://forum.ragezone.com/f583/travianz-version-modified-shadow-many-967580/">RageZone.com</a></b></div><br />
-<div style="text-align: center"><b>Download from <u><a href="https://github.com/Shadowss/TravianZ/archive/master.zip">Github</a></u></b><br />
+<div style="text-align: center"><b><u>Released by: nalooti Team</u></b><br /><br />
+<b>Visit: <a href="http://Nalooti.ir">Nalooti.ir</a></b></div><br />
+<div style="text-align: center"><b>Download from <u><a href="https://Nalooti.ir">Github</a></u></b><br />
 </div>
 </div>
 <br /><br /><br /><br /><div id="side_info">

@@ -5,9 +5,9 @@
 ## --------------------------------------------------------------------------- ##
 ##  Filename       addTroops.php                                               ##
 ##  Developed by:  Dzoki & Advocatie                                           ##
-##  License:       TravianX Project                                            ##
+##  License:       nalooti Project                                            ##
 ##  Thanks to:     Dzoki & itay2277 (edit troops)                              ##
-##  Copyright:     TravianX (c) 2010-2011. All rights reserved.                ##
+##  Copyright:     nalooti (c) 2010-2011. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 

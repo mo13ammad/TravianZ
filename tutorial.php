@@ -4,9 +4,9 @@
 ## --------------------------------------------------------------------------- ##
 ##  Filename       anleitung.php                                               ##
 ##  Developed by:  Dzoki                                                       ##
-##  License:       TravianX Project                                            ##
+##  License:       nalooti Project                                            ##
 ##  Fixed bt:      Shadow                                                      ##
-##  Copyright:     TravianX (c) 2010-2011. All rights reserved.                ##
+##  Copyright:     nalooti (c) 2010-2011. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 
@@ -52,7 +52,7 @@ AccessLogger::logRequest();
 
 		<td><a href="anleitung.php"><span>Manual</span></a></td>
 
-		<td><a href="http://forum.travian.com/" target="_blank"><span>Forum</span></a></td>
+		<td><a href="https://Nalooti.ir" target="_blank"><span>Forum</span></a></td>
 
 
 

@@ -4,8 +4,8 @@
 ## --------------------------------------------------------------------------- ##
 ##  Filename       karte2.php                                                  ##
 ##  Developed by:  Advocaite                                                   ##
-##  License:       TravianX Project                                            ##
-##  Copyright:     TravianX (c) 2010-2011. All rights reserved.                ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2011. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 use App\Utils\AccessLogger;
@@ -29,8 +29,8 @@ if($session->plus){
 	<script src="mt-core.js" type="text/javascript"></script>
 	<script src="unx.js?f4b7h type="text/javascript"></script>
 	<script src="mt-more.js" type="text/javascript"></script>
-	<link href="<?php echo GP_LOCATE; ?>lang/en/lang.css?f4b7d" rel="stylesheet" type="text/css" />
 	<link href="<?php echo GP_LOCATE; ?>lang/en/compact.css?f4b7i" rel="stylesheet" type="text/css" />
+	<link href="<?php echo GP_LOCATE; ?>lang/en/lang.css?f4b7d" rel="stylesheet" type="text/css" />
 	<script type="text/javascript">window.addEvent('domready', start);</script>
 </head>
 <body onload="start()"><?php

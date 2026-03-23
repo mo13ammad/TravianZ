@@ -5,8 +5,8 @@
 ##  Filename       alliance.tpl                                                ##
 ##  Developed by:  Dzoki                                                       ##
 ##  Reworked:      aggenkeech                                                  ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2010-2025. All rights reserved.                ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2025. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 
@@ -141,10 +141,10 @@ if($_GET['aid'])
 									<td colspan="2" class="empty"></td>
 								</tr>
 								<tr>
-									<td colspan="2"><a href="?p=editAli&aid=<?php echo $alidata['id'];?>">» Edit Alliance</a></td>
+									<td colspan="2"><a href="?p=editAli&aid=<?php echo $alidata['id'];?>">Â» Edit Alliance</a></td>
 								</tr>
 								<tr>
-									<td colspan="2"><a href="?p=DelAli&aid=<?php echo $alidata['id'];?>">» Delete Alliance</a></td>
+									<td colspan="2"><a href="?p=DelAli&aid=<?php echo $alidata['id'];?>">Â» Delete Alliance</a></td>
 								</tr>
 								<tr>
 									<td colspan="2" class="empty"></td>

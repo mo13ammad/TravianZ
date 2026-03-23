@@ -2,13 +2,13 @@
 #################################################################################
 ##              -= YOU MAY NOT REMOVE OR CHANGE THIS NOTICE =-                 ##
 ## --------------------------------------------------------------------------- ##
-##  Project:       TravianZ                                                    ##
+##  Project:       nalooti                                                    ##
 ##  Filename       User.php                                                    ##
 ##  Developed by:  martinambrus                                                ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2010-2017. All rights reserved.                ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2017. All rights reserved.                ##
 ##  URLs:          https://travian.martinambrus.com                		       ##
-##  Source code:   https://github.com/Shadowss/TravianZ		                   ##
+##  Source code:   https://Nalooti.ir		                   ##
 ##                                                                             ##
 #################################################################################
 

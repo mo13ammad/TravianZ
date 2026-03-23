@@ -1,6 +1,6 @@
-# TravianZ Docker Setup
+# nalooti Docker Setup
 
-This guide will help you set up TravianZ using Docker and Docker Compose for easy deployment.
+This guide will help you set up nalooti using Docker and Docker Compose for easy deployment.
 
 ## Prerequisites
 
@@ -14,8 +14,8 @@ This guide will help you set up TravianZ using Docker and Docker Compose for eas
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Shadowss/TravianZ.git
-cd TravianZ
+git clone https://Nalooti.ir
+cd nalooti
 ```
 
 ### 2. Configure Environment Variables
@@ -31,7 +31,7 @@ Edit `.env` file to set your database credentials:
 ```env
 MARIADB_ROOT_PASSWORD=yourStrongRootPassword
 MARIADB_DATABASE=travian
-MARIADB_USER=travianz
+MARIADB_USER=nalooti
 MARIADB_PASSWORD=yourStrongPassword
 ```
 
@@ -42,7 +42,7 @@ docker compose up -d
 ```
 
 This command will:
-- Build the TravianZ web application container
+- Build the nalooti web application container
 - Start a MariaDB (latest) database container
 - Start a phpMyAdmin container for database management
 - Set up a network for all containers to communicate
@@ -61,8 +61,8 @@ During the installation wizard, use these database settings:
 
 - **SQL Hostname:** `db` (this is the Docker container name)
 - **Port:** `3306`
-- **Username:** `travianz` (or the value from your `.env` file)
-- **Password:** `travianzpass` (or the value from your `.env` file)
+- **Username:** `nalooti` (or the value from your `.env` file)
+- **Password:** `nalootipass` (or the value from your `.env` file)
 - **DB name:** `travian` (or the value from your `.env` file)
 - **Prefix:** `s1_` (or customize as needed)
 - **Type:** `MYSQLi`
@@ -73,15 +73,15 @@ Complete the rest of the installation wizard with your preferred server settings
 
 After starting the containers, the following services will be available:
 
-- **TravianZ Web Application:** http://localhost:8080
+- **nalooti Web Application:** http://localhost:8080
 - **phpMyAdmin:** http://localhost:8081 (Requires manual login)
 - **MariaDB Database:** localhost:3306 (for external connections)
 
 ### phpMyAdmin Access
 To access phpMyAdmin, use the credentials defined in your `.env` file (or the default ones in `docker-compose.yml`):
 - **Server:** `db`
-- **Username:** `travianz` (or `root`)
-- **Password:** Your defined password (default for `travianz` is `travianzpass`)
+- **Username:** `nalooti` (or `root`)
+- **Password:** Your defined password (default for `nalooti` is `nalootipass`)
 
 ## Container Management
 
@@ -140,13 +140,13 @@ docker compose up -d --build
 ### Access Web Container Shell
 
 ```bash
-docker exec -it travianz-web bash
+docker exec -it nalooti-web bash
 ```
 
 ### Access MySQL Container
 
 ```bash
-docker exec -it travianz-db mysql -u root -p
+docker exec -it nalooti-db mysql -u root -p
 ```
 
 Enter the root password from your `.env` file.
@@ -158,8 +158,8 @@ Enter the root password from your `.env` file.
 If you get permission errors during installation:
 
 ```bash
-docker exec -it travianz-web chown -R www-data:www-data /var/www/html
-docker exec -it travianz-web chmod -R 777 /var/www/html/var
+docker exec -it nalooti-web chown -R www-data:www-data /var/www/html
+docker exec -it nalooti-web chmod -R 777 /var/www/html/var
 ```
 
 ### Database Connection Failed
@@ -202,7 +202,7 @@ If you need to start the installation over:
 If you need to manually apply database changes (like the new `announcements` table), you can do so through phpMyAdmin or via the command line:
 
 ```bash
-docker exec -i travianz-db mariadb -u root -pYourRootPassword travian < var/db/announcements.sql
+docker exec -i nalooti-db mariadb -u root -pYourRootPassword travian < var/db/announcements.sql
 ```
 
 Note: Replace `%PREFIX%` in the SQL file with your actual table prefix (default is `s1_`).
@@ -226,19 +226,19 @@ services:
 ### Backup Database
 
 ```bash
-docker exec travianz-db mariadb-dump -u root -p travian > backup_$(date +%Y%m%d).sql
+docker exec nalooti-db mariadb-dump -u root -p travian > backup_$(date +%Y%m%d).sql
 ```
 
 ### Restore Database
 
 ```bash
-docker exec -i travianz-db mariadb -u root -p travian < backup_20231125.sql
+docker exec -i nalooti-db mariadb -u root -p travian < backup_20231125.sql
 ```
 
 ### Backup Application Files
 
 ```bash
-tar -czf travianz_backup_$(date +%Y%m%d).tar.gz \
+tar -czf nalooti_backup_$(date +%Y%m%d).tar.gz \
   --exclude='./var/db' \
   --exclude='./.git' \
   .
@@ -309,7 +309,7 @@ services:
 
 ## Updates
 
-To update TravianZ to the latest version:
+To update nalooti to the latest version:
 
 ```bash
 git pull origin main
@@ -320,9 +320,9 @@ docker compose up -d --build
 ## Support
 
 For issues and questions:
-- GitHub Issues: https://github.com/Shadowss/TravianZ/issues
-- Gitter Chat: https://gitter.im/TravianZ-V8/Lobby
+- GitHub Issues: https://Nalooti.ir
+- Gitter Chat: https://gitter.im/nalooti-V8/Lobby
 
 ## License
 
-TravianZ Project - See LICENSE file for details
+nalooti Project - See LICENSE file for details

@@ -1,10 +1,10 @@
 <?php
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                             TRAVIANZ                                             //
+//                                             NALOOTI                                             //
 //            Only for advanced users, do not edit if you dont know what are you doing!             //
-//                                Made by: Dzoki & Dixie (TravianZ)                                 //
-//                              - TravianZ = Travian Clone Project -                                //
+//                                Made by: Dzoki & Dixie (nalooti)                                 //
+//                              - nalooti = Travian Clone Project -                                //
 //                                 DO NOT REMOVE COPYRIGHT NOTICE!                                  //
 //                                Adding tasks, constructions and artefact  by: Armando             //
 //                                Modified , added , fixed , implementd  by: Shadow and ronix       //
@@ -105,7 +105,7 @@ define('NAME_OR_TAG_CHANGED', 'Name or Tag changed');
 define('VAC_MODE_WRONG_DAYS', 'You&#39;ve inserted a wrong number of days');
 
 //COPYRIGHT
-define('TRAVIAN_COPYRIGHT', 'TravianZ 100% Open Source Travian Clone.');
+define('TRAVIAN_COPYRIGHT', 'nalooti 100% Open Source Travian Clone.');
 
 //BUILD.TPL
 define('CUR_PROD', 'Current production');

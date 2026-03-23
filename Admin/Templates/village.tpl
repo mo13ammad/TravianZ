@@ -4,10 +4,10 @@
 ## --------------------------------------------------------------------------- ##
 ##  Filename       village.php                                                 ##
 ##  Developed by:  Dzoki & Advocatie                                           ##
-##  License:       TravianX Project                                            ##
+##  License:       nalooti Project                                            ##
 ##  Thanks to:     Dzoki & itay2277(Edit some additions)                       ##
 ##  Fix by:        ronix (some additions)                                      ##
-##  Copyright:     TravianZ (c) 2010-2025. All rights reserved.                ##
+##  Copyright:     nalooti (c) 2010-2025. All rights reserved.                ##
 ##  Improved:      aggenkeech                                                  ##
 #################################################################################
 include_once("../GameEngine/Generator.php");

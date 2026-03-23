@@ -2,15 +2,15 @@
 #################################################################################
 ##              -= YOU MAY NOT REMOVE OR CHANGE THIS NOTICE =-                 ##
 ## --------------------------------------------------------------------------- ##
-##  Project:       TravianZ                        		       	       ##
+##  Project:       nalooti                        		       	       ##
 ##  Version:       01.09.2013 						       ##
 ##  Filename       impressum.php                                               ##
 ##  Developed by:  Dzoki                                                       ##
 ##  Fixed by:      Shadow / Skype : cata7007                                   ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2010-2013. All rights reserved.                ##
-##  URLs:          http://travian.shadowss.ro 				       ##
-##  Source code:   http://github.com/Shadowss/TravianZ-by-Shadow/	       ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2013. All rights reserved.                ##
+##  URLs:          https://Nalooti.ir 				       ##
+##  Source code:   https://Nalooti.ir	       ##
 ##                                                                             ##
 #################################################################################
 
@@ -56,7 +56,7 @@ AccessLogger::logRequest();
 
 		<td><a href="anleitung.php"><span>Manual</span></a></td>
 
-		<td><a href="http://forum.travian.com/" target="_blank"><span>Forum</span></a></td>
+		<td><a href="https://Nalooti.ir" target="_blank"><span>Forum</span></a></td>
 
 
 
@@ -86,7 +86,7 @@ AccessLogger::logRequest();
 
 <p class="submenu">
 
-Travian Games GmbH<br />
+nalooti<br />
 Wilhelm-Wagenfeld-Strabe 22<br />
 80807 Munchen<br />
 Germany
@@ -102,21 +102,21 @@ Fax: 004989/32 49 15 97 3 (plus support only)<br />
 General:
 <script language="JavaScript"><!--
 var name = "admin";
-var domain = "travian.com";
+var domain = "Nalooti.ir";
 document.write("<a href=\"mailto:" + name + "@" + domain + "\"><span class=\"t\">");
 document.write(name + "@" + domain + "</span></a>");
 // --></script>
 <br />
 Support: <script language="JavaScript"><!--
 var name = "support";
-var domain = "travian.com";
+var domain = "Nalooti.ir";
 document.write("<a href=\"mailto:" + name + "@" + domain + "\"><span class=\"t\">");
 document.write(name + "@" + domain + "</span></a>");
 // --></script>
 <br />
 Travian PLUS: <script language="JavaScript"><!--
 var name = "plus";
-var domain = "travian.com";
+var domain = "Nalooti.ir";
 document.write("<a href=\"mailto:" + name + "@" + domain + "\"><span class=\"t\">");
 document.write(name + "@" + domain + "</span></a>");
 // --></script>
@@ -126,7 +126,7 @@ Rechtsanwalt Dr. Andreas Lober<br />
 Schulte Riesenkampff Rechtsanwaltsgesellschaft mbH<br />
 <script language="JavaScript"><!--
 var name = "jugendschutz";
-var domain = "traviangames.com";
+var domain = "Nalooti.ir";
 document.write("<a href=\"mailto:" + name + "@" + domain + "\"><span class=\"t\">");
 document.write(name + "@" + domain + "</span></a>");
 // --></script>
@@ -136,15 +136,15 @@ document.write(name + "@" + domain + "</span></a>");
 Robin Houben<br />
 <script language="JavaScript"><!--
 var name = "privacy";
-var domain = "traviangames.com";
+var domain = "Nalooti.ir";
 document.write("<a href=\"mailto:" + name + "@" + domain + "\"><span class=\"t\">");
 document.write(name + "@" + domain + "</span></a>");
 // --></script>
 <br /><br />
 <b>Please don't forget Username + Game-Server when you write to support</b>
 <br /><br />
-All rights to texts, graphics and source codes are held by Travian Games GmbH.
-Travian is a registered trade mark of Travian Games GmbH.
+All rights to texts, graphics and source codes are held by nalooti.
+Travian is a registered trade mark of nalooti.
 
 </p>
 

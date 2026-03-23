@@ -3,15 +3,15 @@
 #################################################################################
 ##              -= YOU MAY NOT REMOVE OR CHANGE THIS NOTICE =-                 ##
 ## --------------------------------------------------------------------------- ##
-##  Project:       TravianZ      					       		 		  	   ##
+##  Project:       nalooti      					       		 		  	   ##
 ##  Version:       01.09.2013 						       	 				   ##
 ##  Filename       overview.php                                                ##
 ##  Developed by:  Dzoki                                                       ##
 ##  Fixed by:      Shadow / Skype : cata7007                                   ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2010-2013. All rights reserved.                ##
-##  URLs:          http://travian.shadowss.ro 				       	 		   ##
-##  Source code:   http://github.com/Shadowss/TravianZ/	       	   			   ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2013. All rights reserved.                ##
+##  URLs:          https://Nalooti.ir 				       	 		   ##
+##  Source code:   https://Nalooti.ir	       	   			   ##
 ##                                                                             ##
 #################################################################################
 
@@ -32,7 +32,7 @@ foreach($varray as $vil) {
     $totalpop += $vil['pop'];
 }
 ?>
-<h1>Player profile</h1>
+<h1>پروفایل بازیکن</h1>
 
 <?php
 if($_GET['uid'] == $session->uid) {
@@ -46,17 +46,17 @@ include("menu2.tpl");
 <table id="profile" cellpadding="1" cellspacing="1" >
     <thead>
     <tr>
-        <th colspan="2">Player <?php echo $displayarray['username']; ?></th>
+        <th colspan="2">بازیکن <?php echo $displayarray['username']; ?></th>
     </tr>
 <?php 
-if($displayarray['access'] == ADMIN) echo "<tr><th colspan='2'><font color='Red'><center><b>This player is Admin.</b></font></center></th></tr>";  
-if($displayarray['access'] == MULTIHUNTER) echo "<tr><th colspan='2'><font color='Blue'><center><b>This player is Multihunter.</b></font></center></th></tr>";
-if($displayarray['access'] == BANNED) echo "<tr><th colspan='2'><font color='Green'><center><b>This player is BANNED.</b></font></center></th></tr>";
-if($displayarray['vac_mode'] == 1) echo "<tr><th colspan='2'><font color='Maroon'><center><b>This player is on VACATION.</b></font></center></th></tr>"; 
+if($displayarray['access'] == ADMIN) echo "<tr><th colspan='2'><font color='Red'><center><b>این بازیکن مدیر است.</b></font></center></th></tr>";  
+if($displayarray['access'] == MULTIHUNTER) echo "<tr><th colspan='2'><font color='Blue'><center><b>این بازیکن مولتی‌هانتر است.</b></font></center></th></tr>";
+if($displayarray['access'] == BANNED) echo "<tr><th colspan='2'><font color='Green'><center><b>این بازیکن مسدود شده است.</b></font></center></th></tr>";
+if($displayarray['vac_mode'] == 1) echo "<tr><th colspan='2'><font color='Maroon'><center><b>این بازیکن در حالت تعطیلات است.</b></font></center></th></tr>"; 
 ?>
     <tr>
-        <td>Details</td>
-        <td>Description</td>
+        <td>مشخصات</td>
+        <td>توضیحات</td>
 
     </tr>
     </thead><tbody>
@@ -67,15 +67,15 @@ if($displayarray['vac_mode'] == 1) echo "<tr><th colspan='2'><font color='Maroon
         <td class="details">
             <table cellpadding="0" cellspacing="0">
  
-<?php if($displayarray['access'] == BANNED){ echo "<tr><td colspan='2'><center><b>Banned</b></center></td></tr>"; } ?>
+<?php if($displayarray['access'] == BANNED){ echo "<tr><td colspan='2'><center><b>مسدود</b></center></td></tr>"; } ?>
 
 			<tr>
 
-                <th>Rank</th>
+                <th>رتبه</th>
                 <td><?php echo $ranking->getUserRank($displayarray['id']); ?></td>
             </tr>
             <tr>
-                <th>Tribe</th>
+                <th>قوم</th>
                 <td><?php 
                 $tribeArrays = [TRIBE1, TRIBE2, TRIBE3, TRIBE4, TRIBE5];
                 echo $tribeArrays[$displayarray['tribe'] - 1];
@@ -83,7 +83,7 @@ if($displayarray['vac_mode'] == 1) echo "<tr><th colspan='2'><font color='Maroon
             </tr>
 
             <tr>
-                <th>Alliance</th>
+                <th>اتحاد</th>
                 <td><?php
                 if($displayarray['alliance'] == 0) echo "-";
                 else 
@@ -93,32 +93,29 @@ if($displayarray['vac_mode'] == 1) echo "<tr><th colspan='2'><font color='Maroon
                 } ?></td>
             </tr>
             <tr>
-                <th>Villages</th>
+                <th>دهکده‌ها</th>
                 <td><?php echo count($varray);?></td>
 
             </tr>
             <tr>
-                <th>Population</th>
+                <th>جمعیت</th>
                 <td><?php echo $totalpop; ?></td>
             </tr>
             <?php 
-			//Date of Birth
-            if(isset($displayarray['birthday']) && $displayarray['birthday'] != 0) {
+			if(isset($displayarray['birthday']) && $displayarray['birthday'] != 0) {
 			    $age = date('Y') - substr($displayarray['birthday'], 0, 4);
 				if ((date('m') - substr($displayarray['birthday'], 5, 2)) < 0) $age --;
 				elseif ((date('m') - substr($displayarray['birthday'], 5, 2)) == 0){
 					if(date('d') < substr($displayarray['birthday'], 8, 2)) $age --;
 				}
-            echo "<tr><th>Age</th><td>$age</td></tr>";
+            echo "<tr><th>سن</th><td>$age</td></tr>";
             }
-			//Gender
             if(isset($displayarray['gender']) && $displayarray['gender'] != 0) {
-                $gender = ($displayarray['gender']== 1)? "Male" : "Female";
-                echo "<tr><th>Gender</th><td>".$gender."</td></tr>";
+                $gender = ($displayarray['gender']== 1)? "مرد" : "زن";
+                echo "<tr><th>جنسیت</th><td>".$gender."</td></tr>";
             }
-			//Location
             if($displayarray['location'] != "") {
-                echo "<tr><th>Location</th><td>".$displayarray['location']."</td></tr>";
+                echo "<tr><th>موقعیت</th><td>".$displayarray['location']."</td></tr>";
             }
             ?>
             <tr>
@@ -127,16 +124,15 @@ if($displayarray['vac_mode'] == 1) echo "<tr><th colspan='2'><font color='Maroon
             <tr>
 				<?php if(preg_replace("/[^0-9]/","",$_GET['uid']) == $session->uid) {
 				if($session->sit == 0){
-                echo "<td colspan=\"2\"> <a href=\"spieler.php?s=1\">&raquo; Change profile</a></td>";
+                echo "<td colspan=\"2\"> <a href=\"spieler.php?s=1\">&raquo; ویرایش پروفایل</a></td>";
 				}else{
-                echo "<td colspan=\"2\"> <span class=none><b>&raquo; Change profile</b></span></td>";
+                echo "<td colspan=\"2\"> <span class=none><b>&raquo; ویرایش پروفایل</b></span></td>";
 				}
                 } else {
-             echo "<td colspan=\"2\"> <a href=\"nachrichten.php?t=1&amp;id=".$_GET['uid']."\">&raquo; Write message</a></td>";
+             echo "<td colspan=\"2\"> <a href=\"nachrichten.php?t=1&amp;id=".$_GET['uid']."\">&raquo; ارسال پیام</a></td>";
 			 }
                 ?>                
             </tr>
-			<!--<tr><td colspan="2"><a href="nachrichten.php?t=1&id=0"><font color="Red">&raquo; Report Player</font></a></td></tr>-->
             <tr>
 							<td colspan="2" class="desc2">
 								<div class="desc2div"><?php echo nl2br($profiel[0]); ?></div>
@@ -157,15 +153,15 @@ if($displayarray['vac_mode'] == 1) echo "<tr><th colspan='2'><font color='Maroon
 <table cellpadding="1" cellspacing="1" id="villages">
 <thead>
 	 <tr>
-		<th colspan="<?php echo NEW_FUNCTIONS_OASIS ? 4 : 3; ?>">Villages</th>
+		<th colspan="<?php echo NEW_FUNCTIONS_OASIS ? 4 : 3; ?>">دهکده‌ها</th>
      </tr>
      <tr>
-    	<td>Name</td>
+    	<td>نام</td>
     	<?php if(NEW_FUNCTIONS_OASIS){ ?> 	
-    	<td>Oasis</td>
+    	<td>اُسیس</td>
     	<?php } ?>	
-    	<td>Inhabitants</td>
-    	<td>Coordinates</td>	
+    	<td>جمعیت</td>
+    	<td>مختصات</td>	
 	</tr>
 </thead>
 <tbody>
@@ -174,12 +170,12 @@ if($displayarray['vac_mode'] == 1) echo "<tr><th colspan='2'><font color='Maroon
             $hasArtifact = $database->villageHasArtefact($vil['wref']);
             $coor = $database->getCoor($vil['wref']);
             echo "<tr><td class=\"nam\"><a href=\"karte.php?d=".$vil['wref']."&amp;c=".$generator->getMapCheck($vil['wref'])."\">".$vil['name']."</a>";
-            if($vil['capital'] == 1) echo "<span class=\"none3\"> (Capital)</span>";
+            if($vil['capital'] == 1) echo "<span class=\"none3\"> (پایتخت)</span>";
             if(NEW_FUNCTIONS_DISPLAY_ARTIFACT){
-                if($hasArtifact) echo "<span class=\"none3\"> (Artifact)</span>";
+                if($hasArtifact) echo "<span class=\"none3\"> (آرتیفکت)</span>";
             }
 			if(NEW_FUNCTIONS_DISPLAY_WONDER){
-				if($vil['natar'] == 1) echo "<span class=\"none3\"> (WoW)</span>";
+				if($vil['natar'] == 1) echo "<span class=\"none3\"> (شگفتی جهان)</span>";
 			}
             
             if(NEW_FUNCTIONS_OASIS){
@@ -189,31 +185,31 @@ if($displayarray['vac_mode'] == 1) echo "<tr><th colspan='2'><font color='Maroon
                     switch ($oasis['type']) {
                         case 1:
                         case 2:
-                            echo "<img class='r100' src='img/x.gif' title='+25% Lumber'> ";
+                            echo "<img class='r100' src='img/x.gif' title='+25% چوب'> ";
                             break;
                         case 3:
-                            echo "<img class='r200' src='img/x.gif' title='+25% Lumber +25% Crop'> ";
+                            echo "<img class='r200' src='img/x.gif' title='+25% چوب +25% گندم'> ";
                             break;
                         case 4:
                         case 5:
-                            echo "<img class='r400' src='img/x.gif' title='+25% Clay'> ";
+                            echo "<img class='r400' src='img/x.gif' title='+25% خشت'> ";
                             break;
                         case 6:
-                            echo "<img class='r500' src='img/x.gif' title='+25% Clay +25% Crop'> ";
+                            echo "<img class='r500' src='img/x.gif' title='+25% خشت +25% گندم'> ";
                             break;
                         case 7:
                         case 8:
-                            echo "<img class='r700' src='img/x.gif' title='+25% Iron'> ";
+                            echo "<img class='r700' src='img/x.gif' title='+25% آهن'> ";
                             break;
                         case 9:
-                            echo "<img class='r800' src='img/x.gif' title='+25% Iron +25% Crop'> ";
+                            echo "<img class='r800' src='img/x.gif' title='+25% آهن +25% گندم'> ";
                             break;
                         case 10:
                         case 11:
-                            echo "<img class='r1000' src='img/x.gif' title='+25% Crop'> ";
+                            echo "<img class='r1000' src='img/x.gif' title='+25% گندم'> ";
                             break;
                         case 12:
-                            echo "<img class='r1100' src='img/x.gif' title='+50% Crop'> ";
+                            echo "<img class='r1100' src='img/x.gif' title='+50% گندم'> ";
                             break;
                     }
                 }

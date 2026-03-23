@@ -4,15 +4,15 @@
 #################################################################################
 ##              -= YOU MAY NOT REMOVE OR CHANGE THIS NOTICE =-                 ##
 ## --------------------------------------------------------------------------- ##
-##  Project:       TravianZ                        		       	       ##
+##  Project:       nalooti                        		       	       ##
 ##  Version:       01.09.2013 						       ##
 ##  Filename       mapview.php                                                 ##
 ##  Developed by:  Advocaite , yi12345 , Shadow , MisterX		       ##
 ##  Fixed by:      Shadow & MisterX - Attack image view on map		       ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2010-2013. All rights reserved.                ##
-##  URLs:          http://travian.shadowss.ro 				       ##
-##  Source code:   http://github.com/Shadowss/TravianZ/	       ##
+##  License:       nalooti Project                                            ##
+##  Copyright:     nalooti (c) 2010-2013. All rights reserved.                ##
+##  URLs:          https://Nalooti.ir 				       ##
+##  Source code:   https://Nalooti.ir	       ##
 ##                                                                             ##
 #################################################################################
 
@@ -36,6 +36,7 @@ if(isset($_GET['z'])) {
 if(isset($_SESSION['troops_movement'])) unset($_SESSION['troops_movement']);
 
 if($session->plus) $session->populateAttacks();
+$canHighlightRelocationTargets = $database->getStartVillageRelocationStatus($session->uid, $village->wid)['available'];
 
 $xm7 = ($x-7) < -WORLD_MAX? $x+WORLD_MAX+WORLD_MAX-6 : $x-7;
 $xm3 = ($x-3) < -WORLD_MAX? $x+WORLD_MAX+WORLD_MAX-2 : $x-3;
@@ -155,6 +156,9 @@ if (isset($neutralarray[0])) {
 //var_dump($arraydiplo);
 //echo in_array($targetalliance,$friendarray);
 	$image = ($donnees['map_occupied'] == 1 && $donnees['map_fieldtype'] > 0)?(($donnees['ville_user'] == $session->uid)? ($donnees['ville_pop']>=100? $donnees['ville_pop']>= 250?$donnees['ville_pop']>=500? 'b30': 'b20' :'b10' : 'b00') : (($targetalliance != 0)? ($friend==1? ($donnees['ville_pop']>=100? $donnees['ville_pop']>= 250?$donnees['ville_pop']>=500? 'b31': 'b21' :'b11' : 'b01') : ($war==1? ($donnees['ville_pop']>=100? $donnees['ville_pop']>= 250?$donnees['ville_pop']>=500? 'b32': 'b22' :'b12' : 'b02') : ($neutral==1? ($donnees['ville_pop']>=100? $donnees['ville_pop']>= 250?$donnees['ville_pop']>=500? 'b35': 'b25' :'b15' : 'b05') : ($targetalliance == $session->alliance? ($donnees['ville_pop']>=100? $donnees['ville_pop']>= 250?$donnees['ville_pop']>=500? 'b33': 'b23' :'b13' : 'b03') : ($donnees['ville_pop']>=100? $donnees['ville_pop']>= 250?$donnees['ville_pop']>=500? 'b34': 'b24' :'b14' : 'b04'))))) : ($donnees['ville_pop']>=100? $donnees['ville_pop']>= 250?$donnees['ville_pop']>=500? 'b34': 'b24' :'b14' : 'b04'))) : $donnees['map_image'];
+    if($canHighlightRelocationTargets && !$donnees['map_occupied'] && (int) $donnees['map_fieldtype'] === 3) {
+        $image .= ' relocateTarget';
+    }
 
 	// Map Attacks by Shadow & MisterX - fixed by iopietro
 
@@ -217,6 +221,12 @@ if (isset($neutralarray[0])) {
 }
 ?>
 <div id="content"  class="map">
+    <style type="text/css">
+        #map_content .relocateTarget {
+            box-shadow: 0 0 0 2px #ffd34d inset, 0 0 10px rgba(255, 211, 77, 0.85);
+            border-radius: 50%;
+        }
+    </style>
 	<h1><?php echo MAP;?>(<span id="x"><?php echo $x;?></span>|<span id="y"><?php echo $y;?></span>)</h1>
 	<div id="map">
 		<script type="text/javascript">

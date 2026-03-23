@@ -7,15 +7,15 @@ use App\Utils\AccessLogger;
 ##                                                                             ##
 ## --------------------------------------------------------------------------- ##
 ##                                                                             ##
-##  Project:       ZravianX                                                    ##
+##  Project:       nalooti                                                    ##
 ##  Version:       2011.11.30                                                  ##
 ##  Filename:      index.php                            					   ##
 ##  Developed by:  Dzoki & Advocaite & Donnchadh                               ##
 ##  Reworked by:   ZZJHONS                                                     ##
 ##  License:       Creative Commons BY-NC-SA 3.0                               ##
-##  Copyright:     ZravianX (c) 2011 - All rights reserved                     ##
-##  URLs:          http://zravianx.zzjhons.com                                 ##
-##  Source code:   http://www.github.com/ZZJHONS/ZravianX                      ##
+##  Copyright:     nalooti (c) 2011 - All rights reserved                     ##
+##  URLs:          https://Nalooti.ir                                 ##
+##  Source code:   https://Nalooti.ir                      ##
 ##                                                                             ##
 #################################################################################
 
@@ -90,7 +90,7 @@ AccessLogger::logRequest();
 				<tr>
 					<td><a href="tutorial.php"><span><?php echo TUTORIAL; ?></span></a></td>
 					<td><a href="anleitung.php"><span><?php echo $lang['index'][0][2]; ?></span></a></td>
-					<td><a href="http://forum.travian.com/" target="_blank"><span><?php echo FORUM; ?></span></a></td>
+					<td><a href="https://Nalooti.ir" target="_blank"><span><?php echo FORUM; ?></span></a></td>
 					<td><a href="?signup" class="signup_link mark"><span><?php echo $lang['register']; ?></span></a></td>
 					<td><a href="?login" class="login_link"><span><?php echo LOGIN; ?></span></a></td>
 				</tr>
@@ -208,7 +208,7 @@ AccessLogger::logRequest();
 					<li><a href="spielregeln.php"><?php echo SPIELREGELN; ?></a>|</li>
 					<li><a href="agb.php"><?php echo AGB; ?></a>|</li>
 					<li><a href="impressum.php"><?php echo IMPRINT; ?></a></li>
-					<li class="copyright">&copy; 2011-<?php echo date('Y'); ?> - TravianZ - All rights reserved</li>
+					<li class="copyright">&copy; 2011-<?php echo date('Y'); ?> - nalooti - All rights reserved</li>
 				</ul>
 			</div>
 		</div>

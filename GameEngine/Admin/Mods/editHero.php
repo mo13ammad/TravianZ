@@ -4,9 +4,9 @@
 ## --------------------------------------------------------------------------- ##
 ##  Filename       addTroops.php                                               ##
 ##  Developed by:  Dzoki & Advocatie                                           ##
-##  License:       TravianZ Project                                            ##
+##  License:       nalooti Project                                            ##
 ##  Reworks by:    ronix                                                       ##
-##  Copyright:     TravianZ (c) 2010-2014. All rights reserved.                ##
+##  Copyright:     nalooti (c) 2010-2014. All rights reserved.                ##
 ##                                                                             ##
 #################################################################################
 

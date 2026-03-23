@@ -5,14 +5,14 @@
 ##                                                                             ##
 ## --------------------------------------------------------------------------- ##
 ##                                                                             ##
-##  Project:       TravianZ                                                    ##
+##  Project:       nalooti                                                    ##
 ##  Version:       2011.11.06                                                  ##
 ##  Filename:      Templates/Travian/3.6/Tutorial/5.tpl                        ##
 ##  Edited by:     ZZJHONS                                                     ##
 ##  License:       Creative Commons BY-NC-SA 3.0                               ##
-##  Copyright:     TravianZ (c) 2025 - All rights reserved                     ##
-##  URLs:          http://travian.shadowss.ro                                  ##
-##  Source code:   https://github.com/Shadowss/TravianZ                        ##
+##  Copyright:     nalooti (c) 2025 - All rights reserved                     ##
+##  URLs:          https://Nalooti.ir                                  ##
+##  Source code:   https://Nalooti.ir                        ##
 ##                                                                             ##
 #################################################################################
 ?>
@@ -66,7 +66,7 @@
                 <li><a href="spielregeln.php">Game Rules</a>|</li>
                 <li><a href="agb.php">Terms</a>|</li>
                 <li><a href="impressum.php">Imprint</a></li>
-                <li class="copyright">&copy; 2010 - <?php echo date('Y') . ' ' . (defined('SERVER_NAME') ? SERVER_NAME : 'TravianZ');?> All rights reserved</li>
+                <li class="copyright">&copy; 2010 - <?php echo date('Y') . ' ' . (defined('SERVER_NAME') ? SERVER_NAME : 'nalooti');?> All rights reserved</li>
             </ul>
         </div>
     </div>

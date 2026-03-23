@@ -125,3 +125,43 @@ a:hover{color:#00BC00;text-decoration:underline;}#content a{font-weight:bold;}#c
 .f8{font-size:8pt;}.f7{font-size:7pt;}.f6{font-size:6pt;}.e{color:#FF8000;}.c{color:#C0C0C0;}
 .c0{color:#000;}.c1{color:#71D000;}.c2{color:#FF8000;}.c3{color:#228B22;}.c4{color:#F2C700;}
 .c5{color:#F00;}.b{font-weight:bold;}.t{font-weight:normal;}
+html[dir="rtl"] body,
+body.rtl {
+	direction: rtl;
+	text-align: right;
+	font-family: Tahoma, Verdana, Arial, sans-serif;
+}
+
+html[dir="rtl"] .wrapper #content,
+body.rtl .wrapper #content,
+html[dir="rtl"] #content,
+body.rtl #content {
+	text-align: right;
+}
+
+html[dir="rtl"] .grit .infobox,
+body.rtl .grit .infobox,
+html[dir="rtl"] .grit .secondarybox,
+body.rtl .grit .secondarybox {
+	float: right;
+}
+
+html[dir="rtl"] .grit .infobox,
+body.rtl .grit .infobox {
+	margin-left: 9px;
+	margin-right: 15px;
+}
+
+html[dir="rtl"] #about_the_game ul,
+body.rtl #about_the_game ul {
+	margin-left: 0;
+	margin-right: 15px;
+	padding-right: 18px;
+}
+
+html[dir="rtl"] #navigation .menu td,
+body.rtl #navigation .menu td,
+html[dir="rtl"] #player_counter table th,
+body.rtl #player_counter table th {
+	text-align: right;
+}

@@ -5,8 +5,8 @@
 ##  Filename       config.php                                                  ##
 ##  Version        8.0                                                         ##
 ##  Developed by:  Dzoki and Dixie Edited by Advocaite                         ##
-##  License:       TravianZ Project                                            ##
-##  Copyright:     TravianZ (c) 2013-2025. All rights reserved.                ##
+##  License:       nalooti Project                                             ##
+##  Copyright:     nalooti (c) 2013-2025. All rights reserved.                 ##
 ##  Modified by:   Shadow and ronix                                            ##
 ##                                                                             ##
 #################################################################################
@@ -16,89 +16,152 @@
 //////////////////////////////////
 // (E_ALL ^ E_NOTICE) = enabled
 // (0) = disabled
-define("ERROR_REPORT","%ERRORREPORT%");
-%ERROR%
+define("ERROR_REPORT","error_reporting (E_ALL ^ E_NOTICE);");
+error_reporting (E_ALL ^ E_NOTICE);
 define('AUTOMATION_LOCK_FILE_NAME', 'automation.lck');
+
+if (!function_exists('config_env')) {
+    function config_env($key, $default = '')
+    {
+        static $env = null;
+
+        if ($env === null) {
+            $env = [];
+            $envPath = dirname(__DIR__, 3) . DIRECTORY_SEPARATOR . '.env';
+            if (is_file($envPath) && is_readable($envPath)) {
+                $lines = @file($envPath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+                if (is_array($lines)) {
+                    foreach ($lines as $line) {
+                        $line = trim($line);
+                        if ($line === '' || $line[0] === '#') {
+                            continue;
+                        }
+
+                        $eqPos = strpos($line, '=');
+                        if ($eqPos === false) {
+                            continue;
+                        }
+
+                        $name = trim(substr($line, 0, $eqPos));
+                        $value = trim(substr($line, $eqPos + 1));
+                        if ($name === '') {
+                            continue;
+                        }
+
+                        if (strlen($value) >= 2) {
+                            $first = $value[0];
+                            $last = substr($value, -1);
+                            if (($first === '"' && $last === '"') || ($first === "'" && $last === "'")) {
+                                $value = substr($value, 1, -1);
+                            }
+                        }
+
+                        $env[$name] = $value;
+                    }
+                }
+            }
+
+            foreach ($env as $name => $value) {
+                $env[$name] = preg_replace_callback('/\$\{([A-Z0-9_]+)\}/i', function ($matches) use (&$env) {
+                    $ref = $matches[1];
+                    if (array_key_exists($ref, $env)) {
+                        return $env[$ref];
+                    }
+
+                    $fromRuntime = getenv($ref);
+                    return ($fromRuntime !== false) ? $fromRuntime : '';
+                }, $value);
+            }
+        }
+
+        if (array_key_exists($key, $env)) {
+            return $env[$key];
+        }
+
+        $runtimeValue = getenv($key);
+        return ($runtimeValue !== false) ? $runtimeValue : $default;
+    }
+}
 
 //////////////////////////////////
 // *****  SERVER SETTINGS  *****//
 //////////////////////////////////
 
 // ***** Name
-define("SERVER_NAME","%SERVERNAME%");
+define("SERVER_NAME","nalooti23");
 
 // ***** Time zone added by ronix
 // Defines server time zone.
-define("TIMEZONE","%STIMEZONE%");
+define("TIMEZONE","Asia/Tehran");
 date_default_timezone_set(TIMEZONE);
 
 // ***** Started
 // Defines when has server started.
-define("COMMENCE","%STARTTIME%");
+define("COMMENCE","1774298047");
 
 // ***** Server Start Date / Time
-define("START_DATE", "%SSTARTDATE%");
-define("START_TIME", "%SSTARTTIME%");
+define("START_DATE", "24.03.2026");
+define("START_TIME", "00:04");
 
 // ***** Language
 // Choose your server language.
-define("LANG","%LANG%");
+define("LANG","fa");
 
 // ***** Speed
 // Choose your server speed. NOTICE: Higher speed, more likely
 // to have some bugs. Lower speed, most likely no major bugs.
 // Values: 1 (normal), 3 (3x speed) etc...
-define("SPEED", "%SPEED%");
+define("SPEED", "1");
 
 // ***** World size
 // Defines world size. NOTICE: DO NOT EDIT!!
-define("WORLD_MAX", "%MAX%");
+define("WORLD_MAX", "100");
 
 // ***** Graphic Pack
 // true = enabled, false = disabled
 //!!!!!!!!!!!! DO NOT ENABLE !!!!!!!!!!!!
-define("GP_ENABLE",false);
+define("GP_ENABLE", false);
 // Graphic pack location (default: gpack/travian_default/)
 define("GP_LOCATE", "gpack/travian_default/");
 
 // ***** Troop Speed
 // Values: 1 (normal), 3 (3x speed) etc...
-define("INCREASE_SPEED","%INCSPEED%");
+define("INCREASE_SPEED","1");
 
 // ***** Evasion Speed
-define("EVASION_SPEED","%EVASIONSPEED%");
+define("EVASION_SPEED","1");
 
 // ***** Trader capacity
 // Values: 1 (normal), 3 (3x speed) etc...
-define("TRADER_CAPACITY","%TRADERCAP%");
+define("TRADER_CAPACITY","1");
 
 // ***** Cranny capacity
-define("CRANNY_CAPACITY","%CRANNYCAP%");
+define("CRANNY_CAPACITY","1");
 
 // ***** Trapper capacity
-define("TRAPPER_CAPACITY","%TRAPPERCAP%");
+define("TRAPPER_CAPACITY","1");
 
 // ***** Village Expand
 // 1 = slow village expanding - more Cultural Points needed for every new village
 // 0 = fast village expanding - less Cultural Points needed for every new village
-define("CP", %VILLAGE_EXPAND%);
+define("CP", 1);
 
 // ***** Demolish Level Required
 // Defines which level of Main building is required to be able to
 // demolish. Min value = 1, max value = 20
 // Default: 10
-define("DEMOLISH_LEVEL_REQ","%DEMOLISH%");
+define("DEMOLISH_LEVEL_REQ","10");
 
 // ***** Change storage capacity
-define("STORAGE_MULTIPLIER","%STORAGE_MULTIPLIER%");
+define("STORAGE_MULTIPLIER","1");
 define("STORAGE_BASE",800*STORAGE_MULTIPLIER);
 
 // ***** Quest
 // Ingame quest enabled/disabled.
-define("QUEST",%QUEST%);
+define("QUEST",true);
 //quest type : 25 = Travian Official 
-//             37 = TravianZ Extended 
-define("QTYPE",%QTYPE%);
+//             37 = nalooti Extended 
+define("QTYPE",25);
 
 // ***** Beginners Protection
 // 3600 = 1 hour
@@ -106,82 +169,82 @@ define("QTYPE",%QTYPE%);
 // 3600*24 = 1 day
 // 3600*24*3 = 3 days
 // You can choose any value you want!
-define("PROTECTION","%BEGINNER%");
+define("PROTECTION","43200");
 
 // ***** Enable WW Statistics
-define("WW",%WW%);
+define("WW",false);
 
 // ***** Show Natars in Statistics
-define("SHOW_NATARS",%SHOW_NATARS%); 
+define("SHOW_NATARS",false); 
 
 // ***** Natars Units Multiplier
-define("NATARS_UNITS",%NATARS_UNITS%); 
+define("NATARS_UNITS",100); 
 
 // ***** Natars Spawn Time
-define("NATARS_SPAWN_TIME",%NATARS_SPAWN_TIME%); 
-define("NATARS_WW_SPAWN_TIME",%NATARS_WW_SPAWN_TIME%); 
-define("NATARS_WW_BUILDING_PLAN_SPAWN_TIME",%NATARS_WW_BUILDING_PLAN_SPAWN_TIME%); 
+define("NATARS_SPAWN_TIME",260); 
+define("NATARS_WW_SPAWN_TIME",260); 
+define("NATARS_WW_BUILDING_PLAN_SPAWN_TIME",260); 
 
 // ***** Nature troops regeneration time
-define("NATURE_REGTIME",%NATURE_REGTIME%); 
+define("NATURE_REGTIME",43200); 
 
 // ***** Oasis production
-define("OASIS_WOOD_MULTIPLIER",%OASIS_WOOD_MULTIPLIER%); 
-define("OASIS_CLAY_MULTIPLIER",%OASIS_CLAY_MULTIPLIER%); 
-define("OASIS_IRON_MULTIPLIER",%OASIS_IRON_MULTIPLIER%); 
-define("OASIS_CROP_MULTIPLIER",%OASIS_CROP_MULTIPLIER%); 
+define("OASIS_WOOD_MULTIPLIER",40); 
+define("OASIS_CLAY_MULTIPLIER",40); 
+define("OASIS_IRON_MULTIPLIER",40); 
+define("OASIS_CROP_MULTIPLIER",40); 
 define("OASIS_WOOD_PRODUCTION",OASIS_WOOD_MULTIPLIER*SPEED);
 define("OASIS_CLAY_PRODUCTION",OASIS_CLAY_MULTIPLIER*SPEED);
 define("OASIS_IRON_PRODUCTION",OASIS_IRON_MULTIPLIER*SPEED);
 define("OASIS_CROP_PRODUCTION",OASIS_CROP_MULTIPLIER*SPEED); 
 
 // ***** Enable T4 is Coming screen
-define("T4_COMING",%T4_COMING%);
+define("T4_COMING",false);
 
 // ***** Activation Mail
 // true = activation mail will be sent, users will have to finish registration
 //        by clicking on link recieved in mail.
 // false =  users can register with any mail. Not needed to be real one.
-define("AUTH_EMAIL",%ACTIVATE%);
+define("AUTH_EMAIL",false);
 
 // ***** PLUS
 //Plus ZarinPal merchant ID
-define("ZARINPAL_MERCHANT","%ZARINPAL_MERCHANT%");
+define("ZARINPAL_MERCHANT","XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX");
 //Plus Payment currency
-define("PAYMENT_CURRENCY","%PAYMENT_CURRENCY%");
+define("PAYMENT_CURRENCY","Toman");
 //Plus Package A Price
-define("PLUS_PACKAGE_A_PRICE","%PLUS_PACKAGE_A_PRICE%");
+define("PLUS_PACKAGE_A_PRICE","1,99");
 //Plus Package A Gold
-define("PLUS_PACKAGE_A_GOLD","%PLUS_PACKAGE_A_GOLD%");
+define("PLUS_PACKAGE_A_GOLD","60");
 //Plus Package B Price
-define("PLUS_PACKAGE_B_PRICE","%PLUS_PACKAGE_B_PRICE%");
+define("PLUS_PACKAGE_B_PRICE","4,99");
 //Plus Package B Gold
-define("PLUS_PACKAGE_B_GOLD","%PLUS_PACKAGE_B_GOLD%");
+define("PLUS_PACKAGE_B_GOLD","120");
 //Plus Package C Price
-define("PLUS_PACKAGE_C_PRICE","%PLUS_PACKAGE_C_PRICE%");
+define("PLUS_PACKAGE_C_PRICE","9,99");
 //Plus Package C Gold
-define("PLUS_PACKAGE_C_GOLD","%PLUS_PACKAGE_C_GOLD%");
+define("PLUS_PACKAGE_C_GOLD","360");
 //Plus Package D Gold
-define("PLUS_PACKAGE_D_GOLD","%PLUS_PACKAGE_D_GOLD%");
+define("PLUS_PACKAGE_D_GOLD","1000");
 //Plus Package D Price
-define("PLUS_PACKAGE_D_PRICE","%PLUS_PACKAGE_D_PRICE%");
+define("PLUS_PACKAGE_D_PRICE","19,99");
 //Plus Package E Price
-define("PLUS_PACKAGE_E_PRICE","%PLUS_PACKAGE_E_PRICE%");
+define("PLUS_PACKAGE_E_PRICE","49,99");
 //Plus Package E Gold
-define("PLUS_PACKAGE_E_GOLD","%PLUS_PACKAGE_E_GOLD%");
+define("PLUS_PACKAGE_E_GOLD","2000");
 //Plus account lenght
-define("PLUS_TIME",%PLUS_TIME%);
+define("PLUS_TIME",604800);
 //+25% production lenght
-define("PLUS_PRODUCTION",%PLUS_PRODUCTION%);
+define("PLUS_PRODUCTION",604800);
 // ***** Medal Interval check
-define("MEDALINTERVAL",%MEDALINTERVAL%);
+define("MEDALINTERVAL",(3600*24*7));
 // ***** Great Workshop
-define("GREAT_WKS",%GREAT_WKS%);
+define("GREAT_WKS",false);
 // ***** Tourn threshold
-define("TS_THRESHOLD",%TS_THRESHOLD%);  
+define("TS_THRESHOLD",20);  
 
 // ***** Register open/close
-define("REG_OPEN",%REG_OPEN%);
+define("REG_OPEN",true);
 
 // ***** Peace system
 // 0 = None
@@ -189,27 +252,27 @@ define("REG_OPEN",%REG_OPEN%);
 // 2 = Christmas
 // 3 = New Year
 // 4 = Easter
-define("PEACE",%PEACE%);
+define("PEACE",0);
 
 //////////////////////////////////
 //    **** LOG SETTINGS  ****   //
 //////////////////////////////////
 // LOG BUILDING/UPGRADING
-define("LOG_BUILD",%LOGBUILD%);
+define("LOG_BUILD",false);
 // LOG RESEARCHES
-define("LOG_TECH",%LOGTECH%);
+define("LOG_TECH",false);
 // LOG USER LOGIN (IP's)
-define("LOG_LOGIN",%LOGLOGIN%);
+define("LOG_LOGIN",false);
 // LOG GOLD
-define("LOG_GOLD_FIN",%LOGGOLDFIN%);
+define("LOG_GOLD_FIN",false);
 // LOG ADMIN
-define("LOG_ADMIN",%LOGADMIN%);
+define("LOG_ADMIN",false);
 // LOG ATTACK REPORTS
-define("LOG_WAR",%LOGWAR%);
+define("LOG_WAR",false);
 // LOG MARKET REPORTS
-define("LOG_MARKET",%LOGMARKET%);
+define("LOG_MARKET",false);
 // LOG ILLEGAL ACTIONS
-define("LOG_ILLEGAL",%LOGILLEGAL%);
+define("LOG_ILLEGAL",false);
 
 
 
@@ -218,9 +281,9 @@ define("LOG_ILLEGAL",%LOGILLEGAL%);
 //////////////////////////////////
 //true = enabled
 //false = disabled
-define("NEWSBOX1",%BOX1%);
-define("NEWSBOX2",%BOX2%);
-define("NEWSBOX3",%BOX3%);
+define("NEWSBOX1",false);
+define("NEWSBOX2",false);
+define("NEWSBOX3",false);
 
 
 
@@ -232,29 +295,29 @@ define("NEWSBOX3",%BOX3%);
 // example: sql106.000space.com / localhost
 // If you host server on own PC than this value is: localhost
 // If you use online hosting, value must be written in host cpanel
-define("SQL_SERVER", "%SSERVER%");
+define("SQL_SERVER", config_env("DB_HOST", "db"));
 
 // ***** SQL Port
 // default: 3306
-define("SQL_PORT", %SPORT%);
+define("SQL_PORT", (int) config_env("DB_PORT", 3306));
 
 // ***** Database Username
-define("SQL_USER", "%SUSER%");
+define("SQL_USER", config_env("MARIADB_USER", config_env("MYSQL_USER", "nalooti")));
 
 // ***** Database Password
-define("SQL_PASS", "%SPASS%");
+define("SQL_PASS", config_env("MARIADB_PASSWORD", config_env("MYSQL_PASSWORD", "nalootipass")));
 
 // ***** Database Name
-define("SQL_DB", "%SDB%");
+define("SQL_DB", config_env("MARIADB_DATABASE", config_env("MYSQL_DATABASE", "travian")));
 
 // ***** Database - Table Prefix
-define("TB_PREFIX", "%PREFIX%");
+define("TB_PREFIX", "s68f6_");
 
 // ***** Database type
 // 0 = MYSQL
 // 1 = MYSQLi
 // default: 1
-define("DB_TYPE", %CONNECTT%);
+define("DB_TYPE", 1);
 
 
 
@@ -263,21 +326,21 @@ define("DB_TYPE", %CONNECTT%);
 ////////////////////////////////////
 
 // ***** Censore words
-//define("WORD_CENSOR", "%ACTCEN%");
+//define("WORD_CENSOR", "false");
 
 // ***** Words (censore)
 // Choose which words do you want to be censored
-//define("CENSORED","%CENWORDS%");
+//define("CENSORED","");
 
 
 // ***** Limit Mailbox
 // Limits mailbox to defined number of mails. (IGM's)
-define("LIMIT_MAILBOX",%LIMIT_MAILBOX%);
+define("LIMIT_MAILBOX",false);
 // If enabled, define number of maximum mails.
-define("MAX_MAIL","%MAX_MAILS%");
+define("MAX_MAIL","30");
 
 // ***** Include administrator in statistics/rank
-define("INCLUDE_ADMIN", %ARANK%);
+define("INCLUDE_ADMIN", false);
 
 
 
@@ -286,36 +349,36 @@ define("INCLUDE_ADMIN", %ARANK%);
 ////////////////////////////////////
 
 // ***** Admin Email
-define("ADMIN_EMAIL", "%AEMAIL%");
+define("ADMIN_EMAIL", "");
 
 // ***** Admin Name
-define("ADMIN_NAME", "%ANAME%");
+define("ADMIN_NAME", "Admin");
 
 // ***** Show Support Messages in Admin
-define("ADMIN_RECEIVE_SUPPORT_MESSAGES", %ASUPPMSGS%);
+define("ADMIN_RECEIVE_SUPPORT_MESSAGES", true);
 
 // ***** Allow Admin accounts to be raided and attacked
-define("ADMIN_ALLOW_INCOMING_RAIDS", %ARAIDS%);
+define("ADMIN_ALLOW_INCOMING_RAIDS", true);
 
 
 /////////////////////////////////////////////////
 //   ****  NEW MECHANICS AND FUNCTIONS  ****   //
 /////////////////////////////////////////////////
-define("NEW_FUNCTIONS_OASIS", %NEW_FUNCTIONS_OASIS%);
-define("NEW_FUNCTIONS_ALLIANCE_INVITATION", %NEW_FUNCTIONS_ALLIANCE_INVITATION%);
-define("NEW_FUNCTIONS_EMBASSY_MECHANICS", %NEW_FUNCTIONS_EMBASSY_MECHANICS%);
-define("NEW_FUNCTIONS_FORUM_POST_MESSAGE", %NEW_FUNCTIONS_FORUM_POST_MESSAGE%);
-define("NEW_FUNCTIONS_TRIBE_IMAGES", %NEW_FUNCTIONS_TRIBE_IMAGES%);
-define("NEW_FUNCTIONS_MHS_IMAGES", %NEW_FUNCTIONS_MHS_IMAGES%);
-define("NEW_FUNCTIONS_DISPLAY_ARTIFACT", %NEW_FUNCTIONS_DISPLAY_ARTIFACT%);
-define("NEW_FUNCTIONS_DISPLAY_WONDER", %NEW_FUNCTIONS_DISPLAY_WONDER%);
-define("NEW_FUNCTIONS_VACATION", %NEW_FUNCTIONS_VACATION%);
-define("NEW_FUNCTIONS_DISPLAY_CATAPULT_TARGET", %NEW_FUNCTIONS_DISPLAY_CATAPULT_TARGET%);
-define("NEW_FUNCTIONS_MANUAL_NATURENATARS", %NEW_FUNCTIONS_MANUAL_NATURENATARS%);
-define("NEW_FUNCTIONS_DISPLAY_LINKS", %NEW_FUNCTIONS_DISPLAY_LINKS%);
-define("NEW_FUNCTIONS_MEDAL_3YEAR", %NEW_FUNCTIONS_MEDAL_3YEAR%);
-define("NEW_FUNCTIONS_MEDAL_5YEAR", %NEW_FUNCTIONS_MEDAL_5YEAR%);
-define("NEW_FUNCTIONS_MEDAL_10YEAR", %NEW_FUNCTIONS_MEDAL_10YEAR%);
+define("NEW_FUNCTIONS_OASIS", false);
+define("NEW_FUNCTIONS_ALLIANCE_INVITATION", false);
+define("NEW_FUNCTIONS_EMBASSY_MECHANICS", false);
+define("NEW_FUNCTIONS_FORUM_POST_MESSAGE", false);
+define("NEW_FUNCTIONS_TRIBE_IMAGES", false);
+define("NEW_FUNCTIONS_MHS_IMAGES", false);
+define("NEW_FUNCTIONS_DISPLAY_ARTIFACT", false);
+define("NEW_FUNCTIONS_DISPLAY_WONDER", false);
+define("NEW_FUNCTIONS_VACATION", false);
+define("NEW_FUNCTIONS_DISPLAY_CATAPULT_TARGET", false);
+define("NEW_FUNCTIONS_MANUAL_NATURENATARS", false);
+define("NEW_FUNCTIONS_DISPLAY_LINKS", false);
+define("NEW_FUNCTIONS_MEDAL_3YEAR", false);
+define("NEW_FUNCTIONS_MEDAL_5YEAR", false);
+define("NEW_FUNCTIONS_MEDAL_10YEAR", false);
 
 
 //////////////////////////////////////////
@@ -323,8 +386,8 @@ define("NEW_FUNCTIONS_MEDAL_10YEAR", %NEW_FUNCTIONS_MEDAL_10YEAR%);
 //////////////////////////////////////////
 define("AUTO_DEL_INACTIVE",false); // auto-delete inactive players; default = false
 define("UN_ACT_TIME", 3628800); // 6 weeks to consider a player inactive
-//define("TRACK_USR","%UTRACK%");
-//define("USER_TIMEOUT","%UTOUT%");
+//define("TRACK_USR","");
+//define("USER_TIMEOUT","");
 define("TRACK_USR",true); // track users' being active or not
 define("USER_TIMEOUT",3600); // 1 hour of no activity counts as inactivity
 define("ALLOW_BURST",false);
@@ -353,9 +416,9 @@ define("PAGE_ACCESS_LOG_FILENAME", 'access.log'); // filename ONLY, no path!
 ////////////////////////////////////////////
 //   ****  DOMAIN/SERVER SETTINGS  ****   //
 ////////////////////////////////////////////
-define("DOMAIN", "%DOMAIN%");
-define("HOMEPAGE", "%HOMEPAGE%");
-define("SERVER", "%SERVER%");
+define("DOMAIN", "http://127.0.0.1:8080/");
+define("HOMEPAGE", "http://127.0.0.1:8080/");
+define("SERVER", "http://127.0.0.1:8080/");
 
 $requse = 0;
 
@@ -365,8 +428,8 @@ $requse = 0;
 ##  Filename       config.php                                                  ##
 ##  Version        4.8.5                                                       ##
 ##  Developed by:  Dzoki and Dixie Edited by Advocaite                         ##
-##  License:       TravianX Project                                            ##
-##  Copyright:     TravianX (c) 2010-2011. All rights reserved.                ##
+##  License:       nalooti Project                                             ##
+##  Copyright:     nalooti (c) 2010-2011. All rights reserved.                 ##
 ##                                                                             ##
 #################################################################################
 

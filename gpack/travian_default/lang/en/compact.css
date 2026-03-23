@@ -5,7 +5,7 @@ font-size:10pt;
 font-weight:light; /*  2 */
 font-style:italic; /* 3 */
 background:#FFF;
-background:url(img/bg.gif); /* 4  */
+background-image:none; /* 4 - missing asset caused 404s */
 background-repeat:repeat; /* 5  */
 margin-top:0px;
 margin-bottom:0px;
