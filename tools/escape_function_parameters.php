@@ -23,8 +23,7 @@ class MYSQLi_DB {
 
 	var $dblink;
 	function __construct() {
-		$this->dblink = mysqli_connect(SQL_SERVER, SQL_USER, SQL_PASS) or die(mysqli_error());
-		mysqli_select_db($this->dblink, SQL_DB);
+		$this->dblink = mysqli_connect(SQL_SERVER, SQL_USER, SQL_PASS, SQL_DB, (defined('SQL_PORT') ? SQL_PORT : 3306)) or die(mysqli_connect_error());
 		mysqli_query($this->dblink,"SET NAMES \'UTF8\'"); 
 	}
 
@@ -3765,7 +3764,7 @@ References:
 	***************************/
 
        function KillMyHero($id) {
-  	       $q = "UPDATE " . TB_PREFIX . "hero set dead = 1 where uid = ".$id;
+  	       $q = "UPDATE " . TB_PREFIX . "hero set dead = 1, intraining = 0, inrevive = 0, health = 0 where uid = ".$id." AND dead = 0";
                return mysqli_query($this->dblink,$q);
        }
 	   

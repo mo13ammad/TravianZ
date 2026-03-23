@@ -10,7 +10,7 @@ if(isset($_GET['t']) == 99 && isset($_POST['action']) == 'addList' && !empty($_P
 }
 
 ?>
-<form action="build.php?id=39&t=99&action=startRaid" method="post" name="msg">
+<form action="build.php?id=39&t=99&action=startRaid" method="post" name="msg" id="farmlistForm">
 <input type="hidden" name="action" value="startRaid">
 <?php 
 $sql = mysqli_query($database->dblink,"SELECT id, name, owner, wref FROM ".TB_PREFIX."farmlist WHERE owner = ".(int) $session->uid." ORDER BY wref DESC");
@@ -66,7 +66,7 @@ else
 
 <tr class="slotRow">
 <td class="checkbox">
-                <input id="slot" name="slot[]" value="<?php echo $id; ?>" type="checkbox" class="markSlot">
+                <input id="slot<?php echo $id; ?>" name="slot[]" value="<?php echo $id; ?>" type="checkbox" class="markSlot">
 			</td>
             <td class="village">
             <?php
@@ -159,7 +159,7 @@ while($row2 = mysqli_fetch_array($getnotice)){
 
 <?php if($database->getVilFarmlist($session->uid)){ ?>
 <div class="markAll">
-	<input type="checkbox" id="raidListMarkAll" name="s10" class="markAll" onclick="Allmsg(this.form);">
+	<input type="checkbox" id="raidListMarkAll" name="s10" class="markAll" onchange="toggleRaidListSelection(this);">
 	<label for="raidListMarkAll">Select all</label>
 </div><br />
 <div class="addSlot">
@@ -175,6 +175,19 @@ while($row2 = mysqli_fetch_array($getnotice)){
 
 ?>
 </form>
+<script type="text/javascript">
+function toggleRaidListSelection(toggle) {
+    var form = document.getElementById('farmlistForm');
+    if (!form) {
+        return;
+    }
+
+    var checkboxes = form.querySelectorAll('input.markSlot');
+    for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = toggle.checked;
+    }
+}
+</script>
 <?php
 
 if($create == 1){

@@ -29,10 +29,12 @@ cp .env.example .env
 Edit `.env` file to set your database credentials:
 
 ```env
-MARIADB_ROOT_PASSWORD=yourStrongRootPassword
-MARIADB_DATABASE=travian
-MARIADB_USER=nalooti
-MARIADB_PASSWORD=yourStrongPassword
+DB_HOST=db
+DB_PORT=3306
+DB_DATABASE=travian
+DB_USERNAME=nalooti
+DB_PASSWORD=yourStrongPassword
+DB_ROOT_PASSWORD=yourStrongRootPassword
 ```
 
 ### 3. Start the Containers
@@ -61,9 +63,9 @@ During the installation wizard, use these database settings:
 
 - **SQL Hostname:** `db` (this is the Docker container name)
 - **Port:** `3306`
-- **Username:** `nalooti` (or the value from your `.env` file)
-- **Password:** `nalootipass` (or the value from your `.env` file)
-- **DB name:** `travian` (or the value from your `.env` file)
+- **Username:** `nalooti` (or `DB_USERNAME` from your `.env` file)
+- **Password:** `nalootipass` (or `DB_PASSWORD` from your `.env` file)
+- **DB name:** `travian` (or `DB_DATABASE` from your `.env` file)
 - **Prefix:** `s1_` (or customize as needed)
 - **Type:** `MYSQLi`
 

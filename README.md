@@ -66,14 +66,18 @@ Use `.env` (copy from `.env.example`) to manage deployment values.
 
 Main keys:
 
+- `DB_HOST`
+- `DB_PORT`
+- `DB_DATABASE`
+- `DB_USERNAME`
+- `DB_PASSWORD`
+- `DB_ROOT_PASSWORD`
 - `MARIADB_ROOT_PASSWORD`
 - `MARIADB_DATABASE`
 - `MARIADB_USER`
 - `MARIADB_PASSWORD`
-- `DB_HOST`
-- `DB_PORT`
 
-Legacy compatibility keys (`MYSQL_*`) are still supported and can inherit MariaDB values.
+Container compatibility keys (`MARIADB_*`) can inherit from `DB_*`, and legacy `MYSQL_*` keys are still supported.
 
 ## Admin Panel
 

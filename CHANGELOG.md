@@ -18,6 +18,7 @@ Format inspired by Keep a Changelog and Semantic Versioning principles.
 
 ### Changed
 - Movement completion status updates for the hardened flows are now claim-first (atomic) instead of late batch marking.
+- Database configuration is now consistently `DB_*`-first across runtime config, Docker defaults, installer defaults, and legacy tooling, with fallback support for `MARIADB_*` and `MYSQL_*`.
 
 ## [2026-03-14] - Stability, PHP 8, Docker and Installer Hardening
 
