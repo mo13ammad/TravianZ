@@ -1,28 +1,27 @@
 <?php
+// توجه: این فایل حاوی تنظیمات و تعاریف زبان فارسی برای بازی TravianZ است.
+// فقط برای کاربران پیشرفته، در صورتی که نمی‌دانید چه کار می‌کنید ویرایش نکنید!
+// ساخته شده توسط: Dzoki & Dixie (TravianZ)
+// - TravianZ = پروژه کلون بازی Travian -
+// لطفاً اطلاعات کپی‌رایت را حذف نکنید!
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                             TRAVIANZ                                             //
-//            Only for advanced users, do not edit if you dont know what are you doing!             //
-//                                Made by: Dzoki & Dixie (TravianZ)                                 //
-//                              - TravianZ = Travian Clone Project -                                //
-//                                 DO NOT REMOVE COPYRIGHT NOTICE!                                  //
-//                                Adding tasks, constructions and artefact  by: Armando             //
-//                                Modified , added , fixed , implementd  by: Shadow and ronix       //
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-									//                         //
-									//         ENGLISH         //
-									//      Author: Dzoki      //
-									//     Adding: Armando     //
-									/////////////////////////////
 
-//MAIN MENU
+define('CONF_SERV_OASIS_CLAY_PROD_MULT', 'ضریب تولید خشت در آویس');
+define('CONF_SERV_OASIS_CLAY_PROD_MULT_TOOLTIP', 'مقدار پایه تولید خشت در آویس');
+define('CONF_SERV_OASIS_IRON_PROD_MULT', 'ضریب تولید آهن در آویس');
+define('CONF_SERV_OASIS_IRON_PROD_MULT_TOOLTIP', 'مقدار پایه تولید آهن در آویس');
+define('CONF_SERV_OASIS_CROP_PROD_MULT', 'ضریب تولید گندم در آویس');
+define('CONF_SERV_OASIS_CROP_PROD_MULT_TOOLTIP', 'مقدار پایه تولید گندم در آویس');
+define('CONF_SERV_MEDALINTERVAL', 'فاصله مدال‌ها');
+
+
+/////////////////////////////// منوی اصلی
 define('TRIBE1', 'رومی‌ها');
 define('TRIBE2', 'توتن‌ها');
 define('TRIBE3', 'گول‌ها');
 define('TRIBE4', 'طبیعت');
 define('TRIBE5', 'ناتارها');
 define('TRIBE6', 'هیولاها');
-
 define('HOME', 'صفحه اصلی');
 define('INSTRUCT', 'آموزش‌ها');
 define('ADMIN_PANEL', 'پنل مدیریت');
@@ -37,7 +36,7 @@ define('TRAVIAN_PLUS', 'تراوین <b><span class="plus_g">P</span><span class
 define('CONTACT', 'تماس با ما!');
 define('GAME_RULES', 'قوانین بازی');
 
-//MENU
+// منو
 define('REG', 'ثبت‌نام');
 define('FORUM', 'انجمن');
 define('CHAT', 'چت');
@@ -46,87 +45,43 @@ define('MORE_LINKS', 'لینک‌های بیشتر');
 define('TOUR', 'معرفی بازی');
 
 
-//ERRORS
-define('USRNM_EMPTY', '(نام کاربری خالی است)');
-define('USRNM_TAKEN', '(این نام قبلاً استفاده شده است.)');
-define('USRNM_SHORT', '(min. '.USRNM_MIN_LENGTH.' figures)');
-define('USRNM_CHAR', '(کاراکترهای نامعتبر)');
-define('PW_EMPTY', '(رمز عبور خالی است)');
-define('PW_SHORT', '(min. '.PW_MIN_LENGTH.' figures)');
-define('PW_INSECURE', '(رمز عبور امن نیست. لطفاً رمز قوی‌تری انتخاب کنید.)');
-define('EMAIL_EMPTY', '(ایمیل خالی است)');
-define('EMAIL_INVALID', '(آدرس ایمیل نامعتبر است)');
-define('EMAIL_TAKEN', '(این ایمیل قبلاً استفاده شده است)');
-define('TRIBE_EMPTY', '<li>لطفاً یک قبیله انتخاب کنید.</li>');
-define('AGREE_ERROR', '<li>برای ثبت‌نام باید قوانین بازی و شرایط و ضوابط را بپذیرید.</li>');
-define('LOGIN_USR_EMPTY', 'نام را وارد کنید.');
-define('LOGIN_PASS_EMPTY', 'رمز عبور را وارد کنید.');
-define('EMAIL_ERROR', 'ایمیل با مورد موجود مطابقت ندارد');
-define('PASS_MISMATCH', 'رمزهای عبور یکسان نیستند');
-define('ALLI_OWNER', 'پیش از حذف، یک مالک برای اتحاد تعیین کنید');
-define('SIT_ERROR', 'جانشین قبلاً تنظیم شده یا بازیکن پیدا نشد');
-define('USR_NT_FOUND', 'نام وجود ندارد.');
-define('LOGIN_PW_ERROR', 'رمز عبور اشتباه است.');
-define('WEL_TOPIC', 'نکات و اطلاعات مفید ');
-define('ATAG_EMPTY', 'تگ خالی است');
-define('ANAME_EMPTY', 'نام خالی است');
-define('ATAG_EXIST', 'تگ قبلاً گرفته شده');
-define('ANAME_EXIST', 'نام قبلاً گرفته شده');
-define('ALREADY_ALLY_MEMBER', 'شما از قبل در یک اتحاد هستید');
-define('ALLY_TOO_LOW', 'باید سفارت شما حداقل سطح ۳ باشد');
-define('USER_NOT_IN_YOUR_ALLY', 'این کاربر در اتحاد شما نیست!');
-define('CANT_EDIT_YOUR_PERMISSIONS', 'نمی‌توانید دسترسی‌های خودتان را ویرایش کنید!');
-define('CANT_EDIT_LEADER_PERMISSIONS', 'دسترسی‌های رهبر اتحاد قابل ویرایش نیست!');
-define('NO_PERMISSION', 'شما دسترسی کافی ندارید!');
-define('NAME_OR_DIPL_EMPTY', 'نام یا دیپلماسی خالی است');
-define('ALLY_DOESNT_EXISTS', 'اتحاد وجود ندارد');
-define('CANNOT_INVITE_SAME_ALLY', 'نمی‌توانید اتحاد خودتان را دعوت کنید');
-define('WRONG_DIPLOMACY', 'انتخاب نادرست انجام شد');
-define('INVITE_ALREADY_SENT', 'یا قبلاً برای این اتحاد پیمان فرستاده‌اید، یا آن‌ها برای شما فرستاده‌اند، یا از قبل پیمان دارید');
-define('INVITE_SENT', 'دعوت ارسال شد');
-define('DECLARED_WAR_ON', 'اعلام جنگ کرد به');
-define('OFFERED_NON_AGGRESION_PACT_TO', 'پیمان عدم تجاوز پیشنهاد داد به');
-define('OFFERED_CONFED_TO', 'پیمان اتحاد پیشنهاد داد به');
-define('ALLY_TOO_MUCH_PACTS', 'یا شما دیگر نمی‌توانید از این نوع پیمان پیشنهاد دهید یا این اتحاد به سقف مجاز این نوع پیمان رسیده است');
-define('ALLY_PERMISSIONS_UPDATED', 'دسترسی‌ها به‌روزرسانی شد');
-define('ALLY_FORUM_LINK_UPDATED', 'لینک انجمن به‌روزرسانی شد');
-define('NO_FORUMS_YET', 'هنوز هیچ انجمنی وجود ندارد.');
-define('ALLY_USER_KICKED', ' از اتحاد اخراج شد');
-define('NOT_OPENED_YET', 'سرور هنوز شروع نشده است.');
-define('REGISTER_CLOSED', 'ثبت‌نام بسته است. شما نمی‌توانید در این سرور ثبت‌نام کنید.');
-define('NAME_EMPTY', 'لطفاً نام را وارد کنید');
-define('NAME_NO_EXIST', 'کاربری با این نام وجود ندارد ');
-define('ID_NO_EXIST', 'کاربری با این شناسه وجود ندارد ');
-define('SAME_NAME', 'نمی‌توانید خودتان را دعوت کنید');
-define('ALREADY_INVITED', ' از قبل دعوت شده است');
-define('ALREADY_IN_ALLY', ' از قبل در این اتحاد است');
-define('ALREADY_IN_AN_ALLY', ' از قبل در یک اتحاد است');
-define('NAME_OR_TAG_CHANGED', 'نام یا تگ تغییر کرد');
-define('VAC_MODE_WRONG_DAYS', 'تعداد روزهای اشتباهی وارد کرده‌اید');
+define('U2', 'محافظ امپراتور');
+define('U3', 'شوالیه رومی');
+define('U4', 'جاسوس رومی');
+define('U5', 'سواره‌نظام امپراتور');
+define('U6', 'سواره‌نظام قیصر');
+define('U7', 'دژکوب');
+define('U8', 'منجنیق آتشین');
+define('U9', 'سناتور');
+define('U10', 'مهاجر');
+// واحدهای توتن
+define('U11', 'گرزدار');
+define('U12', 'نیزه‌دار');
+define('U13', 'تبرزن');
+define('U14', 'جاسوس توتن');
+define('U15', 'پهلوان');
+define('U16', 'شوالیه توتن');
+define('U17', 'دژکوب توتن');
+define('U18', 'منجنیق توتن');
+define('U19', 'رئیس');
+define('U20', 'مهاجر');
+// واحدهای گول
+define('U21', 'سرباز پیاده گول');
+define('U22', 'شمشیرزن');
 
-//COPYRIGHT
-define('TRAVIAN_COPYRIGHT', 'TravianZ 100% Open Source Travian Clone.');
 
-//BUILD.TPL
-define('CUR_PROD', 'Current production');
-define('NEXT_PROD', 'Production at level ');
-define('CONSTRUCT_BUILD', 'Construct Building');
+define('BEFORE_REGISTER', 'قبل از ثبت‌نام حساب کاربری، باید <a href="/anleitung.php" target="_blank">دستورالعمل‌های</a> بازی Travian ro1 را بخوانید تا مزایا و معایب خاص سه قبیله را مشاهده کنید.');
+define('BUILDING_UPGRADING', '???????:');
+define('HOURS', '????');
 
-//DORF1
-define('LUMBER', 'Lumber');
-define('CLAY', 'Clay');
-define('IRON', 'Iron');
-define('CROP', 'Crop');
-define('LEVEL', 'Level');
-define('CROP_COM', CROP.' consumption');
-define('PER_HR', 'per hour');
-define('PRODUCTION', 'Production');
-define('CAPITAL1', 'Capital');
-define('VILLAGES', 'Villages');
-define('ANNOUNCEMENT', 'Announcement');
-define('GO2MY_VILLAGE', 'Go to my village');
-define('VILLAGE_CENTER', 'Village centre');
-define('FINISH_GOLD', 'Finish all construction and research orders in this village immediately for 2 Gold?');
+// حملات و غیره
+define('TROOP_MOVEMENTS', '???? ??????:');
+define('ARRIVING_REINF_TROOPS', '??????? ???? ?? ??? ?????');
+define('ARRIVING_ATTACKING_TROOPS', '??????? ????? ?? ??? ?????');
+define('ARRIVING_REINF_TROOPS_SHORT', '????');
+define('OWN_ATTACKING_TROOPS', '??????? ????? ????');
+
+
 define('WAITING_LOOP', '(در صف انتظار)');
 define('CROP_NEGATIVE', 'تولید گندم شما منفی است، هرگز به مقدار منابع درخواستی نخواهید رسید.');
 define('HR', 'ساعت');
@@ -141,28 +96,23 @@ define('MS', 'میلی‌ثانیه');
 define('SERVER_TIME', 'زمان سرور:');
 define('REMAINING_GOLD', 'طلای باقی‌مانده');
 
-// HEADER && MENU && Messages && Reports
+// هدر && منو && پیام‌ها && گزارش‌ها
 define('REPORTS', 'گزارش‌ها');
 define('MESSAGES', 'پیام‌ها');
 define('PLUS_MENU', 'منوی پلاس');
-define('LINKS', 'Links');
-define('CANCEL_PROCESS', 'Cancel process');
-define('ACCOUNT_DELETING', 'The account will be deleted in');
-define('INBOX', 'Inbox');
-define('WRITE', 'Write');
-define('SENT', 'Sent');
-define('SEND', 'Send');
-define('ARCHIVE', 'Archive');
-define('NOTES', 'Notes');
-define('SUBJECT', 'Subject');
-define('SENDER', 'Sender');
-define('RECIPIENT', 'Recipient');
-define('BACK', 'Back');
-define('NEW', 'new');
-define('UNREAD', 'unread');
-define('NO_MESS', 'There are no messages available');
-define('NO_MESS_IN_ARCHIVE', NO_MESS.' in the archive');
-define('NO_MESS_SENT', 'There are no sent messages available');
+
+
+define('CONF_LOG_MARKET', 'ثبت فعالیت‌های بازار');
+define('CONF_LOG_MARKET_TOOLTIP', 'فعال (بله) یا غیرفعال (خیر) کردن نمایش لاگ‌های استفاده از بازار توسط بازیکنان.');
+define('CONF_LOG_ILLEGAL', 'ثبت فعالیت‌های غیرمجاز');
+define('CONF_LOG_ILLEGAL_TOOLTIP', 'فعال (بله) یا غیرفعال (خیر) کردن نمایش لاگ‌های غیرمجاز. (دقیقاً نمی‌دانم به چه معناست)');
+
+// تنظیمات مدیریت - Admin/Templates/config.tpl & editNewsboxSet.tpl
+define('NEWSBOX_SETT', 'تنظیمات جعبه خبر');
+define('EDIT_NEWSBOX_SETT', 'ویرایش تنظیمات جعبه خبر');
+define('EDIT_NEWSBOX1', 'جعبه خبر 1');
+
+
 define('MESS_FOR_SUP', 'پیام برای پشتیبانی');
 define('MESS_FOR_MH', 'پیام برای مولتی‌هانتر');
 define('SEND_AS_SUP', 'ارسال به عنوان پشتیبانی');
@@ -179,6 +129,8 @@ define('ONLINE_S4', '۷ روز اخیر');
 define('ONLINE_S5', 'غیرفعال');
 define('WAIT_FOR_CONFIRM', 'در انتظار تایید');
 define('CONFIRM', 'تایید');
+
+
 define('WRITE_MESS_WARN', '<b>هشدار:</b> شما نمی‌توانید مقادیر <b>[message]</b> یا <b>[/message]</b> را در پیام خود استفاده کنید زیرا ممکن است با سیستم BBCode مشکل ایجاد کند.');
 define('NO_REPORTS', 'هیچ گزارشی موجود نیست');
 define('ATTACKER', 'حمله‌کننده');
@@ -191,51 +143,124 @@ define('DEFENDER', 'دفاع‌کننده');
 define('VISITED', 'دیدار کرد');
 define('HIS_TROOPS', '&#39;نیروهای او');
 define('WISHES_YOU', 'برای شما آرزو دارد');
-define('X_MAS', 'Merry Christmas');
-define('NEW_YEAR', 'Happy New Year');
-define('EASTER', 'Happy Easter');
-if(!defined('PEACE')) define('PEACE', 'صلح');
 
-define('GOLD', 'طلا');
-define('GOLD_IMG', '<img src=\"/img/x.gif\" class=\"gold\" alt=\"'.GOLD.'\" title=\"'.GOLD.'\">');
 
-//QUEST
-define('Q_CONTINUE', 'Continue with the next task.');
-define('Q_REWARD', 'Your reward:');
-define('Q_BUTN', 'complete task');
-define('Q0', 'Welcome to ');
-define('Q0_DESC', 'As I see you have been made chieftain of this little village. I will be your counselor for the first few days and never leave your (right hand) side.');
+define('CONF_SQL_DBNAME_TOOLTIP', 'نام پایگاه داده‌ای که به آن متصل می‌شوید.');
+define('CONF_SQL_TBPREFIX', 'پیشوند جدول');
+define('CONF_SQL_TBPREFIX_TOOLTIP', 'پیشوند استفاده شده برای جداول پایگاه داده.');
+define('CONF_SQL_DBTYPE', 'نوع پایگاه داده');
+define('CONF_SQL_DBTYPE_TOOLTIP', 'نوع پایگاه داده استفاده شده.');
+
+// تنظیمات مدیریت - Admin/Templates/config.tpl & editExtraSet.tpl
+define('EXTRA_SETT', 'تنظیمات اضافی');
+define('EDIT_EXTRA_SETT', 'ویرایش تنظیمات اضافی');
+define('CONF_EXTRA_LIMITMAIL', 'محدودیت پست الکترونیکی');
+
+
 define('Q0_OPT1', 'به سوی اولین ماموریت.');
 define('Q0_OPT2', 'خودم نگاهی می‌اندازم.');
 define('Q0_OPT3', 'بازی بدون ماموریت.');
-
 define('Q1', 'وظیفه ۱: هیزم‌شکن');
 define('Q1_DESC', 'چهار جنگل سبز دور دهکده شما وجود دارد. یک هیزم‌شکن روی یکی از آن‌ها بسازید. چوب منبع مهمی برای استقرار جدید ما است.');
 define('Q1_ORDER', 'دستور:</p>یک هیزم‌شکن بسازید.');
 define('Q1_RESP', 'بله، این طوری چوب بیشتری به دست می‌آورید. من کمی کمک کردم و دستور را بلافاصله انجام دادم.');
 define('Q1_REWARD', 'هیزم‌شکن بلافاصله انجام شد.');
-
 define('Q2', 'وظیفه ۲: گندم‌زار');
-define('Q2_DESC', 'Now your subjects are hungry from working all day. Extend a cropland to improve your subjects&#39; supply. Come back here once the building is complete.');
-define('Q2_ORDER', 'Order:</p>Extend one cropland.');
-define('Q2_RESP', 'Very good. Now your subjects have enough to eat again...');
-define('Q2_REWARD', 'Your reward:</p>1 day Travian');
 
-define('Q3', 'Task 3: Your Village&#39;s Name');
-define('Q3_DESC', 'Creative as you are you can grant your village the ultimate name.<br><br>Click on &#39;profile&#39; in the left hand menu and then select &#39;change profile&#39;...');
-define('Q3_ORDER', 'Order:</p>Change your village&#39;s name to something nice.');
-define('Q3_RESP', 'Wow, a great name for their village. It could have been the name of my village!...');
 
-define('Q4', 'Task 4: Other Players');
-define('Q4_DESC', 'In '.SERVER_NAME.' you play along with billions of other players. Click &#39;statistics&#39; in the top menu to look up your rank and enter it here.');
-define('Q4_ORDER', 'Order:</p>Look for your rank in the statistics and enter it here.');
-define('Q4_BUTN', 'complete task');
-define('Q4_RESP', 'Exactly! That&#39;s your rank.');
+define('SENDMERC', '????? ???????(??)');
+define('BAN', '?????? ????? ???');
+define('BUILDMARKET', '???? ?????');
+define('PERHOUR', '?? ????');
+define('BONUS', '?????');
+define('MAP', '????');
+define('LARGE_MAP', '???? ????');
+define('LARGE_MAP_DESC', '????? ???? ???? ?? ???????? ???');
+define('CROPFINDER', '????????');
+define('NORTH', '????');
+define('EAST', '???');
+define('SOUTH', '????');
+define('WEST', '???');
+define('CLOSE_MAP', '???? ????');
+define('AND', '?');
 
+// سایر
+define('VILLAGE', '?????');
+define('STATISTICS', '????');
+define('OASIS', '????');
+
+
+define('NO_OASIS', '??? ??? ????? ?? ?????? ??????.');
+define('NO_VILLAGES', '??? ???????? ???? ?????.');
+define('PLAYER', '??????');
+
+// LOGIN.php
+define('COOKIES', '???? ???? ???? ??????? ???? ?????. ??? ?? ??? ?????? ????? ??????? ???????? ???? ????? ??? ?? ?? ?? ???? ?? ???? ???? ????.');
+define('NAME', '???');
+define('PW_FORGOTTEN', '??? ???? ?? ?????? ?????????');
+define('PW_REQUEST', '?? ??? ???? ????????? ?? ??? ???? ??????? ???? ?? ?? ????? ??? ????? ????? ??.');
+define('PW_GENERATE', '????? ??? ???? ????.');
+define('EMAIL_NOT_VERIFIED', '????? ????? ???? ???!');
+define('EMAIL_FOLLOW', '???? ????????? ???? ??? ??? ???? ?? ????? ????.');
+define('VERIFY_EMAIL', '????? ?????.');
+define('SERVER_STARTS_IN', '???? ???? ?????? ??: ');
+define('START_NOW', '???????? ???? ??');
+
+if(!defined('PEACE')) define('PEACE', 'صلح');
+define('GOLD', 'طلا');
+define('GOLD_IMG', '<img src="/img/x.gif" class="gold" alt="'.GOLD.'" title="'.GOLD.'">');
+
+// 404.php
+define('NOTHING_HERE', '????? ???? ????!');
+define('WE_LOOKED', '??? ??? ?????? ????? ??? ???? ???? ??????');
+
+// MASSMESSAGE.php
+define('MASS', '?????? ????');
+define('MASS_SUBJECT', '?????:');
+define('MASS_COLOR', '??? ????:');
+define('MASS_REQUIRED', '??? ?????? ?????? ?????');
+define('MASS_UNITS', '?????? (??????):');
+define('MASS_SHOWHIDE', '?????/????');
+
+
+define('CONF_ADMIN_RAIDATT_TOOLTIP', 'فعال (True) یا غیرفعال (False) کردن توانایی حمله و غارت به یک مدیر.');
+
+/*|-| Index |-*/
+$lang['index'][0][1] = 'به '.SERVER_NAME.' خوش آمدید';
+$lang['index'][0][2] = 'راهنما';
+$lang['index'][0][3] = 'هم‌اکنون رایگان بازی کنید!';
+$lang['index'][0][4] = 'چیست '.SERVER_NAME;
+$lang['index'][0][5] = SERVER_NAME.' یک <b>بازی مرورگری</b> است که دنیای باستانی جذابی را با هزاران بازیکن واقعی دیگر ارائه می‌دهد.</p><p>این بازی <strong>رایگان است</strong> و نیازی به <strong>دانلود</strong> ندارد.';
+$lang['index'][0][6] = 'اینجا کلیک کنید تا '.SERVER_NAME.' را بازی کنید';
+
+
+define('MASS_READ', 'این را بخوانید: پس از افزودن لبخند، باید چپ یا راست را بعد از عدد اضافه کنید در غیر این صورت تصویر کار نخواهد کرد.');
+define('MASS_CONFIRM', '?????');
+define('MASS_REALLY', 'آیا واقعاً می‌خواهید MassIGM ارسال کنید؟');
+define('MASS_ABORT', 'هم‌اکنون لغو شود');
+define('MASS_SENT', 'Mass IGM ارسال شد');
+
+// ساختمان‌ها
+define('WOODCUTTER', 'هیزم‌شکن');
+define('WOODCUTTER_DESC', 'هیزم‌شکن درختان را قطع می‌کند تا چوب تولید کند. هر چه سطح هیزم‌شکن بالاتر برود، چوب بیشتری تولید می‌شود.<br>با ساخت کارخانه چوب‌بری، می‌توانید تولید را باز هم افزایش دهید.');
+define('CLAYPIT', 'گودال خشت');
 define('Q5', 'وظیفه ۵: دو دستور ساخت');
 define('Q5_DESC', 'یک معدن آهن و یک گودال خشت بسازید. از آهن و خشت هرگز کافی نیست.');
 define('Q5_ORDER', 'دستور:</p><ul><li>یک معدن آهن گسترش دهید.</li><li>یک گودال خشت گسترش دهید.</li></ul>');
-define('Q5_RESP', 'As you noticed, building orders take rather long. The world of '.SERVER_NAME.' will continue to spin even if you are offline. Even in a few months there will be many new things for you to discover.<br><br>The best thing to do is occasionally checking your village and giving you subjects new tasks to do.');
+define('Q5_RESP', 'همانطور که متوجه شدید، دستورات ساخت زمان زیادی می‌برند. دنیای '.SERVER_NAME.' حتی اگر شما آفلاین باشید نیز ادامه خواهد داشت. حتی چند ماه دیگر نیز چیزهای جدید زیادی برای کشف کردن وجود خواهد داشت.<br><br>بهترین کار این است که گاه‌گاهی دهکده خود را بررسی کنید و به سرزمین‌های خود کار جدیدی اختصاص دهید.');
+
+
+$lang['index'][0][7] = 'تعداد کل بازیکنان';
+$lang['index'][0][8] = 'بازیکنان فعال';
+$lang['index'][0][9] = 'بازیکنان آنلاین';
+$lang['index'][0][10] = 'درباره بازی';
+$lang['index'][0][11] = 'شما به عنوان رئیس یک دهکده کوچک شروع خواهید کرد و در یک ماجراجویی هیجان‌انگیز قرار خواهید گرفت.';
+$lang['index'][0][12] = 'دهکده‌ها را توسعه دهید، جنگ‌ها را آغاز کنید یا مسیرهای تجاری با همسایگان خود برقرار کنید.';
+$lang['index'][0][13] = 'با و برخلاف هزاران بازیکن واقعی دیگر بازی کنید و دنیای Travian را تسخیر کنید.';
+$lang['index'][0][14] = 'اخبار';
+$lang['index'][0][15] = 'سوالات متداول';
+$lang['index'][0][16] = 'تصاویر';
+
 
 define('Q6', 'وظیفه ۶: پیام‌ها');
 define('Q6_DESC', 'شما می‌توانید با دیگر بازیکنان از طریق سیستم پیام‌رسانی صحبت کنید. من یک پیام برای شما ارسال کردم. آن را بخوانید و دوباره اینجا بیایید.<br><br>پ.ن: فراموش نکنید: در سمت چپ گزارش‌ها و در سمت راست پیام‌ها.');
@@ -243,105 +268,181 @@ define('Q6_ORDER', 'دستور:</p>پیام جدید خود را بخوانید.
 define('Q6_RESP', 'آن را دریافت کردید؟ خیلی خوب.<br><br>اینجا مقداری طلا برای شماست. با طلا می‌توانید کارهای مختلفی انجام دهید، مثلاً افزایش ظرفیت در منوی سمت چپ.');
 define('Q6_RESP1', '-حساب یا افزایش تولید منابع. برای انجام این کار کلیک کنید ');
 define('Q6_RESP2', 'در منوی سمت چپ.');
-define('Q6_SUBJECT', 'Message From The Taskmaster');
-define('Q6_MESSAGE', 'You are to be informed that a nice reward is waiting for you at the taskmaster.<br><br>Hint: The message has been generated automatically. An answer is not necessary.');
 
-define('Q7', 'Task 7: One Each!');
-define('Q7_DESC', 'Now we should increase your resource production a bit. Build an additional woodcutter, clay pit, iron mine and cropland to level 1.');
-define('Q7_ORDER', 'Order:</p>Extend one more of each resource tile to level 1.');
-define('Q7_RESP', 'Very good, great develop of resources production.');
 
-define('Q8', 'Task 8: Huge Army!');
-define('Q8_DESC', 'Now I&#39;ve got a very special quest for you. I am hungry. Give me 200 crop!<br><br>In return I will try to organize a huge army to protect your village.');
-define('Q8_ORDER', 'Order:</p>Send 200 crop to the taskmaster.');
-define('Q8_BUTN', 'Send crop');
-define('Q8_NOCROP', 'No Enough Crop!');
+define('CLAYPIT_DESC', 'در اینجا خشت تولید می‌شود. با افزایش سطح آن، تولید خشت افزایش می‌یابد.<br>با ساخت کارخانه خشت‌زنی، می‌توانید تولید را باز هم افزایش دهید.');
+define('IRONMINE', 'معدن آهن');
+define('IRONMINE_DESC', 'در اینجا معدنچیان آهن گرانبها را استخراج می‌کنند. با افزایش سطح معدن، تولید آهن آن افزایش می‌یابد.<br>با ساخت ذوب‌آهن، می‌توانید تولید را باز هم افزایش دهید.');
+define('CROPLAND', 'گندم‌زار');
+define('CROPLAND_DESC', 'غذای جمعیت شما در اینجا تولید می‌شود. با افزایش سطح گندم‌زار، تولید گندم افزایش می‌یابد.<br>با ساخت آسیاب و نانوایی، می‌توانید تولید را باز هم افزایش دهید.');
 
-define('Q9', 'Task 9: Everything to 1.');
-define('Q9_DESC', 'In Travian there is always something to do! While you are waiting for incoming the huge army, Now we should increase your resource production a bit. Extend all your resource tiles to level 1.');
-define('Q9_ORDER', 'Order:</p>Extend all resource tiles to level 1.');
-define('Q9_RESP', 'Very good, your resource production just thrives.<br><br>Soon we can start with constructing buildings in the village.');
 
-define('Q10', 'Task 10: Dove of Peace');
-define('Q10_DESC', 'The first days after signing up you are protected against attacks by your fellow players. You can see how long this protection lasts by adding the code <b>[#0]</b> to your profile.');
-define('Q10_ORDER', 'Order:</p>Write the code <b>[#0]</b> into your profile by adding it to one of the two description fields.');
-define('Q10_RESP', 'Well done! Now everyone can see what a great warrior the world is approached by.');
-define('Q10_REWARD', 'Your reward:</p>2 day Travian');
+define('U23', 'ردیاب');
+define('U24', 'رعد توتاتس');
+define('U25', 'سواره‌نظام دروید');
+define('U26', 'شوالیه گول');
+define('U27', 'دژکوب گول');
+define('U28', 'منجنیق گول');
+define('U29', 'رئیس بزرگ');
+define('U30', 'مهاجر');
+define('U99', 'تله');
 
-define('Q11', 'Task 11: Neighbours!');
-define('Q11_DESC', 'Around you, there are many different villages. One of them is named. ');
-define('Q11_DESC1', ' Click on &#39;map&#39; in the header menu and look for that village. The name of your neighbours&#39; villages can be seen when hovering your mouse over any of them.');
-define('Q11_ORDER', 'Order:</p>Look for the coordinates of ');
-define('Q11_ORDER1', 'and enter them here.');
-define('Q11_RESP', 'Exactly, there ');
-define('Q11_RESP1', ' Village! As many resources as you reach this village. Well, almost as much ...');
-define('Q11_BUTN', 'complete task');
+// واحدهای طبیعت
+define('U31', 'موش');
+define('U32', 'عنکبوت');
+define('U33', 'مار');
+define('U34', 'خفاش');
+define('U35', 'گراز وحشی');
+define('U36', 'گرگ');
+define('U37', 'خرس');
+define('U38', 'تمساح');
+define('U39', 'تایگر');
+define('U40', 'فیل');
 
-define('Q12', 'Task 12: Cranny');
-define('Q12_DESC', 'It&#39;s getting time to erect a cranny. The world of '.SERVER_NAME.' is dangerous.<br><br>Many players live by stealing other players&#39; resources. Build a cranny to hide some of your resources from enemies.');
-define('Q12_ORDER', 'Order:</p>Construct a Cranny.');
-define('Q12_RESP', 'Well done, now it&#39;s way harder for your mean fellow players to plunder your village.<br><br>If under attack, your villagers will hide the resources in the Cranny all on their own.');
+// واحدهای ناتار
+define('U41', 'نیزه‌دار ناتار');
+define('U42', 'جنگجوی خاردار');
+define('U43', 'نگهبان');
 
-define('Q13', 'Task 13: To Two.');
-define('Q13_DESC', 'In '.SERVER_NAME.' there is always something to do! Extend one woodcutter, one clay pit, one iron mine and one cropland to level 2 each.');
-define('Q13_ORDER', 'Order:</p>Extend one of each resource tile to level 2.');
-define('Q13_RESP', 'Very good, your village grows and thrives!');
 
-define('Q14', 'Task 14: Instructions');
-define('Q14_DESC', 'In the ingame instructions you can find short information texts about different buildings and types of units.<br><br>Click on &#39;instructions&#39; at the left to find out how much lumber is required for the barracks.');
-define('Q14_ORDER', 'Order:</p>Enter how much lumber barracks cost');
-define('Q14_BUTN', 'complete task');
-define('Q14_RESP', 'Exactly! Barracks cost 210 lumber.');
+$lang['screenshots']['desc5'] = 'گزارش حمله شما';
+$lang['screenshots']['title6'] = 'آمار';
+$lang['screenshots']['desc6'] = 'مشاهده رتبه شما در آمار';
+$lang['screenshots']['title7'] = 'سلاح یا نان';
+$lang['screenshots']['desc7'] = 'شما می‌توانید انتخاب کنید که به عنوان نظامی یا اقتصادی بازی کنید';
 
-define('Q15', 'Task 15: Main Building');
-define('Q15_DESC', 'Your master builders need a main building level 3 to erect important buildings such as the marketplace or barracks.');
-define('Q15_ORDER', 'Order:</p>Extend your main building to level 3.');
-define('Q15_RESP', 'Well done. The main building level 3 has been completed.<br><br>With this upgrade your master builders cannot only construct more types of buildings but also do so faster.');
 
-define('Q16', 'Task 16: Advanced!');
-define('Q16_DESC', 'Look up your rank in the player statistics again and enjoy your progress.');
-define('Q16_ORDER', 'Order:</p>Look for your rank in the statistics and enter it here.');
-define('Q16_RESP', 'Well done! That&#39;s your current rank.');
+define('BRICKYARD_DESC', 'خشت در اینجا پخته می‌شود. کارخانه خشت‌زنی تولید خشت دهکده را افزایش می‌دهد. در سطح ۱، تولید را ۵٪ افزایش می‌دهد و در سطح ۵ به ۲۵٪ می‌رسد.');
+define('IRONFOUNDRY', 'ذوب‌آهن');
+define('CURRENT_IRON_BONUS', 'امتیاز فعلی تولید آهن:');
+define('IRON_BONUS_LEVEL', 'امتیاز تولید آهن در سطح');
+define('IRONFOUNDRY_DESC', 'آهن در اینجا ذوب می‌شود. ذوب‌آهن تولید آهن دهکده را افزایش می‌دهد. در سطح ۱، تولید را ۵٪ افزایش می‌دهد و در سطح ۵ به ۲۵٪ می‌رسد.');
+define('GRAINMILL', 'آسیاب');
+define('CURRENT_CROP_BONUS', 'امتیاز فعلی تولید گندم:');
 
-define('Q17', 'Task 17: Weapons or Dough');
-define('Q17_DESC', 'Now you have to make a decision: Either trade peacefully or become a dreaded warrior.<br><br>For the marketplace you need a granary, for the barracks you need a rally point.');
-define('Q17_BUTN', 'Economy');
-define('Q17_BUTN1', 'Military');
 
-define('Q18', 'Task 18: Military');
-define('Q18_DESC', 'A brave decision. To be able to send troops you need a rally point.<br><br>The rally point must be built on a specific building site. The ');
-define('Q18_DESC1', ' building site.');
-define('Q18_DESC2', ' is located on the right side of the main building, slightly below it. The building site itself is curved.');
-define('Q18_ORDER', 'Order:</p>Construct a rally point.');
-define('Q18_RESP', 'Your rally point has been erected! A good move towards world domination!');
+define('UPGRADES_COMMENCE_BLACKSMITH', '??????? ?? ?? ????? ?????? ???? ???????.');
+define('MAXIMUM_LEVEL', '???????<br>???');
+define('EXPAND_WAREHOUSE', '??????<br>????? ????');
+define('EXPAND_GRANARY', '??????<br>????? ???');
+define('ENOUGH_RESOURCES', '????? ????');
+define('CROP_NEGATIVE ', 'تولید گندم منفی است بنابراین هرگز به منابع مورد نیاز نخواهید رسید.');
+define('TOO_FEW_RESOURCES', '?????<br>??????');
+define('UPGRADING', '?? ??? ?????');
+define('DURATION', '????????');
+define('COMPLETE', '?????');
 
-define('Q19', 'Task 19: Barracks');
-define('Q19_DESC', 'Now you have a main building level 3 and a rally point. That means that all prerequisites for building barracks have been fulfilled.<br><br>You can use the barracks to train troops for fighting.');
-define('Q19_ORDER', 'Order:</p>Construct barracks.');
-define('Q19_RESP', 'Well done... The best instructors from the whole country have gathered to train your men\u2019s fighting skills to top form.');
 
-define('Q20', 'Task 20: Train.');
-define('Q20_DESC', 'Now that you have barracks you can start training troops. Train two ');
-define('Q20_ORDER', 'Please train 2 ');
-define('Q20_RESP', 'The foundation for your glorious army has been laid.<br><br>Before sending your army off to plunder you should check with the.');
-define('Q20_RESP1', 'Combat Simulator');
-define('Q20_RESP2', 'to see how many troops you need to successfully fight one rat without losses.');
+define('DEMOLISH', 'تخریب');
+define('DEMOLITION_OF', 'تخریب ');
+define('MAINBUILDING_DESC', 'استادان معمار دهکده در ساختمان مرکزی زندگی می‌کنند. هر چه سطح این ساختمان بالاتر باشد، معماران شما ساختمان‌های جدید را سریع‌تر تمام می‌کنند.');
+define('RALLYPOINT', 'اردوگاه');
+define('RALLYPOINT_COMMENCE', 'حرکت نیروها زمانی نمایش داده می‌شود که '.RALLYPOINT.' ساخته شده باشد');
+define('OVERVIEW', 'مرور کلی');
+define('REINFORCEMENT', 'نیروی کمکی');
+define('EVASION_SETTINGS', 'تنظیمات فرار');
+define('SEND_TROOPS_AWAY_MAX', 'ارسال نیروها به دوردست حداکثر');
+define('TIMES', 'بار');
 
-define('Q21', 'Task 18: Economy');
-define('Q21_DESC', 'Trade & Economy was your choice. Golden times await you for sure!');
+
+define('NO_REPORTS_FROM_OTH', 'هیچ گزارشی برای انتقالات از دهکده‌های خارجی وجود ندارد.');
+define('CHANGE_PROFILE', 'تغییر پروفایل');
+define('WRITE_MESSAGE', 'نوشتن پیام');
+define('REPORT_PLAYER', 'گزارش بازیکن');
+define('ARTEFACT1', 'اثر');
+define('WoW1', 'WoW');
+define('VILLAGE_NAME', 'نام دهکده');
+define('BDAY', 'تولد');
+define('CONDITIONS', 'شرایط');
+define('TIME_PREF', 'ترجیحات زمانی');
+define('TIME_ZONES_DESC', 'در اینجا می‌توانید زمان نمایش داده شده در Travian را مطابق با منطقه زمانی خود تغییر دهید.');
+define('TIME_ZONE_L1', 'اروپا');
+define('TIME_ZONE_L2', 'UK');
+define('TIME_ZONE_L3', 'ترکیه');
+
+
+define('PER_EVASION', 'در هر فرار');
+define('RALLYPOINT_DESC', 'نیروهای دهکده شما در اینجا جمع می‌شوند. از اینجا می‌توانید آن‌ها را برای تسخیر، غارت یا تقویت دهکده‌های دیگر بفرستید.');
+define('COMBAT_SIMULATOR', 'شبیه‌ساز جنگ');
+define('MARKETPLACE', 'بازار');
+define('MERCHANT', 'بازرگانان');
+define('OR_', 'یا');
+define('GO', 'برو');
+define('UNITS_OF_RESOURCE', 'واحد منبع');
+define('MERCHANT_CARRY', 'هر بازرگان می‌تواند حمل کند');
+define('MERCHANT_COMING', 'بازرگانان در حال رسیدن');
+define('TRANSPORT_FROM', 'حمل از');
+define('ARRIVAL_IN', 'رسیدن در');
+
+
+define('TIME_ZONE_L4', 'آسیا/کلکته');
+define('TIME_ZONE_L5', 'آسیا/بانکوک');
+define('TIME_ZONE_L6', 'USA/نیویورک');
+define('TIME_ZONE_L7', 'USA/شیکاگو');
+define('TIME_ZONE_L8', 'نیوزیلند');
+define('MONTH1', 'ژانویه');
+define('MONTH2', 'فوریه');
+define('MONTH3', 'مارس');
+define('MONTH4', 'آوریل');
+define('MONTH5', 'مه');
+define('MONTH6', 'ژوئن');
+define('MONTH7', 'جولای');
+define('MONTH8', 'آگوست');
+define('MONTH9', 'سپتامبر');
+define('MONTH10', 'اکتبر');
+define('MONTH11', 'نوامبر');
+define('MONTH12', 'دسامبر');
+
+// اثر
+
+
+define('U44', 'پرنده شکاری');
+define('U45', 'تبرزن سواره');
+define('U46', 'شوالیه ناتار');
+define('U47', 'فیل جنگی');
+define('U48', 'بالیستا');
+define('U49', 'امپراتور ناتار');
+define('U50', 'مهاجر ناتار');
+
+// واحدهای هیولا
+define('U51', '????? ?????');
+define('U52', '?????? ?????');
+define('U53', '?????? ?????');
+define('U54', '???');
+define('U55', '???????? ?????');
+define('U56', '???????? ???? ?????');
+define('U57', '????? ?????');
+define('U58', '?????? ?????');
+define('U59', '???? ?????');
+define('U60', '????? ?????');
+
+// INDEX.php
+define('LOGIN', 'ورود');
+define('PLAYERS', 'بازیکنان');
+
+
+define('USRNM_CHAR', '(کاراکترهای غیرمجاز)');
+define('PW_EMPTY', '(رمز عبور خالی است)');
+define('PW_SHORT', '(حداقل '.PW_MIN_LENGTH.' کاراکتر)');
+define('PW_INSECURE', '(رمز عبور ناامن است. لطفاً رمز پیچیده‌تری انتخاب کنید)');
+define('EMAIL_EMPTY', '(ایمیل خالی است)');
+define('EMAIL_INVALID', '(آدرس ایمیل نامعتبر است)');
+define('EMAIL_TAKEN', '(این ایمیل قبلاً استفاده شده است)');
+define('TRIBE_EMPTY', '<li>لطفاً یک نژاد انتخاب کنید.</li>');
+define('AGREE_ERROR', '<li>برای ثبت‌نام باید قوانین بازی را بپذیرید.</li>');
+define('LOGIN_USR_EMPTY', 'نام کاربری را وارد کنید.');
 define('Q21_ORDER', 'دستور:</p>یک غار بسازید.');
 define('Q21_RESP', 'بسیار خوب! با غار می‌توانید گندم بیشتری ذخیره کنید.');
-
 define('Q22', 'وظیفه ۱۹: انبار');
 define('Q22_DESC', 'نه تنها گندم باید ذخیره شود. سایر منابع نیز می‌توانند اتلاف شوند اگر به درستی ذخیره نشوند. یک انبار بسازید!');
 define('Q22_ORDER', 'دستور:</p>یک انبار بسازید.');
 define('Q22_RESP', ';بسیار خوب، انبار شما کامل شده است...&rdquo;</i><br>حالا شما تمام پیش‌نیازهای لازم برای ساخت یک بازار را برآورده کرده‌اید.');
-
 define('Q23', 'وظیفه ۲۰: بازار.');
+
+
 define('Q23_DESC', ';یک بازار بسازید تا بتوانید با سایر بازیکنان معامله کنید.');
 define('Q23_ORDER', 'دستور:</p>لطفاً یک بازار بسازید.');
 define('Q23_RESP', ';بازار کامل شده است. حالا می‌توانید پیشنهادات خود را ایجاد کنید و پیشنهادات خارجی را بپذیرید! وقتی پیشنهادات خود را ایجاد می‌کنید، باید به این فکر کنید که چه چیزی سایر بازیکنان بیشتر به آن نیاز دارند تا سود بیشتری کسب کنید.');
-
 define('Q24', 'وظیفه ۲۱: همه به ۲.');
 define('Q24_DESC', 'حالا باید تولید منابع خود را کمی افزایش دهیم. یک هیزم‌شکن، یک گودال خشت، یک معدن آهن و یک گندم‌زار اضافی به سازند.');
 define('Q24_ORDER', 'دستور:</p>همه خانه‌های منبع را به سطح ۲ برسانید.');
@@ -426,7 +527,7 @@ define('Q25_8_BUTN', 'ارسال گندم');
 define('Q25_8_NOCROP', 'گندم کافی نیست!');
 
 define('Q25_9', 'وظیفه ۹: از هر کدام یکی!');
-define('Q25_9_DESC', 'In '.SERVER_NAME.' there is always something to do! While you are waiting for your new army,<br><br>extend one additional woodcutter, clay pit, iron mine and cropland to level 1');
+define('Q25_9_DESC', 'در '.SERVER_NAME.' همیشه کاری برای انجام دادن هست! تا وقتی منتظر ارتش جدیدت هستی،<br><br>یک هیزم‌شکن، یک گودال خشت، یک معدن آهن و یک گندم‌زار دیگر را به سطح ۱ برسان.');
 define('Q25_9_ORDER', 'دستور:</p>از هر خانه منبع، یکی دیگر را به سطح ۱ برسانید.');
 define('Q25_9_RESP', 'خیلی خوب، تولید منابع شما به‌خوبی در حال پیشرفت است.');
 
@@ -452,12 +553,12 @@ define('Q25_13_ORDER', 'دستور:</p>کد <b>[#0]</b> را در یکی از د
 define('Q25_13_RESP', 'آفرین! حالا همه می‌توانند ببینند چه جنگجوی بزرگی وارد این دنیا شده است.');
 
 define('Q25_14', 'وظیفه ۱۴: مخفیگاه');
-define('Q25_14_DESC', 'It&#39;s getting time to erect a cranny. The world of <b>'.SERVER_NAME.'</b> is dangerous.<br><br>Many players live by stealing other players&#39; resources. Build a cranny to hide some of your resources from enemies.');
+define('Q25_14_DESC', 'وقت آن رسیده که یک مخفیگاه بسازید. دنیای <b>'.SERVER_NAME.'</b> خطرناک است.<br><br>بسیاری از بازیکنان با دزدیدن منابع دیگران پیشرفت می‌کنند. یک مخفیگاه بسازید تا بخشی از منابع خود را از دشمنان پنهان کنید.');
 define('Q25_14_ORDER', 'دستور:</p>یک مخفیگاه بسازید.');
 define('Q25_14_RESP', 'آفرین، حالا غارت کردن دهکده شما برای بازیکنان مهاجم خیلی سخت‌تر شده است.<br><br>اگر به شما حمله شود، روستاییان به‌طور خودکار منابع را در مخفیگاه پنهان می‌کنند.');
 
 define('Q25_15', 'وظیفه ۱۵: تا سطح ۲.');
-define('Q25_15_DESC', 'In <b>'.SERVER_NAME.'</b> there is always something to do! Extend one woodcutter, one clay pit, one iron mine and one cropland to level 2 each.');
+define('Q25_15_DESC', 'در <b>'.SERVER_NAME.'</b> همیشه کاری برای انجام دادن هست! یک هیزم‌شکن، یک گودال خشت، یک معدن آهن و یک گندم‌زار را به سطح ۲ برسانید.');
 define('Q25_15_ORDER', 'دستور:</p>یکی از هر نوع خانه منبع را به سطح ۲ برسانید.');
 define('Q25_15_RESP', 'خیلی خوب، دهکده شما رشد می‌کند و شکوفا می‌شود!');
 
@@ -522,9 +623,9 @@ define('Q25_26_ORDER', 'دستور:</p>همه خانه‌های منبع را ب
 define('Q25_26_RESP', 'تبریک! دهکده شما رشد می‌کند و شکوفا می‌شود...');
 
 define('Q25_27', 'وظیفه ۲۳: دوستان.');
-define('Q25_27_DESC', 'As single player it is hard to compete with attackers. It is to your advantage if your neighbours like you.<br><br>It is even better if you play together with friends. Did you know that you can earn '.GOLD_IMG.' by inviting friends?');
-define('Q25_27_ORDER', 'Order:</p>How much '.GOLD_IMG.' do you earn for inviting a friend?');
-define('Q25_27_RESP', 'Correct! You get 50 '.GOLD_IMG.' if your invited friend have 2 village.');
+define('Q25_27_DESC', 'به‌عنوان یک بازیکن تنها، رقابت با مهاجمان سخت است. اگر همسایه‌ها شما را دوست داشته باشند، به نفع شماست.<br><br>حتی بهتر است با دوستانتان بازی کنید. آیا می‌دانستید با دعوت از دوستان می‌توانید '.GOLD_IMG.' دریافت کنید؟');
+define('Q25_27_ORDER', 'دستور:</p>با دعوت یک دوست، چقدر '.GOLD_IMG.' به دست می‌آورید؟');
+define('Q25_27_RESP', 'درست است! اگر دوست دعوت‌شده شما ۲ دهکده داشته باشد، ۵۰ '.GOLD_IMG.' دریافت می‌کنید.');
 
 define('Q25_28', 'وظیفه ۲۴: ساخت سفارت.');
 define('Q25_28_DESC', 'دنیای Travian خطرناک است. شما برای محافظت در برابر مهاجمان، قبلاً یک مخفیگاه ساخته‌اید.<br><br>یک اتحاد خوب می‌تواند محافظت بسیار بهتری برای شما فراهم کند.');
@@ -548,80 +649,18 @@ define('U0', 'قهرمان');
 
 //ROMAN UNITS
 define('U1', 'سرباز پیاده');
-define('U2', 'محافظ امپراتور');
-define('U3', 'شوالیه رومی');
-define('U4', 'جاسوس رومی');
-define('U5', 'سواره‌نظام امپراتور');
-define('U6', 'سواره‌نظام قیصر');
-define('U7', 'دژکوب');
-define('U8', 'منجنیق آتشین');
-define('U9', 'سناتور');
-define('U10', 'مهاجر');
 
 //TEUTON UNITS
-define('U11', 'گرزدار');
-define('U12', 'نیزه‌دار');
-define('U13', 'تبرزن');
-define('U14', 'جاسوس توتن');
-define('U15', 'پهلوان');
-define('U16', 'شوالیه توتن');
-define('U17', 'دژکوب توتن');
-define('U18', 'منجنیق توتن');
-define('U19', 'رئیس');
-define('U20', 'مهاجر');
 
 //GAUL UNITS
-define('U21', 'سرباز پیاده گول');
-define('U22', 'شمشیرزن');
-define('U23', 'ردیاب');
-define('U24', 'رعد توتاتس');
-define('U25', 'سواره‌نظام دروید');
-define('U26', 'شوالیه گول');
-define('U27', 'دژکوب گول');
-define('U28', 'منجنیق گول');
-define('U29', 'رئیس بزرگ');
-define('U30', 'مهاجر');
-define('U99', 'تله');
 
 //NATURE UNITS
-define('U31', 'موش');
-define('U32', 'عنکبوت');
-define('U33', 'مار');
-define('U34', 'خفاش');
-define('U35', 'گراز وحشی');
-define('U36', 'گرگ');
-define('U37', 'خرس');
-define('U38', 'تمساح');
-define('U39', 'تایگر');
-define('U40', 'فیل');
 
 //NATARS UNITS
-define('U41', 'نیزه‌دار ناتار');
-define('U42', 'جنگجوی خاردار');
-define('U43', 'نگهبان');
-define('U44', 'پرنده شکاری');
-define('U45', 'تبرزن سواره');
-define('U46', 'شوالیه ناتار');
-define('U47', 'فیل جنگی');
-define('U48', 'بالیستا');
-define('U49', 'امپراتور ناتار');
-define('U50', 'مهاجر ناتار');
 
 //MONSTER UNITS
-define('U51', 'Monster Peon');
-define('U52', 'Monster Hunter');
-define('U53', 'Monster Warrior');
-define('U54', 'Ghost');
-define('U55', 'Monster Steed');
-define('U56', 'Monster War Steed');
-define('U57', 'Monster Ram');
-define('U58', 'Monster Catapult');
-define('U59', 'Monster Chief');
-define('U60', 'Monster Settler');
 
 //INDEX.php
-define('LOGIN', 'ورود');
-define('PLAYERS', 'بازیکنان');
 define('MODERATOR', 'مدیر');
 define('ACTIVE', 'فعال');
 define('ONLINE', 'آنلاین');
@@ -629,188 +668,126 @@ define('TUTORIAL', 'آموزش');
 if(!defined('FAQ')) define('FAQ', 'سوالات متداول');
 if(!defined('SPIELREGELN')) define('SPIELREGELN', 'قوانین بازی');
 define('PLAYER_STATISTICS', 'آمار بازیکنان');
-define('TOTAL_PLAYERS', PLAYERS.' in total');
+define('TOTAL_PLAYERS', 'کل بازیکنان: '.PLAYERS);
 define('ACTIVE_PLAYERS', 'بازیکنان فعال');
-define('ONLINE_PLAYERS', PLAYERS.' online');
-define('MP_STRATEGY_GAME', SERVER_NAME.' - the multiplayer strategy game');
-define('WHAT_IS', SERVER_NAME.' is one of the most popular browser games in the world. As a player in '.SERVER_NAME.', you will build your own empire, recruit a mighty army, and fight with your allies for game world hegemony.');
+define('ONLINE_PLAYERS', PLAYERS.' آنلاین');
+define('MP_STRATEGY_GAME', SERVER_NAME.' - بازی استراتژیک چندنفره');
+define('WHAT_IS', SERVER_NAME.' یکی از محبوب‌ترین بازی‌های مرورگر در جهان است. به عنوان یک بازیکن در '.SERVER_NAME.'، شما امپراتوری خود را می‌سازید، ارتشی قدرتمند استخدام می‌کنید و با متحدان خود برای تسلط بر دنیای بازی می‌جنگید.');
 define('REGISTER_FOR_FREE', 'اینجا رایگان ثبت‌نام کنید!');
 define('LATEST_GAME_WORLD', 'آخرین دنیای بازی');
 define('LATEST_GAME_WORLD2', 'در آخرین دنیای بازی ثبت‌نام کنید<br>و از مزایای یکی از اولین بازیکنان<br>بودن لذت ببرید.');
-define('PLAY_NOW', 'Play '.SERVER_NAME.' now');
-define('LEARN_MORE', 'Learn more <br>about '.SERVER_NAME.'!');
+define('PLAY_NOW', 'هم‌اکنون '.SERVER_NAME.' بازی کنید');
+define('LEARN_MORE', 'بیشتر بدانید <br>درباره '.SERVER_NAME.'!');
 define('LEARN_MORE2', 'حالا با سیستم سرور متحول شده،<br>گرافیک کاملاً جدید<br>این شبیه‌ساز عالی است!');
 define('COMUNITY', 'جامعه');
 define('BECOME_COMUNITY', 'هم‌اکنون عضو جامعه ما شوید!');
 define('BECOME_COMUNITY2', 'عضو یکی از بزرگترین جوامع<br>بازی در جهان شوید.');
 define('NEWS', 'اخبار');
 define('SCREENSHOTS', 'تصاویر بازی');
-if(!defined('FAQ')) define('FAQ', 'سوالات متداول');
-if(!defined('SPIELREGELN')) define('SPIELREGELN', 'قوانین بازی');
 define('AGB', 'شرایط و ضوابط');
-define('LEARN1', 'Upgrade your fields and mines to increase your resource production. You will need resources to construct buildings and train soldiers.');
-define('LEARN2', 'Construct and expand the buildings in your village. Buildings improve your overall infrastructure, increase your resource production and allow you to research, train and upgrade your troops.');
-define('LEARN3', 'View and interact with your surroundings. You can make new friends or new enemies, make use of the nearby oases and observe as your empire grows and becomes stronger.');
-define('LEARN4', 'Follow your improvement and success and compare yourself to other players. Look at the Top 10 rankings and fight to win a weekly medal.');
-define('LEARN5', 'Receive detailed reports about your adventures, trades and battles. Don&#39;t forget to check the brand new reports about the happenings taking place in your surroundings.');
-define('LEARN6', 'Exchange information and conduct diplomacy with other players. Always remember that communication is the key to winning new friends and solving old conflicts.');
+define('LEARN1', '???? ?????? ????? ?????? ??????? ? ???????? ??? ?? ????? ????. ???? ???? ?????????? ? ????? ??????? ?? ????? ???? ?????? ????.');
+define('LEARN2', '??????????? ????? ??? ?? ?????? ? ????? ????. ?????????? ??????? ??? ??? ?? ????? ???????? ????? ????? ?? ?????? ??????? ? ????? ?????? ????? ? ?????? ?????? ?? ????? ???????.');
+define('LEARN3', '????? ??? ?? ?????? ? ?? ?? ????? ????? ?????. ????????? ?????? ?? ?????? ???? ???? ????? ?? ???????? ????? ???? ????? ? ??? ????????? ??? ?? ????? ????.');
+define('LEARN4', '???? ?????? ? ?????? ??? ?? ????? ???? ? ??? ?? ?? ???? ???????? ?????? ????. ?? ????????? ?? ??? ???? ???? ???? ? ???? ?????? ????? ???? ????? ??????.');
+define('LEARN5', '????????? ???? ????????????? ??????? ? ??????? ??? ?? ?????? ????. ????????? ???? ?????? ????????? ????? ??? ?? ?????? ?????.');
+define('LEARN6', '?? ???? ???????? ????? ??????? ???? ? ???????? ????? ?????. ????? ?? ??? ????? ????? ?? ??????? ???? ????? ?????? ???? ? ?? ?????????? ????? ???.');
 define('LOGIN_TO', 'Log in to '.SERVER_NAME);
 define('REGIN_TO', 'Register in '.SERVER_NAME);
-define('P_ONLINE', 'Players online: ');
-define('P_TOTAL', 'Players in total: ');
-define('CHOOSE', 'Please choose a server.');
+define('P_ONLINE', '???????? ??????: ');
+define('P_TOTAL', '?? ????????: ');
+define('CHOOSE', '????? ?? ???? ?????? ????.');
 define('STARTED', ' The server started '. round((time() - COMMENCE) / 86400) .' days ago.');
 
 //ANMELDEN.php
-define('NICKNAME', 'Nickname');
-define('EMAIL', 'Email');
-define('PASSWORD', 'Password');
-define('NW', 'North West');
-define('NE', 'North East');
-define('SW', 'South West');
-define('SE', 'South East');
-define('RANDOM', 'random');
-define('ACCEPT_RULES', ' I accept the game rules and general terms and conditions.');
-define('ONE_PER_SERVER', 'Each player may only own ONE account per server.');
-define('BEFORE_REGISTER', 'قبل از ثبت‌نام حساب کاربری، باید <a href="/anleitung.php" target="_blank">دستورالعمل‌های</a> بازی Travian ro1 را بخوانید تا مزایا و معایب خاص سه قبیله را مشاهده کنید.');
-define('BUILDING_UPGRADING', 'Building:');
-define('HOURS', 'hours');
+define('NICKNAME', '??? ??????');
+define('EMAIL', '?????');
+define('PASSWORD', '??? ????');
+define('NW', '???? ???');
+define('NE', '???? ???');
+define('SW', '???? ???');
+define('SE', '???? ???');
+define('RANDOM', '??????');
+define('ACCEPT_RULES', ' ?? ?????? ???? ? ????? ? ????? ????? ?? ????????.');
+define('ONE_PER_SERVER', '?? ?????? ??? ???? ?? ????? ?? ???? ?? ?? ???? ???.');
 
 
 //ATTACKS ETC.
-define('TROOP_MOVEMENTS', 'Troop Movements:');
-define('ARRIVING_REINF_TROOPS', 'Arriving reinforcing troops');
-define('ARRIVING_ATTACKING_TROOPS', 'Arriving attacker troops');
-define('ARRIVING_REINF_TROOPS_SHORT', 'Reinf.');
-define('OWN_ATTACKING_TROOPS', 'Own attacking troops');
-define('ATTACK', 'Attack');
-define('OWN_REINFORCING_TROOPS', 'Own reinforcing troops');
-define('NEWVILLAGE', 'New village.');
-define('FOUNDNEWVILLAGE', 'Founding New village');
-define('UNDERATTACK', 'دهکده تحت حمله است');
-define('OASISATTACK', 'آویس تحت حمله است');
-define('OASISATTACKS', 'حمله به آویس');
-define('RETURNFROM', 'بازگشت از');
-define('REINFORCEMENTFOR', 'نیروی کمکی به');
-define('ATTACK_ON', 'حمله به');
-define('RAID_ON', 'غارت به');
-define('SCOUTING', 'جاسوسی');
-define('PRISONERS', 'اسیران');
-define('PRISONERSIN', 'اسیران در');
-define('PRISONERSFROM', 'اسیران از');
-define('TROOPS', 'نیروها');
-define('BOUNTY', 'غنیمت');
-define('ARRIVAL', 'رسیدن');
-define('CATAPULT_TARGET', 'هدف(های) منجنیق');
-define('INCOMING_TROOPS', 'نیروهای ورودی');
-define('TROOPS_ON_THEIR_WAY', 'نیروها در راه هستند');
-define('OWN_TROOPS', 'نیروهای خودی');
-define('ON', 'در');
-define('AT', 'ساعت');
-define('UPKEEP', 'نگهداری');
-define('SEND_BACK', 'بازگرداندن');
-define('TROOPS_IN_THE_VILLAGE', 'نیروها در دهکده');
-define('TROOPS_IN_OTHER_VILLAGE', 'نیروها در دهکده دیگر');
-define('TROOPS_IN_OASIS', 'نیروها در آویس');
-define('KILL', 'کشتن');
-define('FROM', 'از');
-define('SEND_TROOPS', 'ارسال نیروها');
-define('TASKMASTER', 'مامور');
-define('TO_THE_TASK', 'به سوی ماموریت');
-define('VILLAGE_OF_THE_ELDERS', 'دهکده سالخوردگان');
-define('VILLAGE_OF_THE_ELDERS_TROOPS', 'نیروهای دهکده سالخوردگان');
+define('ATTACK', '????');
+define('OWN_REINFORCING_TROOPS', '??????? ???? ????');
+define('NEWVILLAGE', '????? ????.');
+define('FOUNDNEWVILLAGE', '????? ????? ????');
+define('UNDERATTACK', '??? ????? ??? ???? ???');
+define('OASISATTACK', '??? ???? ??? ???? ???');
+define('OASISATTACKS', '???? ?? ????');
+define('RETURNFROM', '?????? ??');
+define('REINFORCEMENTFOR', '????? ???? ??');
+define('ATTACK_ON', '???? ??');
+define('RAID_ON', '???? ??');
+define('SCOUTING', '??????');
+define('PRISONERS', '??????');
+define('PRISONERSIN', '?????? ??');
+define('PRISONERSFROM', '?????? ??');
+define('TROOPS', '??????');
+define('BOUNTY', '?????');
+define('ARRIVAL', '?????');
+define('CATAPULT_TARGET', '???(???) ??????');
+define('INCOMING_TROOPS', '??????? ?????');
+define('TROOPS_ON_THEIR_WAY', '?????? ?? ??? ?????');
+define('OWN_TROOPS', '??????? ????');
+define('ON', 'on');
+define('AT', 'at');
+define('UPKEEP', '???????');
+define('SEND_BACK', '??????????');
+define('TROOPS_IN_THE_VILLAGE', '?????? ?? ?????');
+define('TROOPS_IN_OTHER_VILLAGE', '?????? ?? ????? ????');
+define('TROOPS_IN_OASIS', '?????? ?? ????');
+define('KILL', '????');
+define('FROM', '??');
+define('SEND_TROOPS', '????? ??????');
+define('TASKMASTER', '?????');
+define('TO_THE_TASK', '?? ??? ???????');
+define('VILLAGE_OF_THE_ELDERS', '????? ??????????');
+define('VILLAGE_OF_THE_ELDERS_TROOPS', '??????? ????? ??????????');
 
 //SEND TROOP
-define('REINFORCE', 'نیروی کمکی');
-define('NORMALATTACK', 'حمله معمولی');
-define('RAID', 'غارت');
-define('OR', 'یا');
-define('SENDTROOP', 'ارسال نیروها');
-define('NOTROOP', 'نیرویی نیست');
+define('REINFORCE', '????? ????');
+define('NORMALATTACK', '???? ??????');
+define('RAID', '????');
+define('OR', 'or');
+define('SENDTROOP', '????? ??????');
+define('NOTROOP', '?????? ????');
 
 //map
-define('DETAIL', 'جزئیات');
-define('ABANDVALLEY', 'دره متروکه');
-define('OCCUPIED', 'اشغال‌شده');
-define('UNOCCUPIED', 'اشغال‌نشده');
-define('UNOCCUOASIS', 'آویس اشغال‌نشده');
-define('OCCUOASIS', 'آویس اشغال‌شده');
-define('THERENOINFO', 'هیچ<br>اطلاعاتی موجود نیست.');
-define('LANDDIST', 'توزیع زمین');
-define('TRIBE', 'قبیله');
-define('ALLIANCE', 'اتحاد');
-define('POP', 'جمعیت');
-define('REPORT', 'گزارش');
-define('OPTION', 'گزینه‌ها');
-define('CENTREMAP', 'مرکز نقشه');
-define('FNEWVILLAGE', 'تاسیس دهکده جدید');
-define('CULTUREPOINT', 'امتیاز فرهنگی');
-define('BUILDRALLY', 'ساخت اردوگاه');
-define('SETTLERSAVAIL', 'مهاجران موجود');
-define('BEGINPRO', 'حفاظت مبتدیان');
-define('SENDMERC', 'ارسال بازرگان(ها)');
-define('BAN', 'بازیکن مسدود است');
-define('BUILDMARKET', 'ساخت بازار');
-define('PERHOUR', 'در ساعت');
-define('BONUS', 'پاداش');
-define('MAP', 'نقشه');
-define('LARGE_MAP', 'نقشه بزرگ');
-define('LARGE_MAP_DESC', 'نمایش نقشه بزرگ در پنجره‌ای جداگانه');
-define('CROPFINDER', 'گندم‌یاب');
-define('NORTH', 'شمال');
-define('EAST', 'شرق');
-define('SOUTH', 'جنوب');
-define('WEST', 'غرب');
-define('CLOSE_MAP', 'بستن نقشه');
-define('AND', 'و');
+define('DETAIL', '??????');
+define('ABANDVALLEY', '??? ??????');
+define('OCCUPIED', '?????????');
+define('UNOCCUPIED', '??????????');
+define('UNOCCUOASIS', '???? ??????????');
+define('OCCUOASIS', '???? ?????????');
+define('THERENOINFO', '???<br>???????? ????? ????.');
+define('LANDDIST', '????? ????');
+define('TRIBE', '?????');
+define('ALLIANCE', '?????');
+define('POP', '?????');
+define('REPORT', '?????');
+define('OPTION', '????????');
+define('CENTREMAP', '???? ????');
+define('FNEWVILLAGE', '????? ????? ????');
+define('CULTUREPOINT', '?????? ??????');
+define('BUILDRALLY', '???? ???????');
+define('SETTLERSAVAIL', '??????? ?????');
+define('BEGINPRO', '????? ???????');
 
 //other
-define('VILLAGE', 'دهکده');
-define('STATISTICS', 'آمار');
-define('OASIS', 'آویس');
-define('NO_OASIS', 'شما هیچ آویسی در اختیار ندارید.');
-define('NO_VILLAGES', 'هیچ دهکده‌ای وجود ندارد.');
-define('PLAYER', 'بازیکن');
 
 //LOGIN.php
-define('COOKIES', 'برای ورود باید کوکی‌ها فعال باشند. اگر از این رایانه به‌صورت مشترک استفاده می‌کنید، برای امنیت خود پس از هر جلسه از حساب خارج شوید.');
-define('NAME', 'نام');
-define('PW_FORGOTTEN', 'رمز عبور را فراموش کرده‌اید؟');
-define('PW_REQUEST', 'در این صورت می‌توانید یک رمز تازه درخواست کنید که به آدرس ایمیل شما ارسال خواهد شد.');
-define('PW_GENERATE', 'ایجاد رمز عبور جدید.');
-define('EMAIL_NOT_VERIFIED', 'ایمیل تایید نشده است!');
-define('EMAIL_FOLLOW', 'برای فعال‌سازی حساب خود این لینک را دنبال کنید.');
-define('VERIFY_EMAIL', 'تایید ایمیل.');
-define('SERVER_STARTS_IN', 'سرور شروع می‌شود در: ');
-define('START_NOW', 'هم‌اکنون شروع کن');
 
 
 //404.php
-define('NOTHING_HERE', 'اینجا چیزی نیست!');
-define('WE_LOOKED', '۴۰۴ بار دنبالش گشتیم اما چیزی پیدا نکردیم');
 
 //MASSMESSAGE.php
-define('MASS', 'محتوای پیام');
-define('MASS_SUBJECT', 'موضوع:');
-define('MASS_COLOR', 'رنگ پیام:');
-define('MASS_REQUIRED', 'همه فیلدها اجباری هستند');
-define('MASS_UNITS', 'تصاویر (واحدها):');
-define('MASS_SHOWHIDE', 'نمایش/مخفی');
-define('MASS_READ', 'این را بخوانید: پس از افزودن شکلک، باید چپ یا راست را بعد از عدد اضافه کنید وگرنه تصویر کار نخواهد کرد.');
-define('MASS_CONFIRM', 'تایید');
-define('MASS_REALLY', 'آیا واقعاً می‌خواهید MassIGM ارسال کنید؟');
-define('MASS_ABORT', 'همین حالا لغو شود');
-define('MASS_SENT', 'Mass IGM ارسال شد');
 
 //BUILDINGS
-define('WOODCUTTER', 'هیزم‌شکن');
-define('WOODCUTTER_DESC', 'هیزم‌شکن درختان را قطع می‌کند تا چوب تولید کند. هر چه سطح هیزم‌شکن بالاتر برود، چوب بیشتری تولید می‌شود.<br>با ساخت کارخانه چوب‌بری، می‌توانید تولید را باز هم افزایش دهید.');
-define('CLAYPIT', 'گودال خشت');
-define('CLAYPIT_DESC', 'در اینجا خشت تولید می‌شود. با افزایش سطح آن، تولید خشت افزایش می‌یابد.<br>با ساخت کارخانه خشت‌زنی، می‌توانید تولید را باز هم افزایش دهید.');
-define('IRONMINE', 'معدن آهن');
-define('IRONMINE_DESC', 'در اینجا معدنچیان آهن گرانبها را استخراج می‌کنند. با افزایش سطح معدن، تولید آهن آن افزایش می‌یابد.<br>با ساخت ذوب‌آهن، می‌توانید تولید را باز هم افزایش دهید.');
-define('CROPLAND', 'گندم‌زار');
-define('CROPLAND_DESC', 'غذای جمعیت شما در اینجا تولید می‌شود. با افزایش سطح گندم‌زار، تولید گندم افزایش می‌یابد.<br>با ساخت آسیاب و نانوایی، می‌توانید تولید را باز هم افزایش دهید.');
 
 define('SAWMILL', 'کارخانه چوب‌بری');
 define('SAWMILL_DESC', 'چوب‌های قطع شده در اینجا فرآوری می‌شوند. کارخانه چوب‌بری تولید چوب دهکده را افزایش می‌دهد. در سطح ۱، تولید را ۵٪ افزایش می‌دهد و با هر ارتقاء ۵٪ دیگر اضافه می‌شود که در سطح ۵ به ۲۵٪ می‌رسد.');
@@ -822,15 +799,8 @@ define('PERCENT', 'درصد');
 define('BRICKYARD', 'کارخانه خشت‌زنی');
 define('CURRENT_CLAY_BONUS', 'امتیاز فعلی تولید خشت:');
 define('CLAY_BONUS_LEVEL', 'امتیاز تولید خشت در سطح');
-define('BRICKYARD_DESC', 'خشت در اینجا پخته می‌شود. کارخانه خشت‌زنی تولید خشت دهکده را افزایش می‌دهد. در سطح ۱، تولید را ۵٪ افزایش می‌دهد و در سطح ۵ به ۲۵٪ می‌رسد.');
 
-define('IRONFOUNDRY', 'ذوب‌آهن');
-define('CURRENT_IRON_BONUS', 'امتیاز فعلی تولید آهن:');
-define('IRON_BONUS_LEVEL', 'امتیاز تولید آهن در سطح');
-define('IRONFOUNDRY_DESC', 'آهن در اینجا ذوب می‌شود. ذوب‌آهن تولید آهن دهکده را افزایش می‌دهد. در سطح ۱، تولید را ۵٪ افزایش می‌دهد و در سطح ۵ به ۲۵٪ می‌رسد.');
 
-define('GRAINMILL', 'آسیاب');
-define('CURRENT_CROP_BONUS', 'امتیاز فعلی تولید گندم:');
 define('CROP_BONUS_LEVEL', 'امتیاز تولید گندم در سطح');
 define('GRAINMILL_DESC', 'گندم در اینجا آرد می‌شود. آسیاب تولید گندم دهکده را افزایش می‌دهد. در سطح ۱، تولید را ۵٪ افزایش می‌دهد و در سطح ۵ به ۲۵٪ می‌رسد.');
 
@@ -848,60 +818,28 @@ define('CROP_UNITS', 'واحد گندم');
 define('GRANARY_DESC', 'گندم تولید شده در مزارع شما در انبار غله ذخیره می‌شود. با افزایش سطح آن، ظرفیت انبار غله افزایش می‌یابد.');
 
 define('BLACKSMITH', 'آهنگری');
-define('ACTION', 'Action');
-define('UPGRADE', 'Upgrade');
-define('UPGRADE_IN_PROGRESS', 'Upgrade in<br>progress');
-define('UPGRADE_BLACKSMITH', 'Upgrade<br>blacksmith');
-define('UPGRADES_COMMENCE_BLACKSMITH', 'Upgrades can commence when blacksmith is completed.');
-define('MAXIMUM_LEVEL', 'Maximum<br>level');
-define('EXPAND_WAREHOUSE', 'Expand<br>warehouse');
-define('EXPAND_GRANARY', 'Expand<br>granary');
-define('ENOUGH_RESOURCES', 'Enough resources');
-define('CROP_NEGATIVE ', 'تولید گندم منفی است بنابراین هرگز به منابع مورد نیاز نخواهید رسید.');
-define('TOO_FEW_RESOURCES', 'منابع<br>ناکافی');
-define('UPGRADING', 'در حال ارتقا');
-define('DURATION', 'مدت‌زمان');
-define('COMPLETE', 'تکمیل');
-define('BLACKSMITH_DESC', 'سلاح‌های جنگجویان شما در کوره‌های آهنگری بهبود می‌یابد. با افزایش سطح آن، می‌توانید ساخت سلاح‌های بهتر را سفارش دهید.');
+define('ACTION', '??????');
+define('UPGRADE', '?????');
+define('UPGRADE_IN_PROGRESS', '?????<br>?? ??? ?????');
+define('UPGRADE_BLACKSMITH', '??????<br>??????');
+define('BLACKSMITH_DESC', 'The weapons of your warriors are enhanced in the blacksmith&#39;s melting furnaces. By increasing its level, you can order the fabrication of even better weapons');
 
-define('ARMOURY', 'زره‌سازی');
-define('UPGRADE_ARMOURY', 'ارتقای<br>زره‌سازی');
-define('UPGRADES_COMMENCE_ARMOURY', 'ارتقاها پس از تکمیل زره‌سازی آغاز می‌شوند.');
-define('ARMOURY_DESC', 'زره جنگجویان شما در کوره‌های زره‌سازی بهبود می‌یابد. با افزایش سطح آن، می‌توانید ساخت زره‌های بهتر را سفارش دهید.');
+define('ARMOURY', '????????');
+define('UPGRADE_ARMOURY', '??????<br>????????');
+define('UPGRADES_COMMENCE_ARMOURY', '??????? ?? ?? ????? ???????? ???? ???????.');
+define('ARMOURY_DESC', 'The armor of your warriors are enhanced in the armoury&#39;s melting furnaces. By increasing its level, you can order the fabrication of even better armor');
 
-define('TOURNAMENTSQUARE', 'میدان مسابقات');
-define('CURRENT_SPEED', 'پاداش سرعت فعلی:');
-define('SPEED_LEVEL', 'پاداش سرعت در سطح');
-define('TOURNAMENTSQUARE_DESC', 'نیروهای شما می‌توانند در میدان مسابقات استقامت خود را افزایش دهند. هرچه سطح ساختمان بالاتر برود، نیروها در فاصله‌های بیش از '.TS_THRESHOLD.' خانه سریع‌تر حرکت می‌کنند.');
+define('TOURNAMENTSQUARE', '????? ???????');
+define('CURRENT_SPEED', '????? ???? ????:');
+define('SPEED_LEVEL', '????? ???? ?? ???');
+define('TOURNAMENTSQUARE_DESC', 'Your troops can increase their stamina at the Tournament Square. The further the building is upgraded, the faster your troops are beyond a minimum distance of '.TS_THRESHOLD.' squares');
 
 define('MAINBUILDING', 'ساختمان مرکزی');
 define('CURRENT_CONSTRUCTION_TIME', 'زمان ساخت فعلی:');
 define('CONSTRUCTION_TIME_LEVEL', 'زمان ساخت در سطح');
 define('DEMOLITION_BUILDING', 'تخریب ساختمان:</h2><p>اگر دیگر به ساختمانی نیاز ندارید، می‌توانید دستور تخریب آن را صادر کنید.</p>');
-define('DEMOLISH', 'تخریب');
-define('DEMOLITION_OF', 'تخریب ');
-define('MAINBUILDING_DESC', 'استادان معمار دهکده در ساختمان مرکزی زندگی می‌کنند. هر چه سطح این ساختمان بالاتر باشد، معماران شما ساختمان‌های جدید را سریع‌تر تمام می‌کنند.');
 
-define('RALLYPOINT', 'اردوگاه');
-define('RALLYPOINT_COMMENCE', 'حرکت نیروها زمانی نمایش داده می‌شود که '.RALLYPOINT.' ساخته شده باشد');
-define('OVERVIEW', 'مرور کلی');
-define('REINFORCEMENT', 'نیروی کمکی');
-define('EVASION_SETTINGS', 'تنظیمات فرار');
-define('SEND_TROOPS_AWAY_MAX', 'ارسال نیروها به دوردست حداکثر');
-define('TIMES', 'بار');
-define('PER_EVASION', 'در هر فرار');
-define('RALLYPOINT_DESC', 'نیروهای دهکده شما در اینجا جمع می‌شوند. از اینجا می‌توانید آن‌ها را برای تسخیر، غارت یا تقویت دهکده‌های دیگر بفرستید.');
-define('COMBAT_SIMULATOR', 'شبیه‌ساز جنگ');
 
-define('MARKETPLACE', 'بازار');
-define('MERCHANT', 'بازرگانان');
-define('OR_', 'یا');
-define('GO', 'برو');
-define('UNITS_OF_RESOURCE', 'واحد منبع');
-define('MERCHANT_CARRY', 'هر بازرگان می‌تواند حمل کند');
-define('MERCHANT_COMING', 'بازرگانان در حال رسیدن');
-define('TRANSPORT_FROM', 'حمل از');
-define('ARRIVAL_IN', 'رسیدن در');
 define('NO_COORDINATES_SELECTED', 'No Coordinates selected');
 define('CANNOT_SEND_RESOURCES', 'You cannot send resources to the same village');
 define('BANNED_CANNOT_SEND_RESOURCES', 'Player is Banned. You cannot send resources to him');
@@ -1027,71 +965,71 @@ define('SHOW_MORE', 'نمایش بیشتر');
 define('HIDE_MORE', 'مخفی کردن');
 define('ACADEMY_DESC', 'واحدهای جدید در دارالفنون تحقیق می‌شوند. با افزایش سطح آن، می‌توانید واحدهای بهتری را تحقیق کنید.');
 
-define('CRANNY', 'Cranny');
-define('CURRENT_HIDDEN_UNITS', 'Currently hidden units per resource:');
-define('HIDDEN_UNITS_LEVEL', 'Hidden units per resource at level');
-define('UNITS', 'units');
+define('CRANNY', '???????');
+define('CURRENT_HIDDEN_UNITS', '????? ?????????? ???? ???? ?? ????:');
+define('HIDDEN_UNITS_LEVEL', '????? ?????????? ???? ?? ???? ?? ???');
+define('UNITS', '????');
 define('CRANNY_DESC', 'The cranny hides some of your resources in case the village gets attacked. These resources cannot get stolen.<br>At level 1 the cranny can hold '.(100*((int)CRANNY_CAPACITY)).' of each resource. The capacity of Gallic crannies is 1.5 times larger.<br>If a Teutonic hero attacks a village, crannies can hide only 80% of their normal capacity');
 
-define('TOWNHALL', 'Town Hall');
+define('TOWNHALL', '????? ???');
 define('CELEBRATIONS_COMMENCE_TOWNHALL', 'Celebrations can commence when the town hall is completed.');
-define('GREAT_CELEBRATIONS', 'Great celebration');
-define('CULTURE_POINTS', 'Culture points');
-define('HOLD', 'hold');
-define('CELEBRATIONS_IN_PROGRESS', 'Celebration<br>in progress');
-define('CELEBRATIONS', 'Celebrations');
+define('GREAT_CELEBRATIONS', '??? ????');
+define('CULTURE_POINTS', '?????? ??????');
+define('HOLD', '?????? ????');
+define('CELEBRATIONS_IN_PROGRESS', '???<br>?? ??? ???????');
+define('CELEBRATIONS', '??????');
 define('TOWNHALL_DESC', 'In the town hall, you can hold pompous celebrations. Such a celebration increases your culture points.<br>Culture points are necessary to found or conquer new villages. Each building produces culture points and the higher its level, the more culture points it produces');
 
-define('RESIDENCE', 'Residence');
-define('CAPITAL', 'This is your capital');
+define('RESIDENCE', '????????');
+define('CAPITAL', '??? ?????? ?????');
 define('RESIDENCE_TRAIN_DESC', 'In order to found a new village you need a level 10 or 20 residence and 3 settlers. In order to conquer a new village you need a level 10 or 20 residence and a senator, chief or chieftain.');
-define('PRODUCTION_POINTS', 'Production of this village:');
-define('PRODUCTION_ALL_POINTS', 'Production of all villages:');
-define('POINTS_DAY', 'Culture points per day');
-define('VILLAGES_PRODUCED', 'Your villages have produced');
-define('POINTS_NEED', 'points in total. To found or conquer a new village you need');
-define('POINTS', 'points');
-define('INHABITANTS', 'Inhabitants');
-define('COORDINATES', 'Coordinates');
-define('EXPANSION', 'Expansion');
-define('TRAIN', 'Train');
-define('DATE', 'Date');
+define('PRODUCTION_POINTS', '????? ??? ?????:');
+define('PRODUCTION_ALL_POINTS', '????? ??? ????????:');
+define('POINTS_DAY', '?????? ?????? ?? ???');
+define('VILLAGES_PRODUCED', '????????? ??? ????? ????????');
+define('POINTS_NEED', '?????? ?? ?????. ???? ????? ?? ??? ????? ???? ???? ????? ??');
+define('POINTS', '??????');
+define('INHABITANTS', '????');
+define('COORDINATES', '??????');
+define('EXPANSION', '?????');
+define('TRAIN', '?????');
+define('DATE', '?????');
 define('CONQUERED_BY_VILLAGE', 'Villages founded or conquered by this village');
 define('NONE_CONQUERED_BY_VILLAGE', 'No other village has been founded or conquered by this village yet.');
 define('RESIDENCE_CULTURE_DESC', 'In order to extend your empire you need culture points. These culture points increase in the course of time and do so faster as your building levels increase.');
 define('RESIDENCE_LOYALTY_DESC', 'By attacking with senators, chiefs or chieftains a village&#39;s loyalty can be brought down. If it reaches zero, the village joins the realm of the attacker. The loyalty of this village is currently at ');
 define('RESIDENCE_DESC', 'The Residence protects the village against enemy conquests. You can build one residence per village. Units that can found a new village or conquer existing villages can be trained here.<br>Additionally, the residence provides an expansion slot at levels 10 and 20 each');
 
-define('PALACE', 'Palace');
-define('PALACE_CONSTRUCTION', 'Palace under construction');
+define('PALACE', '???');
+define('PALACE_CONSTRUCTION', '??? ?? ??? ????');
 define('PALACE_TRAIN_DESC', 'In order to found a new village you need a level 10, 15 or 20 palace and 3 settlers. In order to conquer a new village you need a level 10, 15 or 20 palace and a senator, chief or chieftain.');
-define('CHANGE_CAPITAL', 'change capital');
+define('CHANGE_CAPITAL', '????? ??????');
 define('SECURITY_CHANGE_CAPITAL', 'Are you sure, that you want to change your capital?<br><b>You can&#39;t undo this!</b><br>For security you must enter your password to confirm:<br>');
 define('PALACE_DESC', 'The palace building is unique. You can only build one in your whole realm and you can proclaim that village as your capital. It also protects the village against enemy conquests. Units that can found a new village or conquer existing villages can be trained here.<br>Additionally, the palace provides an expansion slot at levels 10, 15 and 20 each');
 
-define('TREASURY', 'Treasury');
+define('TREASURY', '?????');
 define('TREASURY_COMMENCE', 'Artefacts can be viewed when treasury is completed.');
-define('ARTEFACTS_AREA', 'Artefacts in your area');
+define('ARTEFACTS_AREA', '??????????? ????? ???');
 define('NO_ARTEFACTS_AREA', 'There are no artefacts in your area.');
-define('OWN_ARTEFACTS', 'Own artefacts');
-define('CONQUERED', 'Conquered');
-define('DISTANCE', 'Distance');
-define('EFFECT', 'Effect');
-define('ACCOUNT', 'Account');
-define('SMALL_ARTEFACTS', 'Small artefacts');
-define('LARGE_ARTEFACTS', 'Large artefacts');
+define('OWN_ARTEFACTS', '??????????? ???');
+define('CONQUERED', '????? ???');
+define('DISTANCE', '?????');
+define('EFFECT', '???');
+define('ACCOUNT', '????');
+define('SMALL_ARTEFACTS', '??????????? ????');
+define('LARGE_ARTEFACTS', '??????????? ????');
 define('NO_ARTEFACTS', 'There are no artefacts.');
 define('ANY_ARTEFACTS', 'You do not own any artefacts.');
-define('OWNER', 'Owner');
-define('AREA_EFFECT', 'Area of effect');
-define('VILLAGE_EFFECT', 'Village effect');
-define('ACCOUNT_EFFECT', 'Account effect');
-define('UNIQUE_EFFECT', 'Unique effect');
-define('REQUIRED_LEVEL', 'Required level');
-define('TIME_CONQUER', 'Time of conquer');
-define('TIME_ACTIVATION', 'Time of activation');
+define('OWNER', '????');
+define('AREA_EFFECT', '?????? ???');
+define('VILLAGE_EFFECT', '??? ?????');
+define('ACCOUNT_EFFECT', '??? ????');
+define('UNIQUE_EFFECT', '??? ????');
+define('REQUIRED_LEVEL', '??? ????????');
+define('TIME_CONQUER', '???? ?????');
+define('TIME_ACTIVATION', '???? ?????????');
 define('NEXT_EFFECT', ' Next effect');
-define('FORMER_OWNER', 'Former owner(s)');
+define('FORMER_OWNER', '????(???) ????');
 define('BUILDING_STRONGER', 'Building stronger with');
 define('BUILDING_WEAKER', 'Building weaker with');
 define('TROOPS_FASTER', 'Makes troops faster with');
@@ -1110,89 +1048,89 @@ define('NO_WW', 'There are no Wonders of the World');
 define('NO_PREVIOUS_OWNERS', 'There are no previous owners.');
 define('TREASURY_DESC', 'The riches of your empire are kept in the treasury. A treasury can only store one artefact at a time.<br>You need a treasury at level 10 for a small artefact, or level 20 for a great one');
 
-define('TRADEOFFICE', 'Trade Office');
-define('CURRENT_MERCHANT', 'Current merchant load:');
-define('MERCHANT_LEVEL', 'Merchant load at level');
+define('TRADEOFFICE', '???? ?????');
+define('CURRENT_MERCHANT', '????? ???? ???????:');
+define('MERCHANT_LEVEL', '????? ??????? ?? ???');
 define('TRADEOFFICE_DESC', 'In the trade office, the merchants&#39; carts get improved and equipped with more powerful horses. The higher its level, the more your merchants are able to carry');
 
-define('GREATBARRACKS', 'Great Barracks');
+define('GREATBARRACKS', '?????? ????');
 define('TRAINING_COMMENCE_GREATBARRACKS', 'Training can commence when great barracks is completed.');
 define('GREATBARRACKS_DESC', 'The Great Barracks allows you to build a second Barracks in the same village, but the troops cost 3 times the original amount.<br>Combined with the regular Barracks, you can train your troops twice as fast in one village');
 
-define('GREATSTABLE', 'Great Stable');
+define('GREATSTABLE', '????? ????');
 define('TRAINING_COMMENCE_GREATSTABLE', 'Training can commence when great stable is completed.');
 define('GREATSTABLE_DESC', 'The Great Stable allows you to build a second Stable in the same village, but the troops cost 3 times the original amount.<br>Combined with the regular Stable, you can train your troops twice as fast in one village');
 
-define('CITYWALL', 'City Wall');
-define('DEFENCE_NOW', 'Defence Bonus now:');
-define('DEFENCE_LEVEL', 'Defence Bonus at level');
+define('CITYWALL', '????? ???');
+define('DEFENCE_NOW', '????? ????? ????:');
+define('DEFENCE_LEVEL', '????? ????? ?? ???');
 define('CITYWALL_DESC', 'Provides a defense bonus for your troops (((1.03 ^ level) * 100)% + 10) defensive points per level to the basic defensive value for a village. The higher level Wall will give your troops a higher defence bonus.<br>Tribe-specific: Romans only');
 
-define('EARTHWALL', 'Earth Wall');
+define('EARTHWALL', '????? ????');
 define('EARTHWALL_DESC', 'Provides a defense bonus for your troops (((1.02 ^ level) * 100)% + 6) defensive points per level to the basic defensive value for a village. A higher level Earth Wall will give your troops a higher defence bonus.<br>Tribe-specific: Teutons only');
 
-define('PALISADE', 'Palisade');
+define('PALISADE', '????');
 define('PALISADE_DESC', 'Provides a defense bonus for your troops (((1.025 ^ level) * 100)% + 8) defensive points per level to the basic defensive value for a village. A higher level Palisade will give your troops a higher defence bonus.<br>Tribe-specific: Gauls only');
 
-define('STONEMASON', 'Stonemason&#39;s Lodge');
-define('CURRENT_STABILITY', 'Current stability bonus:');
-define('STABILITY_LEVEL', 'Stability bonus at level');
+define('STONEMASON', '?????????');
+define('CURRENT_STABILITY', '????? ??????? ????:');
+define('STABILITY_LEVEL', '????? ??????? ?? ???');
 define('STONEMASON_DESC', 'The Stonemason is an expert it cutting stone. The higher the level of the Stonemason&#39;s Lodge, the greater the stability of your village&#39;s buildings. For each level this building will increase durability by 10% for a maximum of 200% durability for your buildings.<br>This building can only be built in an accounts Capital');
 
-define('BREWERY', 'Brewery');
-define('CURRENT_BONUS', 'Current bonus:');
-define('BONUS_LEVEL', 'Bonus at level');
+define('BREWERY', '????????');
+define('CURRENT_BONUS', '????? ????:');
+define('BONUS_LEVEL', '????? ?? ???');
 define('BREWERY_DESC', 'Tasty mead is brewed here.Drinks make your soldiers braver and stronger when attacking others (1% per Brewery level). Unfortunately, the persuasive power of leaders is reduced by 50% and catapults can only make random hits. Can only be built in the capital, but affects all your villages. The mead-festivals always last 72 hours.<br>Tribe-specific: Teutons only');
 
-define('TRAPPER', 'Trapper');
-define('CURRENT_TRAPS', 'Currect maximum traps to train:');
-define('TRAPS_LEVEL', 'Maximum traps to train at level');
-define('TRAPS', 'Traps');
-define('TRAP', 'Trap');
-define('CURRENT_HAVE', 'You currently have');
-define('WHICH_OCCUPIED', 'of which are occupied.');
+define('TRAPPER', '????????');
+define('CURRENT_TRAPS', '?????? ??? ???? ???? ?????:');
+define('TRAPS_LEVEL', '?????? ??? ?? ???');
+define('TRAPS', '??????');
+define('TRAP', '???');
+define('CURRENT_HAVE', '??? ????? ?????');
+define('WHICH_OCCUPIED', '?? ?? ??? ?????? ????? ???????.');
 define('TRAINING_COMMENCE_TRAPPER', 'Training can commence when trapper is completed.');
 define('TRAPPER_DESC', 'The trapper protects your village with well hidden traps. This means that unwary enemies can be imprisoned and won&#39;t be able to harm your village any more.<br>Troops cannot be freed with a raid. If the owner of the traps release the captives all of the traps will be repaired automatically.<br>Tribe-specific: Gauls only');
 
-define('HEROSMANSION', 'Hero&#39;s Mansion');
-define('HERO_READY', 'Hero will be ready in ');
-define('NAME_CHANGED', 'Hero name has been changed');
-define('NOT_UNITS', 'Not available units');
+define('HEROSMANSION', '????? ??????');
+define('HERO_READY', '?????? ????? ?????? ?? ');
+define('NAME_CHANGED', '??? ?????? ????? ???');
+define('NOT_UNITS', '????? ?? ????? ????');
 define('NOT', 'Not ');
-define('TRAIN_HERO', 'Train New Hero');
-define('REVIVE', 'Revive');
-define('OASES', 'Oases');
-define('DELETE', 'Delete');
-define('RESOURCES', 'Resources');
-define('OFFENCE', 'Offence');
-define('DEFENCE', 'Defence');
-define('OFF_BONUS', 'Off-Bonus');
-define('DEF_BONUS', 'Def-Bonus');
-define('REGENERATION', 'Regeneration');
-define('DAY', 'Day');
-define('EXPERIENCE', 'Experience');
+define('TRAIN_HERO', '????? ?????? ????');
+define('REVIVE', '????');
+define('OASES', '???????');
+define('DELETE', '???');
+define('RESOURCES', '?????');
+define('OFFENCE', '?????');
+define('DEFENCE', '????');
+define('OFF_BONUS', '????? ????');
+define('DEF_BONUS', '????? ????');
+define('REGENERATION', '???????');
+define('DAY', '???');
+define('EXPERIENCE', '?????');
 define('YOU_CAN', 'You can ');
-define('RESET', 'reset');
+define('RESET', '????????');
 define('YOUR_POINT_UNTIL', ' your points until you are level ');
 define('OR_LOWER', ' or lower!');
 define('YOUR_HERO_HAS', 'Your hero has ');
 define('OF_HIT_POINTS', 'of his life points');
-define('ERROR_NAME_SHORT', 'Error: name too short');
+define('ERROR_NAME_SHORT', '???: ??? ???? ????? ???');
 define('HEROSMANSION_DESC', 'The hero&#39;s mansion is the home of your glorious hero.<br>At building levels 10, 15 and 20, you can use your hero to annex an unoccupied oasis to your village, one per each of these levels respectively. Depending on the oasis, you will get a production increase for a certain type of resource (or even two resources, from some oases)');
 
-define('GREATWAREHOUSE', 'Great Warehouse');
+define('GREATWAREHOUSE', '????? ????');
 define('GREATWAREHOUSE_DESC', 'The great warehouse has 3 times the capacity of a normal warehouse.<br>This building can only be built in wonder of the world villages or with a special Natarian artefact');
 
-define('GREATGRANARY', 'Great Granary');
+define('GREATGRANARY', '????? ??? ????');
 define('GREATGRANARY_DESC', 'The great granary has 3 times the capacity of a normal granary.<br>This building can only be built in wonder of the world villages or with a special Natarian artefact');
 
-define('WONDER', 'Wonder of the World');
-define('WORLD_WONDER', 'World Wonder');
+define('WONDER', '????? ????');
+define('WORLD_WONDER', '????? ????');
 define('WONDER_DESC', 'A Wonder of the World (also known as WW) is as astonishing as it sounds. Every level costs a lot of resources. It is nearly impossible for a single player to build a WW on their own. The reason is that you not only need a lot of resources, but also the troops to protect your precious building.<br>To build WW you need an Ancient Construction Plan. You can get this by attacking a Natar Village with your hero. You need to have an empty level 10 treasury and your hero must survive. With those plan and an extremely high level of resources, you can start the world wonder.<br>Once it gets to level 50, you will need someone else in your alliance to have a second construction plan active. You cannot do it all by yourself.<br>Finishing a WW lvl 100, you will win the Travian server and its the end of a game world.<br>Once you finish, a message will come up telling who won and statistics. You can no longer build, but you can message people until the server restarts');
-define('WORLD_WONDER_CHANGE_NAME', 'You need to have World Wonder level 1 to be able to change its name');
-define('WORLD_WONDER_NAME', 'World Wonder name');
-define('WORLD_WONDER_NOTCHANGE_NAME', 'You can not change the name of the World Wonder after level 10');
-define('WORLD_WONDER_NAME_CHANGED', 'Name changed');
+define('WORLD_WONDER_CHANGE_NAME', '???? ????? ??? ????? ???? ???? ??? ?? ????? ? ????.');
+define('WORLD_WONDER_NAME', '??? ????? ????');
+define('WORLD_WONDER_NOTCHANGE_NAME', '??? ?? ??? ?? ?????????? ??? ????? ???? ?? ????? ????.');
+define('WORLD_WONDER_NAME_CHANGED', '??? ????? ???');
 
 define('HORSEDRINKING', 'Horse Drinking Trough');
 define('HORSEDRINKING_DESC', 'Decreases the training time and the upkeep of cavalry. It can also be built in Roman Wonder of the World villages.<br>Speeds up the training time of cavalry units by 1% per level and lowers the crop consumption of some units depending on its level.<br>Tribe-specific: Romans only');
@@ -1351,37 +1289,6 @@ define('VILLAGES_ALLI_PLAYERS', 'villages from players of the alliance');
 define('REPORT_FILTER', 'Report filter');
 define('NO_REPORTS_TO_OWN', 'No reports for transfers to own villages');
 define('NO_REPORTS_TO_OTH', 'No reports for transfers to foreign villages');
-define('NO_REPORTS_FROM_OTH', 'هیچ گزارشی برای انتقالات از دهکده‌های خارجی وجود ندارد.');
-define('CHANGE_PROFILE', 'تغییر پروفایل');
-define('WRITE_MESSAGE', 'Write message');
-define('REPORT_PLAYER', 'گزارش بازیکن');
-define('ARTEFACT1', 'اثر');
-define('WoW1', 'WoW');
-define('VILLAGE_NAME', 'نام دهکده');
-define('BDAY', 'تولد');
-define('CONDITIONS', 'شرایط');
-define('TIME_PREF', 'ترجیحات زمانی');
-define('TIME_ZONES_DESC', 'در اینجا می‌توانید زمان نمایش داده شده در Travian را مطابق با منطقه زمانی خود تغییر دهید.');
-define('TIME_ZONE_L1', 'اروپا');
-define('TIME_ZONE_L2', 'UK');
-define('TIME_ZONE_L3', 'ترکیه');
-define('TIME_ZONE_L4', 'آسیا/کلکته');
-define('TIME_ZONE_L5', 'آسیا/بانکوک');
-define('TIME_ZONE_L6', 'USA/نیویورک');
-define('TIME_ZONE_L7', 'USA/شیکاگو');
-define('TIME_ZONE_L8', 'نیوزیلند');
-define('MONTH1', 'ژانویه');
-define('MONTH2', 'فوریه');
-define('MONTH3', 'مارس');
-define('MONTH4', 'آوریل');
-define('MONTH5', 'مه');
-define('MONTH6', 'ژوئن');
-define('MONTH7', 'جولای');
-define('MONTH8', 'آگوست');
-define('MONTH9', 'سپتامبر');
-define('MONTH10', 'اکتبر');
-define('MONTH11', 'نوامبر');
-define('MONTH12', 'دسامبر');
 
 //artefact
 define('ARCHITECTS_DESC', 'All buildings in the area of effect are stronger. This means that you will need more catapults to damage buildings protected by this artefacts powers.');
@@ -1581,13 +1488,6 @@ define('CONF_SERV_NTRTIME', 'Nature Troops Regeneration Time');
 define('CONF_SERV_NTRTIME_TOOLTIP', 'Time through which the nature troops will be restored in oases.');
 define('CONF_SERV_OASIS_WOOD_PROD_MULT', 'Oasis Wood Production Multiplier');
 define('CONF_SERV_OASIS_WOOD_PROD_MULT_TOOLTIP', 'The base wood oasis production');
-define('CONF_SERV_OASIS_CLAY_PROD_MULT', 'ضریب تولید خشت در آویس');
-define('CONF_SERV_OASIS_CLAY_PROD_MULT_TOOLTIP', 'مقدار پایه تولید خشت در آویس');
-define('CONF_SERV_OASIS_IRON_PROD_MULT', 'ضریب تولید آهن در آویس');
-define('CONF_SERV_OASIS_IRON_PROD_MULT_TOOLTIP', 'مقدار پایه تولید آهن در آویس');
-define('CONF_SERV_OASIS_CROP_PROD_MULT', 'ضریب تولید گندم در آویس');
-define('CONF_SERV_OASIS_CROP_PROD_MULT_TOOLTIP', 'مقدار پایه تولید گندم در آویس');
-define('CONF_SERV_MEDALINTERVAL', 'فاصله مدال‌ها');
 define('CONF_SERV_MEDALINTERVAL_TOOLTIP', 'The time interval for issuing medals for the top players and alliances. If this parameter is changed on the installed server, the time interval changes after the subsequent issuance of the medals.');
 define('CONF_SERV_TOURNTHRES', 'Tourn Threshold');
 define('CONF_SERV_TOURNTHRES_TOOLTIP', 'The number of squares on the game map, after which Tournament Square will start working.');
@@ -1652,15 +1552,8 @@ define('CONF_LOG_ADMIN', 'Log Admin');
 define('CONF_LOG_ADMIN_TOOLTIP', 'Enable (Yes) or disable (No) the display of logs for administrator actions in the control panel.');
 define('CONF_LOG_WAR', 'Log War');
 define('CONF_LOG_WAR_TOOLTIP', 'Enable (Yes) or disable (No) the display of logs attacks on players in the game.');
-define('CONF_LOG_MARKET', 'ثبت فعالیت‌های بازار');
-define('CONF_LOG_MARKET_TOOLTIP', 'فعال (بله) یا غیرفعال (خیر) کردن نمایش لاگ‌های استفاده از بازار توسط بازیکنان.');
-define('CONF_LOG_ILLEGAL', 'ثبت فعالیت‌های غیرمجاز');
-define('CONF_LOG_ILLEGAL_TOOLTIP', 'فعال (بله) یا غیرفعال (خیر) کردن نمایش لاگ‌های غیرمجاز. (دقیقاً نمی‌دانم به چه معناست)');
 
 //Admin setting - Admin/Templates/config.tpl & editNewsboxSet.tpl
-define('NEWSBOX_SETT', 'تنظیمات جعبه خبر');
-define('EDIT_NEWSBOX_SETT', 'ویرایش تنظیمات جعبه خبر');
-define('EDIT_NEWSBOX1', 'جعبه خبر 1');
 define('EDIT_NEWSBOX1_TOOLTIP', 'Enable or disable the display of the Newsbox 1. Displayed on the authorization page and on the game pages.');
 define('EDIT_NEWSBOX2', 'Newsbox 2');
 define('EDIT_NEWSBOX2_TOOLTIP', 'Enable or disable the display of the Newsbox 2. Displayed on the authorization page and on the game pages.');
@@ -1678,16 +1571,8 @@ define('CONF_SQL_DBUSER_TOOLTIP', 'The user name to connect to the database.');
 define('CONF_SQL_DBPASS', 'DB Password');
 define('CONF_SQL_DBPASS_TOOLTIP', 'Password from the user to connect to the database.');
 define('CONF_SQL_DBNAME', 'DB Name');
-define('CONF_SQL_DBNAME_TOOLTIP', 'نام پایگاه داده‌ای که به آن متصل می‌شوید.');
-define('CONF_SQL_TBPREFIX', 'پیشوند جدول');
-define('CONF_SQL_TBPREFIX_TOOLTIP', 'پیشوند استفاده شده برای جداول پایگاه داده.');
-define('CONF_SQL_DBTYPE', 'نوع پایگاه داده');
-define('CONF_SQL_DBTYPE_TOOLTIP', 'نوع پایگاه داده استفاده شده.');
 
 //Admin setting - Admin/Templates/config.tpl & editExtraSet.tpl
-define('EXTRA_SETT', 'تنظیمات اضافی');
-define('EDIT_EXTRA_SETT', 'ویرایش تنظیمات اضافی');
-define('CONF_EXTRA_LIMITMAIL', 'محدودیت پست الکترونیکی');
 define('CONF_EXTRA_LIMITMAIL_TOOLTIP', 'Enable (Yes) or disable (No) the mailbox limit.');
 define('CONF_EXTRA_MAXMAIL', 'Max number of mails');
 define('CONF_EXTRA_MAXMAIL_TOOLTIP', 'The maximum number of messages that can fit in the mailbox.');
@@ -1704,7 +1589,6 @@ define('CONF_ADMIN_SHOWSTATS_TOOLTIP', 'Enable (True) or disable (False) the dis
 define('CONF_ADMIN_SUPPMESS', 'Include Support Messages');
 define('CONF_ADMIN_SUPPMESS_TOOLTIP', 'Enable (True) or disable (False) the sending of messages to the mailbox of the administrator addressed to Support.');
 define('CONF_ADMIN_RAIDATT', 'Allow Raided and Attacked');
-define('CONF_ADMIN_RAIDATT_TOOLTIP', 'فعال (True) یا غیرفعال (False) کردن توانایی حمله و غارت به یک مدیر.');
 
 /*
 |--------------------------------------------------------------------------
@@ -1728,9 +1612,9 @@ $lang['index'][0][13] = 'Play with and against thousands of other real players a
 $lang['index'][0][14] = 'News';
 $lang['index'][0][15] = 'FAQ';
 $lang['index'][0][16] = 'Screenshots';
-$lang['forum'] = 'انجمن';
-$lang['register'] = 'ثبت‌نام';
-$lang['login'] = 'ورود';
+$lang['forum'] = 'Forum';
+$lang['register'] = 'Register';
+$lang['login'] = 'Login';
 $lang['screenshots']['title1'] = 'Village';
 $lang['screenshots']['desc1'] = 'Village building';
 $lang['screenshots']['title2'] = 'Resource';

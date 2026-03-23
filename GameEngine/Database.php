@@ -3034,8 +3034,8 @@ public function getBestOasisCropBonus($x, $y) {
 			$q = "SELECT $field FROM " . TB_PREFIX . "ali_permission where username = '$ref' LIMIT 1";
 		}
 		$result = mysqli_query($this->dblink,$q);
-		//$dbarray = mysqli_fetch_array($result); - some error in here !
-		return $dbarray[$field];
+		$dbarray = $result ? mysqli_fetch_assoc($result) : null;
+		return isset($dbarray[$field]) ? $dbarray[$field] : 0;
 	}
 
 	function getAlliance($id, $use_cache = true) {
